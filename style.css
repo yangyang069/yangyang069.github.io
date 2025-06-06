@@ -4792,20 +4792,42 @@ nav.scrolled {
     }
     
     .nav-links {
-        display: none;
-    }
-    
-    .nav-links.mobile-active {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: white;
-        padding: 1rem;
+        padding: 0 1rem;
         z-index: 100;
-        align-items: flex-start; /* 添加左对齐 */
+        align-items: flex-start;
+        
+        /* 动画初始状态 */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        background: transparent;
+        transform: translateY(-1rem);
+        transition: max-height 0.4s ease-out, 
+                    opacity 0.3s ease-out,
+                    transform 0.3s ease-out,
+                    padding-top 0.4s ease-out,
+                    padding-bottom 0.4s ease-out,
+                    background-color 0.4s ease-out;
+    }
+    
+    .nav-links.mobile-active {
+        max-height: 40rem; /* 确保高度足够容纳所有链接 */
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: var(--bg-primary);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
     }
     
     .nav-links.mobile-active a {
@@ -4814,6 +4836,15 @@ nav.scrolled {
         width: 100%; /* 确保链接占满容器宽度 */
         text-align: left; /* 确保文本左对齐 */
         justify-content: flex-start; /* 对flex布局的子元素左对齐 */
+    }
+    
+    [data-theme="dark"] .nav-links.mobile-active {
+        background-color: var(--bg-primary);
+    }
+
+    [data-theme="dark"] .nav-links.mobile-active a {
+        color: var(--text-primary);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .menu-toggle {

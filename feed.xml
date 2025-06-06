@@ -5,7 +5,22 @@
     <link>https://louaq.github.io</link>
     <description>Updates from YangYang's homepage, including new publications and talks.</description>
     <language>en-us</language>
+    <lastBuildDate>Tue, 30 Jul 2024 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://louaq.github.io/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>New Activity: Academic Exchange at CNCC2024</title>
+      <link>https://louaq.github.io/#academic-activities</link>
+      <pubDate>Tue, 30 Jul 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="false">https://louaq.github.io/activity/cncc2024</guid>
+      <description>
+        <![CDATA[
+          <p><strong>Location:</strong> Hengdian, Zhejiang, China</p>
+          <p><strong>Event:</strong> China National Computer Congress (CNCC 2024)</p>
+          <p><strong>Description:</strong> Participated in the China National Computer Congress, engaging with leading researchers in computer science and AI. Focused on topics like Graphics Neural Networks and NVIDIA technologies.</p>
+        ]]>
+      </description>
+    </item>
 
     <item>
       <title>New Publication: An Improved YOLOv8-Based Rice Pest and Disease Detection Method</title>

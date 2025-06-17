@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YangYang - Homepage Updates</title>
+    <link>https://louaq.github.io</link>
+    <description>Updates from YangYang's homepage, including new publications and talks.</description>
+    <language>en-us</language>
+    <atom:link href="https://louaq.github.io/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>New Publication: An Improved YOLOv8-Based Rice Pest and Disease Detection Method</title>
+      <link>https://louaq.github.io/#publications</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="false">https://louaq.github.io/publication/cgi2024</guid>
+      <description>
+        <![CDATA[
+          <p><strong>Authors:</strong> Yang Yang, Jianlin Zhu, Bo Yang, Xiao Zhang, Jin Huang</p>
+          <p><strong>Conference:</strong> Computer Graphics International Conference 2024 (CGI 2024)</p>
+          <p><strong>Abstract:</strong> This paper presents an enhanced YOLOv8 model for detecting rice pests and diseases, contributing to precision agriculture through advanced computer vision techniques.</p>
+          <p>
+            <a href="https://louaq.github.io/pdf-viewer.html?url=./pdf/978-3-031-82024-3_8.pdf&title=An Improved YOLOv8-Based Rice Pest and Disease Detection Method">PDF</a> | 
+            <a href="https://github.com/Louaq/CGI2024">Code</a> |
+            <a href="https://drive.google.com/file/d/1UJcbH2cKLstZdyEJPGv_Hb3GP06MYJff/view?usp=sharing">Dataset</a> |
+            <a href="https://louaq.github.io/#publications" onclick="document.querySelector('[data-citation-file=\'./citation/10.1007_978-3-031-82024-3_8-citation.bib\']').click(); return false;">Cite</a>
+          </p>
+        ]]>
+      </description>
+    </item>
+
+    <item>
+      <title>New Talk: An Improved YOLOv8-Based Rice Pest and Disease Detection Method (CGI 2024)</title>
+      <link>https://louaq.github.io/#talks</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="false">https://louaq.github.io/talk/cgi2024</guid>
+      <description>
+        <![CDATA[
+          <p><strong>Event:</strong> Computer Graphics International Conference 2024 (Online)</p>
+          <p><strong>Description:</strong> This talk presents an improved YOLOv8-based rice pest and disease detection method.</p>
+          <p>
+            <a href="https://louaq.github.io/ppt-viewer.html?url=https://docs.google.com/presentation/d/18N1NjLzoq4ebQ8FyU649AgYWezRZIxbLarAtNvdkFaQ/edit?usp=drive_link&title=CGI2024演示文稿">Slides</a> | 
+            <a href="https://drive.google.com/file/d/1MYGWupPT0zrqpIpRvBc7m3qs2gzznOiw/view?usp=sharing">Video</a>
+          </p>
+        ]]>
+      </description>
+    </item>
+
+  </channel>
+</rss> 

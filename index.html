@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YangYang(杨杨)-Homepage</title>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            document.documentElement.setAttribute('data-theme', savedTheme || 'light');
+        })();
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/academicons/1.9.1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Lora:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme-transition.css">
+    
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="nav-name">YangYang</a>
+
+        <div class="nav-links">
+            <a href="#about-me"><i class="fas fa-user-graduate"></i> About</a>
+            <a href="#publications"><i class="fas fa-file-alt"></i> Publications</a>
+            <a href="#talks"><i class="fas fa-comments"></i> Talks</a>
+            <a href="#experience"><i class="fas fa-graduation-cap"></i> Education</a>
+            <a href="#academic-activities"><i class="fas fa-award"></i> Activities</a>
+        </div>
+
+        <div class="nav-right">
+            <button class="theme-toggle" aria-label="切换主题">
+                <i class="fas fa-moon"></i>
+            </button>
+            <a href="feed.xml" class="rss-btn" target="_blank" rel="noopener noreferrer" aria-label="RSS订阅"
+                data-tooltip="RSS订阅">
+                <i class="fas fa-rss"></i>
+            </a>
+            <button class="menu-toggle" aria-label="菜单">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="about">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-greeting">
+                    <span class="wave">👋</span>
+                    <span>Available for work</span>
+                </div>
+                <h1>YangYang</h1>
+                
+                <p class="hero-subtitle">MS Student with 1+ years of experience, passionate about Computer Vision, AI
+                    research, and innovative technology that sparks breakthrough discoveries. I love bringing research
+                    ideas to life. 🚀🔬</p>
+                <div class="social-links">
+                    <a href="#" data-tooltip="yangyang@scuec.edu.cn" rel="noopener noreferrer">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=ph6q3aQAAAAJ" data-tooltip="Google Scholar"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="ai ai-google-scholar"></i>
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Yang-Yang-826" data-tooltip="Research Gate"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-researchgate"></i>
+                    </a>
+                    <a href="https://orcid.org/0009-0009-6670-7889" data-tooltip="ORCID" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="ai ai-orcid"></i>
+                    </a>
+                    <a href="https://github.com/Louaq" data-tooltip="GitHub" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="img/avatar.png" alt="YangYang Profile" class="profile-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about-me-section" id="about-me">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Hi! I'm a 1st year MS student at <a href="https://www.scuec.edu.cn/" target="_blank"
+                            rel="noopener noreferrer">South-Central Minzu University</a>, studying <strong>Semantic
+                            Segmentation</strong> and <strong>Computer Vision</strong> under the supervision of <a
+                            href="https://www.scuec.edu.cn/jky/info/1165/4995.htm" target="_blank"
+                            rel="noopener noreferrer">Dr. Jianlin Zhu</a>. I also hold a Bachelor in <strong>Network
+                            Engineering</strong> obtained at <a href="https://www.scuec.edu.cn/" target="_blank"
+                            rel="noopener noreferrer">South-Central
+                            Minzu University</a> in 2024. My research interests include <strong>Medical Image
+                            Processing</strong> and <strong>Computer Vision</strong>.</p>
+
+                    <p>The goal for my MS is to contribute to research in the above areas, then to find a research
+                        position in academia or industry in the same field.</p>
+
+                    <div class="research-focus">
+                        <h3>Research Focus</h3>
+                        <div class="focus-grid">
+                            <div class="focus-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Semantic Segmentation</span>
+                            </div>
+                            <div class="focus-item">
+                                <i class="fas fa-microscope"></i>
+                                <span>Computer Vision</span>
+                            </div>
+                            <div class="focus-item">
+                                <i class="fas fa-brain"></i>
+                                <span>Image Processing</span>
+                            </div>
+                            <div class="focus-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>Deep Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">1+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Published Papers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Conference Attended</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="publications-section scholarly-content" id="publications" data-section-type="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Publications</h2>
+            </div>
+            <div class="section-content">
+                <div class="publications-grid">
+                    <!-- Publication 1: CGI 2024 -->
+                    <div class="publication-card">
+                        <div class="publication-image">
+                            <img src="Paper illustration/cgi.png" alt="CGI 2024 Paper">
+                            <div class="publication-badges">
+                                <span class="badge published">Published</span>
+                                <span class="badge conference">CGI 2024</span>
+                            </div>
+                        </div>
+                        <div class="publication-content">
+                            <h3 itemprop="headline">An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
+                            <p class="authors" itemprop="author"><strong>Yang Yang</strong>, Jianlin Zhu, Bo Yang, Xiao
+                                Zhang, Jin Huang
+                            </p>
+                            <p class="venue" itemprop="isPartOf" itemscope itemtype="http://schema.org/Event">
+                                <span itemprop="name">Computer Graphics International Conference 2024</span>
+                            </p>
+                            <div class="publication-links">
+                                <a href="pdf-viewer.html?url=./pdf/978-3-031-82024-3_8.pdf&title=An Improved YOLOv8-Based Rice Pest and Disease Detection Method"
+                                    class="pub-link" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </a>
+                                <a href="https://github.com/Louaq/CGI2024" class="pub-link" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1UJcbH2cKLstZdyEJPGv_Hb3GP06MYJff/view?usp=sharing"
+                                    class="pub-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-database"></i>
+                                    <span>Dataset</span>
+                                </a>
+                                <a href="#" class="pub-link scholar-cite-button citation-button"
+                                    data-citation-file="./citation/10.1007_978-3-031-82024-3_8-citation.bib">
+                                    <i class="fas fa-quote-right"></i>
+                                    <span>Cite</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Publication 2: Under Review -->
+                    <div class="publication-card">
+                        <div class="publication-image">
+                            <img src="" alt="XXX Under Review">
+                            <div class="publication-badges">
+                                <span class="badge under-review">Under Review</span>
+                                <span class="badge journal">xxx</span>
+                            </div>
+                        </div>
+                        <div class="publication-content">
+                            <h3 itemprop="headline">xxxxxxxxx:xxxxxxxxx</h3>
+                            <p class="authors" itemprop="author"><strong>Yang Yang</strong></p>
+                            <p class="venue" itemprop="isPartOf" itemscope itemtype="http://schema.org/Periodical">
+                                <span itemprop="name">xxxxxxxxxxxxxxxxxxxxxxxxxx</span> (Under Review)
+                            </p>
+                            <div class="publication-status">
+                                <span class="status-indicator">🔥 Under Review at xxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+                            </div>
+                            <div class="publication-links">
+                                <a href="#" class="pub-link disabled">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </a>
+                                <a href="#" class="pub-link disabled">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#" class="pub-link disabled">
+                                    <i class="fas fa-database"></i>
+                                    <span>Dataset</span>
+                                </a>
+                                <a href="#" class="pub-link scholar-cite-button citation-button disabled"
+                                    data-citation-file="#">
+                                    <i class="fas fa-quote-right"></i>
+                                    <span>Cite</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Publication 3: Waiting for submission -->
+                    <div class="publication-card">
+                        <div class="publication-image">
+                            <img src="" alt="Waiting for submission">
+                            <div class="publication-badges">
+                                <span class="badge under-review">Waiting for submission</span>
+                                <span class="badge journal">xxx</span>
+                            </div>
+                        </div>
+                        <div class="publication-content">
+                            <h3 itemprop="headline">xxxxxxxxx:xxxxxxxxx</h3>
+                            <p class="authors" itemprop="author"><strong>Yang Yang</strong></p>
+                            <p class="venue" itemprop="isPartOf" itemscope itemtype="http://schema.org/Periodical">
+                                <span itemprop="name">xxxxxxxxxxxxxxxxxxxxxxxxxx</span> (Waiting for submission)
+                            </p>
+                            <div class="publication-status">
+                                <span class="status-indicator">🔥 Waiting for submission at
+                                    xxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+                            </div>
+                            <div class="publication-links">
+                                <a href="#" class="pub-link disabled">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </a>
+                                <a href="#" class="pub-link disabled">
+                                    <i class="fab fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#" class="pub-link disabled">
+                                    <i class="fas fa-database"></i>
+                                    <span>Dataset</span>
+                                </a>
+                                <a href="#" class="pub-link scholar-cite-button citation-button disabled"
+                                    data-citation-file="#">
+                                    <i class="fas fa-quote-right"></i>
+                                    <span>Cite</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talks Section -->
+    <section class="talks-section" id="talks">
+        <div class="container">
+            <div class="section-header">
+                <h2>Talks</h2>
+            </div>
+            <div class="section-content">
+                <div class="talks-grid">
+                    <!-- Talk 1: CGI 2024 -->
+                    <div class="talk-card">
+                        <div class="talk-image-container">
+                            <img src="Paper illustration/cgi_demo.png" alt="CGI 2024 Talk">
+                            <div class="talk-badge-container">
+                                <span class="talk-badge conference">Online</span>
+                            </div>
+                        </div>
+                        <div class="talk-content">
+                            <h3>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
+                            <p class="talk-description">This talk presents an improved YOLOv8-based rice pest and
+                                disease detection method</p>
+                            <div class="talk-links">
+                                <a href="ppt-viewer.html?url=https://docs.google.com/presentation/d/18N1NjLzoq4ebQ8FyU649AgYWezRZIxbLarAtNvdkFaQ/edit?usp=drive_link&title=CGI2024演示文稿"
+                                    class="pub-link" rel="noopener noreferrer">
+                                    <i class="fas fa-file-powerpoint"></i>
+                                    <span>Slides</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1MYGWupPT0zrqpIpRvBc7m3qs2gzznOiw/view?usp=sharing"
+                                    class="pub-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-video"></i>
+                                    <span>Video</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+            <div class="section-content">
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span class="year">2024-2027</span>
+                            <span class="status">Expected</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Master of Computer Technology</h4>
+                            <p class="institution">
+                                <i class="fas fa-university"></i>
+                                South-Central Minzu University <img src="Icons/scuec.png" alt="SCU logo" width="90"
+                                    height="30" class="scu-logo">
+                            </p>
+                            <p class="description">Focusing on Computer Vision, Semantic Segmentation, and Deep Learning
+                                under the supervision of <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm"
+                                    target="_blank" rel="noopener noreferrer">Dr. Jianlin Zhu. </a></p>
+                            <div class="timeline-tags">
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">Deep Learning</span>
+                                <span class="tag">Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span class="year">2020-2024</span>
+                            <span class="status">Completed</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Bachelor of Network Engineering</h4>
+                            <p class="institution">
+                                <i class="fas fa-university"></i>
+                                South-Central Minzu University <img src="Icons/scuec.png" alt="SCU logo" width="90"
+                                    height="30" class="scu-logo">
+                            </p>
+                            <p class="description">Comprehensive study of network technologies, programming, and
+                                computer systems.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Network Engineering</span>
+                                <span class="tag">Programming</span>
+                                <span class="tag">Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Activities Section -->
+    <section class="academic-activities-section" id="academic-activities">
+        <div class="container">
+            <div class="section-header">
+                <h2>Activities</h2>
+            </div>
+            <div class="section-content">
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span class="year">2024</span>
+                            <span class="month">November</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Academic Exchange at CNCC2024</h4>
+                            <p class="institution">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Hengdian, Zhejiang, China
+                            </p>
+                            <p class="description">Participated in the China National Computer Congress, engaging with
+                                leading researchers in computer science and AI.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Graphics Neural Network</span>
+                                <span class="tag">NVIDIA</span>
+                                <span class="tag">Conference</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Visitor Map Section -->
+    <section class="visitor-map-section" id="visitor-map">
+        <div class="container">
+            <div class="section-header">
+                <h2>Visitor</h2>
+            </div>
+            <div class="section-content">
+                <div class="map-wrapper">
+                    <script type="text/javascript" id="clustrmaps"
+                        src="//clustrmaps.com/map_v2.js?d=_AhZGM9DqgNcORvW5D0isv0WXJPU1XWopy7ZarZtYuA&cl=ffffff&w=300"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 引用模态对话框 -->
+    <div id="citation-modal" class="citation-modal">
+        <div class="citation-modal-content">
+            <span class="citation-close">&times;</span>
+            <h3>Citation</h3>
+            <div class="citation-text-container">
+                <pre id="citation-text"></pre>
+            </div>
+            <button id="copy-citation-btn" class="copy-citation-btn">
+                <i class="fas fa-copy"></i> Copy
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>AGPL-3.0 Licensed | Copyright © 2024-<span id="current-year"></span> <a href="https://github.com/Louaq" target="_blank">YangYang</a></p>
+                    <div class="footer-quick-links">
+                        <a href="https://www.scuec.edu.cn" target="_blank" rel="noopener noreferrer">
+                            South-Central Minzu University
+                        </a>
+                        <a href="https://www.scuec.edu.cn/yjsy/" target="_blank" rel="noopener noreferrer">
+                            Graduate School
+                        </a>
+                        <a href="https://www.scuec.edu.cn/jky/index.htm" target="_blank" rel="noopener noreferrer">
+                            School of Computer Science (School of Artificial Intelligence)
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <a href="mailto:yangyang@mail.scuec.edu.cn" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                    <a href="https://github.com/Louaq" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=ph6q3aQAAAAJ" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="ai ai-google-scholar"></i>
+                    </a>
+                </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

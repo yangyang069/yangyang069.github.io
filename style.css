@@ -5719,3 +5719,35 @@ nav.scrolled {
     width: 300px !important;
     height: 200px !important;
 }
+
+/* 移动端 tooltip 修复 */
+@media (max-width: 768px) { /* A wider breakpoint to catch more devices */
+    .social-links a::before {
+        white-space: normal;
+        word-break: break-all;
+        max-width: 180px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* Prevent going off-screen on the left */
+    .social-links a:first-child::before {
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .social-links a:first-child:hover::before {
+        transform: translateX(0) translateY(-5px);
+    }
+
+    /* Prevent going off-screen on the right */
+    .social-links a:last-child::before {
+        left: auto;
+        right: 0;
+        transform: translateX(0);
+    }
+
+    .social-links a:last-child:hover::before {
+        transform: translateX(0) translateY(-5px);
+    }
+}

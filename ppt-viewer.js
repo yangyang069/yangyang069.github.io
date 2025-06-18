@@ -34,8 +34,7 @@ class PPTViewer {
         this.currentUrl = urlParams.get('url') || urlParams.get('ppt') || '';
         this.currentTitle = urlParams.get('title') || '演示文稿';
         
-        // 设置标题
-        document.getElementById('presentationTitle').textContent = this.currentTitle;
+        // 设置文档标题
         document.title = `${this.currentTitle} - PPT查看器 - YangYang`;
 
         console.log('解析的参数:', {

@@ -239,40 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 技术栈项目悬停效果
-    const techItems = document.querySelectorAll('.tech-item');
-    techItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.transform = 'translateY(-3px) scale(1.05)';
-        });
-
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = '';
-        });
-    });
-
-    // 项目卡片3D效果
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
-    });
-
     // 平滑滚动到锚点
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -301,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('loaded');
     }, 100);
 
-    updateLastCommitTime();
+    // updateLastCommitTime();
 });
 
 // 页脚动态功能
@@ -310,31 +276,6 @@ function initFooter() {
     const currentYearElement = document.getElementById('current-year');
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
-    }
-
-    // 更新最后更新时间
-    const lastUpdatedElement = document.getElementById('last-updated');
-    if (lastUpdatedElement) {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = now.getMonth() + 1;
-        lastUpdatedElement.textContent = `${year}年${month}月`;
-    }
-    
-
-    // 访问统计功能（可以连接到实际的统计服务）
-    const visitorCountElement = document.getElementById('visitor-count');
-    if (visitorCountElement) {
-        // 这里可以连接到实际的访问统计API
-        // 目前显示一个友好的消息
-        const messages = [
-            'Thank you for visiting!',
-            'Welcome to my academic homepage',
-            'I am glad to share my research with you',
-            'Looking forward to academic exchange with you'
-        ];
-        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-        visitorCountElement.textContent = randomMessage;
     }
 
     // 为页脚链接添加悬浮效果

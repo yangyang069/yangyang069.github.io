@@ -5719,3 +5719,12 @@ nav.scrolled {
     width: 300px !important;
     height: 200px !important;
 }
+
+.hover-underline {
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+}
+
+.hover-underline:hover {
+    text-decoration: underline;
+}

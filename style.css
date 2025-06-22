@@ -1821,6 +1821,13 @@ nav.scrolled {
     position: relative;
     height: 200px;
     overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+/* 确保在主题切换时保持一致的高度 */
+[data-theme="light"] .publication-image,
+[data-theme="dark"] .publication-image {
+    height: 200px;
 }
 
 .publication-image img {
@@ -1828,6 +1835,15 @@ nav.scrolled {
     height: 100%;
     object-fit: cover;
     transition: var(--transition-normal);
+}
+
+/* 移动端视图下的高度保持一致 */
+@media (max-width: 480px) {
+    .publication-image,
+    [data-theme="light"] .publication-image,
+    [data-theme="dark"] .publication-image {
+        height: 120px;
+    }
 }
 
 .publication-overlay {
@@ -4938,9 +4954,12 @@ nav.scrolled {
         flex-direction: column;
     }
     
-    .publication-image {
+    .publication-image,
+    [data-theme="light"] .publication-image,
+    [data-theme="dark"] .publication-image {
         width: 100%;
         height: 200px;
+        transition: none;
     }
     
     .publication-content {
@@ -5267,6 +5286,14 @@ nav.scrolled {
 /* 确保主题切换不使用任何动画 */
 [data-theme], [data-theme] * {
     transition: none !important;
+}
+
+/* 确保publication-image在主题切换时不会有动画效果 */
+.publication-image,
+[data-theme="light"] .publication-image,
+[data-theme="dark"] .publication-image {
+    transition: none !important;
+    animation: none !important;
 }
 
 /* 友情链接区域样式 */

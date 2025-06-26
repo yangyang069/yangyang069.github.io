@@ -9,8 +9,7 @@
     <meta name="google-site-verification" content="BQFGVLyhneER-dR3-w8JppqO1y_TG5vPSgJ3n8zH5lk" />
     <script>
         (function () {
-            const savedTheme = localStorage.getItem('theme');
-            document.documentElement.setAttribute('data-theme', savedTheme || 'light');
+            document.documentElement.setAttribute('data-theme', 'light');
         })();
     </script>
     <!-- Favicon -->
@@ -20,7 +19,6 @@
     <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Lora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="theme-transition.css">
     
 </head>
 
@@ -37,13 +35,6 @@
         </div>
 
         <div class="nav-right">
-            <button class="theme-toggle" aria-label="切换主题">
-                <i class="fas fa-moon"></i>
-            </button>
-            <a href="feed.xml" class="rss-btn" target="_blank" rel="noopener noreferrer" aria-label="RSS订阅"
-                data-tooltip="RSS订阅">
-                <i class="fas fa-rss"></i>
-            </a>
             <button class="menu-toggle" aria-label="菜单">
                 <i class="fas fa-bars"></i>
             </button>

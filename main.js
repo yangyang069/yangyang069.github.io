@@ -1,66 +1,7 @@
-// 使用立即执行函数来设置初始主题，避免闪烁
+// 设置默认浅色主题
 (function() {
-    // 检查本地存储中的主题设置
-    const savedTheme = localStorage.getItem('theme');
-    // 如果有保存的主题，就使用它；否则默认使用浅色主题
-    const initialTheme = savedTheme || 'light';
-    // 立即设置主题，不等待DOM加载
-    document.documentElement.setAttribute('data-theme', initialTheme);
+    document.documentElement.setAttribute('data-theme', 'light');
 })();
-
-// 主题切换功能
-const themeToggle = document.querySelector('.theme-toggle');
-const themeIcon = themeToggle?.querySelector('i');
-
-// 页面加载完成后更新图标
-document.addEventListener('DOMContentLoaded', function() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    updateThemeIcon(currentTheme);
-});
-
-// 更新主题图标
-function updateThemeIcon(theme) {
-    if (!themeIcon) return;
-
-    // 移除延时操作，立即切换图标
-    if (theme === 'dark') {
-        themeIcon.classList.remove('fa-moon', 'fa-adjust');
-        themeIcon.classList.add('fa-sun');
-    } else {
-        themeIcon.classList.remove('fa-sun', 'fa-adjust');
-        themeIcon.classList.add('fa-moon');
-    }
-}
-
-
-// 切换主题
-if (themeToggle) {
-    themeToggle.addEventListener('click', (e) => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-        // 立即切换主题，无动画
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-        
-        // 发布主题变化事件
-        document.dispatchEvent(new CustomEvent('themeChanged', { 
-            detail: { theme: newTheme } 
-        }));
-    });
-}
-
-// 监听系统主题变化（仅当用户未手动设置主题时）
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    // 只有当用户没有手动设置主题时，才根据系统主题变化
-    if (!localStorage.getItem('theme')) {
-        // 即使系统主题变化，仍然保持我们的默认主题（浅色）
-        const newTheme = 'light';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        updateThemeIcon(newTheme);
-    }
-});
 
 document.getElementById('current-year').textContent = new Date().getFullYear();
 

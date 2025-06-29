@@ -20,6 +20,58 @@
     <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Lora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
     
+    <!-- 移动端样式重置 -->
+    <style>
+        @media (max-width: 768px) {
+            .contact-links a {
+                padding: 0 !important;
+                margin: 0 8px 0 0 !important;
+                background-color: transparent !important;
+                border-radius: 0 !important;
+            }
+            
+            .contact-links a:hover {
+                background-color: transparent !important;
+                text-decoration: underline !important;
+            }
+            
+            .pub-links a,
+            .project-links a {
+                padding: 0 !important;
+                margin: 0 8px 0 0 !important;
+                background-color: transparent !important;
+                border-radius: 0 !important;
+            }
+            
+            .pub-links a:hover,
+            .project-links a:hover {
+                background-color: transparent !important;
+                text-decoration: underline !important;
+            }
+            
+            .news-item {
+                background-color: transparent !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .edu-period {
+                flex: 0 0 70px !important;
+            }
+        }
+        
+        @media (hover: none) and (pointer: coarse) {
+            .contact-links a:active,
+            .pub-links a:active,
+            .project-links a:active {
+                background-color: transparent !important;
+                transform: none !important;
+            }
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -28,10 +80,11 @@
         <header class="main-header">
             <div class="header-content">
                 <div class="profile-info">
-                    <h1>YangYang</h1>
+                    <h1>Yang Yang</h1>
                     <p class="bio">
-                        Hi, I am YangYang (杨杨), a Computer Science MS student at 
-                        <a href="https://www.scuec.edu.cn/" target="_blank">South-Central Minzu University</a>, 
+                        Hi, I am Yang Yang (杨杨), a Computer Science MS student at 
+                        <a href="https://www.scuec.edu.cn/" target="_blank">South-Central Minzu University</a>
+                        <img src="img/scuec.ico" alt="SCUEC Logo" style="width: 16px; height: 16px; margin-left: 5px; vertical-align: middle;">, 
                         where I am fortunate to be advised by Professor 
                         <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm" target="_blank">Jianlin Zhu</a>. 
                         I received my B.S. degree in Network Engineering from South-Central Minzu University in 2024.
@@ -44,11 +97,13 @@
                     <div class="contact-links">
                         <a href="mailto:yangyang@scuec.edu.cn">Email</a> |
                         <a href="https://scholar.google.com/citations?user=ph6q3aQAAAAJ" target="_blank">Scholar</a> |
-                        <a href="https://github.com/Louaq" target="_blank">Github</a>
+                        <a href="https://github.com/Louaq" target="_blank">Github</a> |
+                        <a href="https://orcid.org/0009-0009-6670-7889" target="_blank">ORCID</a> |
+                        <a href="https://www.researchgate.net/profile/Yang-Yang-826" target="_blank">ResearchGate</a>
                     </div>
                 </div>
                 <div class="profile-photo">
-                    <img src="img/avatar.jpg" alt="YangYang Profile Photo">
+                    <img src="img/profile.png" alt="YangYang Profile Photo">
                 </div>
             </div>
         </header>
@@ -58,6 +113,14 @@
             <h2>News</h2>
             <div class="news-list">
                 <div class="news-item">
+                    <span class="news-date">[May. 2025]</span>
+                    <span class="news-content">Completed my second journal paper! 🎉</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">[Mar. 2025]</span>
+                    <span class="news-content">Submitted my first journal paper to The Visual Computer <strong>TVC</strong>! 🎉</span>
+                </div>
+                <div class="news-item">
                     <span class="news-date">[Nov. 2024]</span>
                     <span class="news-content">Attended <strong>CNCC2024</strong> in Hengdian, Zhejiang, engaging with leading researchers in computer science and AI! 👩‍💻</span>
                 </div>
@@ -66,7 +129,7 @@
                     <span class="news-content">Started my MS studies at South-Central Minzu University! 🎓</span>
                 </div>
                 <div class="news-item">
-                    <span class="news-date">[Jul. 2024]</span>
+                    <span class="news-date">[Jun. 2024]</span>
                     <span class="news-content">Graduated with B.S. in Network Engineering! 🎉</span>
                 </div>
             </div>
@@ -74,7 +137,7 @@
 
         <!-- Publications Section -->
         <section class="publications-section">
-            <h2>Selected Publications</h2>
+            <h2>Publications</h2>
             <div class="publications-list">
                 <!-- Publication 1 -->
                 <div class="publication-item">
@@ -100,30 +163,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Publication 2 - Under Review -->
-                <!-- <div class="publication-item">
-                    <div class="pub-image">
-                        <img src="Paper illustration/tvc.png" alt="Under Review Paper">
-                    </div>
-                    <div class="pub-content">
-                        <h3>Advanced Medical Image Segmentation via Deep Learning</h3>
-                        <p class="authors">
-                            <strong>Yang Yang</strong>, Jianlin Zhu
-                        </p>
-                        <p class="venue">
-                            Under Review at <strong>Medical Image Analysis</strong>, 2024
-                        </p>
-                        <div class="pub-links">
-                            <span class="link-disabled">[paper]</span>
-                            <span class="link-disabled">[code]</span>
-                            <span class="link-disabled">[dataset]</span>
-                        </div>
-                        <p class="pub-description">
-                            Novel deep learning approaches for precise medical image segmentation across multiple modalities.
-                        </p>
-                    </div>
-                </div> -->
             </div>
         </section>
 
@@ -137,7 +176,12 @@
                     </div>
                     <div class="project-content">
                         <h3>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/1MYGWupPT0zrqpIpRvBc7m3qs2gzznOiw/view?usp=drive_link" target="_blank">[video]</a>
+                            <a href="https://docs.google.com/presentation/d/1Ows77MtWSs9H_lGSSiU7L8SzOUVF6I74ZjIpg1dbIbE/edit?usp=drive_link" target="_blank">[slide]</a>
+                        </div>
                         <p>This talk presents an improved YOLOv8-based rice pest and disease detection method.</p>
+
                     </div>
                 </div>
             </div>
@@ -169,7 +213,8 @@
         <!-- Footer -->
         <footer class="main-footer">
             <div class="visitor-counter">
-                <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=_AhZGM9DqgNcORvW5D0isv0WXJPU1XWopy7ZarZtYuA"></script>
+                <script type="text/javascript" id="clustrmaps"
+                    src="//clustrmaps.com/map_v2.js?d=_AhZGM9DqgNcORvW5D0isv0WXJPU1XWopy7ZarZtYuA&cl=ffffff&w=300"></script>
             </div>
             <div class="footer-info">
                 <p>&copy; Yang Yang | Last updated: June 29th, 2025</p>

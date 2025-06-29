@@ -32,7 +32,6 @@ h2 {
     font-weight: bold;
     margin: 30px 0 15px 0;
     color: #000;
-    border-bottom: 1px solid #ddd;
     padding-bottom: 5px;
 }
 
@@ -69,7 +68,7 @@ strong {
 .header-content {
     display: flex;
     gap: 30px;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .profile-info {
@@ -77,13 +76,13 @@ strong {
 }
 
 .profile-photo {
-    flex: 0 0 150px;
+    flex: 0 0 250px;
 }
 
 .profile-photo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 8px;
+    width: 250px;
+    height: 250px;
+    border-radius: 0;
     object-fit: cover;
 }
 
@@ -144,18 +143,19 @@ strong {
     gap: 20px;
     margin-bottom: 25px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
 }
 
 .pub-image {
-    flex: 0 0 120px;
+    flex: 0 0 284px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pub-image img {
-    width: 120px;
-    height: 80px;
+    width: 284px;
+    height: 156px;
     object-fit: cover;
-    border: 1px solid #ddd;
 }
 
 .pub-content {
@@ -210,18 +210,19 @@ strong {
     gap: 20px;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
 }
 
 .project-image {
-    flex: 0 0 100px;
+    flex: 0 0 284px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-image img {
-    width: 100px;
-    height: 70px;
+    width: 284px;
+    height: 156px;
     object-fit: cover;
-    border: 1px solid #ddd;
 }
 
 .project-content {
@@ -237,6 +238,20 @@ strong {
     font-size: 0.95rem;
 }
 
+.project-links {
+    margin-bottom: 8px;
+}
+
+.project-links a {
+    margin-right: 10px;
+    color: #0066cc;
+}
+
+.project-links .link-disabled {
+    color: #999;
+    margin-right: 10px;
+}
+
 /* Education Section */
 .education-section {
     margin-bottom: 30px;
@@ -248,16 +263,16 @@ strong {
 
 .education-item {
     display: flex;
-    gap: 20px;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    gap: 5px;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
 }
 
 .edu-period {
-    flex: 0 0 150px;
+    flex: 0 0 100px;
     font-weight: bold;
     color: #666;
+    font-size: 0.9rem;
 }
 
 .edu-content {
@@ -265,19 +280,22 @@ strong {
 }
 
 .edu-content h3 {
-    margin-bottom: 3px;
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+    line-height: 1.3;
 }
 
 .edu-content p {
-    margin-bottom: 2px;
+    margin-bottom: 6px;
     color: #666;
+    font-size: 1rem;
+    line-height: 1.3;
 }
 
 /* Footer */
 .main-footer {
     margin-top: 40px;
     text-align: center;
-    border-top: 1px solid #ddd;
     padding-top: 20px;
 }
 
@@ -362,87 +380,359 @@ strong {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        padding: 20px;
+    }
+    
+    .header-content {
+        gap: 20px;
+    }
+    
+    .profile-photo {
+        flex: 0 0 200px;
+    }
+    
+    .profile-photo img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .pub-image {
+        flex: 0 0 240px;
+    }
+    
+    .pub-image img {
+        width: 240px;
+        height: 132px;
+    }
+    
+    .project-image {
+        flex: 0 0 240px;
+    }
+    
+    .project-image img {
+        width: 240px;
+        height: 132px;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
+        padding: 10px;
     }
     
     .header-content {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
     }
     
     .profile-photo {
         align-self: center;
+        flex: none;
+    }
+    
+    .profile-photo img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .bio, .research-interests {
+        text-align: left;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+    
+    .contact-links {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .contact-links a {
+        margin-right: 8px;
     }
     
     .publication-item,
     .project-item {
         flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
     }
     
     .pub-image,
     .project-image {
         align-self: center;
+        flex: none;
+    }
+    
+    .pub-image img,
+    .project-image img {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        aspect-ratio: 284/156;
     }
     
     .education-item {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 3px;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
     }
     
     .edu-period {
-        font-size: 0.9rem;
+        flex: 0 0 80px;
+        font-size: 1rem;
+        color: #0066cc;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+    
+    .edu-content h3 {
+        margin-top: 0;
+        margin-bottom: 1px;
+        font-size: 19.2px;
+        line-height: 1.2;
+    }
+    
+    .edu-content p {
+        margin-bottom: 1px;
+        font-size: 19.2px;
+        line-height: 1.2;
     }
     
     h1 {
         font-size: 2rem;
+        margin-bottom: 10px;
+        line-height: 1.2;
     }
     
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+        margin: 20px 0 8px 0;
+        line-height: 1.2;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+        line-height: 1.3;
     }
     
     .news-item {
         flex-direction: column;
-        gap: 5px;
+        gap: 2px;
+        margin-bottom: 10px;
     }
     
     .news-date {
         min-width: auto;
+        color: #0066cc;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    
+    .news-content {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .pub-links a,
+    .project-links a {
+        margin-right: 8px;
+        font-size: 1rem;
     }
     
     .citation-modal-content {
         margin: 5% auto;
         width: 95%;
+        padding: 15px;
+    }
+    
+    .visitor-counter {
+        transform: scale(0.8);
+    }
+    
+    /* 移动端学校图标调整 */
+    .bio img {
+        width: 12px !important;
+        height: 12px !important;
+        margin-left: 3px !important;
+    }
+    
+    .contact-links a {
+        padding: 0 !important;
+        margin: 0 8px 0 0 !important;
+        background-color: transparent !important;
+        border-radius: 0 !important;
+    }
+    
+    .contact-links a:hover {
+        background-color: transparent !important;
+    }
+    
+    .pub-links a,
+    .project-links a {
+        padding: 0 !important;
+        margin: 0 8px 0 0 !important;
+        background-color: transparent !important;
+        border-radius: 0 !important;
+    }
+    
+    .pub-links a:hover,
+    .project-links a:hover {
+        background-color: transparent !important;
+    }
+    
+    .contact-links a:active,
+    .pub-links a:active,
+    .project-links a:active {
+        background-color: transparent !important;
+        transform: none !important;
+    }
+    
+    .news-item {
+        background-color: transparent !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 10px;
+        padding: 8px;
+    }
+    
+    body {
+        font-size: 16px;
     }
     
     h1 {
         font-size: 1.8rem;
+        line-height: 1.1;
+        margin-bottom: 8px;
     }
     
     h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+        margin: 15px 0 6px 0;
+        line-height: 1.1;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+        line-height: 1.2;
     }
     
     .profile-photo img {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
     }
     
-    .pub-image img {
-        width: 100px;
-        height: 70px;
+    .bio, .research-interests {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 8px;
     }
     
+    .contact-links {
+        font-size: 0.9rem;
+    }
+    
+    .contact-links a {
+        margin-right: 6px;
+    }
+    
+    .news-list,
+    .publications-list,
+    .projects-list,
+    .education-list {
+        margin-left: 5px;
+    }
+    
+    .news-item {
+        margin-bottom: 8px;
+    }
+    
+    .news-date {
+        font-size: 0.85rem;
+        margin-bottom: 1px;
+    }
+    
+    .news-content {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+    
+    .pub-image img,
     .project-image img {
-        width: 80px;
-        height: 60px;
+        max-width: 100%;
+        width: 220px;
+        height: auto;
+    }
+    
+    .pub-content,
+    .project-content {
+        padding: 0;
+    }
+    
+    .authors {
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+    }
+    
+    .venue {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+    
+    .pub-description,
+    .project-content p {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    .pub-links a,
+    .project-links a {
+        margin-right: 6px;
+        font-size: 0.85rem;
+    }
+    
+    .education-item {
+        gap: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 2px;
+    }
+    
+    .edu-period {
+        font-size: 0.85rem;
+    }
+    
+    .edu-content h3 {
+        font-size: 1rem;
+    }
+    
+    .edu-content p {
+        font-size: 0.85rem;
+    }
+    
+    .visitor-counter {
+        transform: scale(0.7);
+        margin-bottom: 5px;
+    }
+    
+    .footer-info p {
+        font-size: 0.8rem;
+    }
+    
+    /* 移动端学校图标调整 */
+    .bio img {
+        width: 10px !important;
+        height: 10px !important;
+        margin-left: 2px !important;
     }
 }
 
@@ -459,5 +749,43 @@ strong {
     a {
         color: #000;
         text-decoration: underline;
+    }
+}
+
+/* 滚动和交互体验优化 */
+@media (max-width: 768px) {
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+    }
+    
+    /* 优化文本选择 */
+    p, h1, h2, h3 {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+    
+    /* 防止文本缩放 */
+    input, textarea, select {
+        font-size: 16px;
+    }
+    
+    /* Visitor Counter 溢出处理 */
+    .visitor-counter {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .visitor-counter > * {
+        max-width: 100%;
     }
 } 

@@ -20,66 +20,6 @@
     <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Lora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
     
-    <!-- 移动端样式重置 -->
-    <style>
-        @media (max-width: 768px) {
-            .contact-links a {
-                padding: 0 !important;
-                margin: 0 8px 0 0 !important;
-                background-color: transparent !important;
-                border-radius: 0 !important;
-            }
-            
-            .contact-links a:hover {
-                background-color: transparent !important;
-                text-decoration: underline !important;
-            }
-            
-            .pub-links a,
-            .project-links a {
-                padding: 0 !important;
-                margin: 0 8px 0 0 !important;
-                background-color: transparent !important;
-                border-radius: 0 !important;
-            }
-            
-            .pub-links a:hover,
-            .project-links a:hover {
-                background-color: transparent !important;
-                text-decoration: underline !important;
-            }
-            
-            .news-item {
-                background-color: transparent !important;
-                border-radius: 0 !important;
-                padding: 0 !important;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .education-item {
-                flex-direction: column !important;
-                gap: 3px !important;
-                margin-bottom: 12px !important;
-            }
-            
-            .edu-period {
-                flex: none !important;
-                font-size: 0.9rem !important;
-                margin-bottom: 2px !important;
-            }
-        }
-        
-        @media (hover: none) and (pointer: coarse) {
-            .contact-links a:active,
-            .pub-links a:active,
-            .project-links a:active {
-                background-color: transparent !important;
-                transform: none !important;
-            }
-        }
-    </style>
-    
 </head>
 
 <body>
@@ -101,7 +41,7 @@
                     <p class="research-interests">
                         My research focuses on <strong>Multimodal Medical Image Analysis</strong> and 
                         <strong>Computer Vision</strong>. I am particularly interested in developing innovative 
-                        deep learning methodologies for medical image analysis and healthcare technology applications.
+                        deep learning methodologies for multimodal medical image analysis and healthcare technology applications.
                     </p>
                     <div class="contact-links">
                         <a href="mailto:yangyang@scuec.edu.cn">Email</a> |
@@ -123,27 +63,27 @@
             <div class="news-list">
                 <div class="news-item">
                     <span class="news-date">[May. 2025]</span>
-                    <span class="news-content">Completed my second journal paper! 🎉</span>
+                    <span class="news-content">🎉 Completed my second journal paper!</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">[May. 2025]</span>
-                    <span class="news-content">Submitted my first journal paper to The Visual Computer <strong>(TVC)</strong>! 🎉</span>
+                    <span class="news-content">🎉 Submitted my first journal paper to The Visual Computer <strong>(TVC)</strong>!</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">[Mar. 2025]</span>
-                    <span class="news-content">The first conference paper is accepted by <strong>CGI2024</strong>! 🎉</span>
+                    <span class="news-content">🎉 The first conference paper is accepted by <strong>CGI2024</strong>!</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">[Nov. 2024]</span>
-                    <span class="news-content">Attended <strong>CNCC2024</strong> in Hengdian, Zhejiang, engaging with leading researchers in computer science and AI! 👩‍💻</span>
+                    <span class="news-content">👩‍💻 Attended <strong>CNCC2024</strong> in Hengdian, Zhejiang, engaging with leading researchers in computer science and AI!</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">[Sep. 2024]</span>
-                    <span class="news-content">Started my MS studies at South-Central Minzu University! 🎓</span>
+                    <span class="news-content">🎓 Started my MS studies at South-Central Minzu University!</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">[Jun. 2024]</span>
-                    <span class="news-content">Graduated with B.S. in Network Engineering! 🎉</span>
+                    <span class="news-content">🎉 Graduated with B.S. in Network Engineering!</span>
                 </div>
             </div>
         </section>
@@ -183,6 +123,35 @@
         </section>
 
         <!-- Research Projects Section -->
+        <section class="research-projects-section">
+            <h2>Projects</h2>
+            <div class="projects-list">
+                <!-- Project 1 -->
+                <div class="publication-item">
+                    <div class="pub-image">
+                        <img src="img/project_1.gif" alt="Rice Pest Detection Project">
+                    </div>
+                    <div class="pub-content">
+                        <h3>Rice Pest and Disease Detection System</h3>
+                        <p class="authors">
+                            <strong>Yang Yang</strong>, Jianlin Zhu, Bo Yang, Xiao Zhang, Jin Huang
+                        </p>
+                        <p class="venue">
+                            Online Project, 2024
+                        </p>
+                        <div class="pub-links">
+                            <a href="https://drive.google.com/file/d/1Six0T71DQEEsr7OH-iI0AiNGi1UrYrDh/view?usp=sharing" target="_blank">[demo]</a>
+                        </div>
+                        <p class="pub-description">
+                            A simple and effective method for rice pest and disease detection.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Talks Section -->
         <section class="projects-section">
             <h2>Talks</h2>
             <div class="projects-list">

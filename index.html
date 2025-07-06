@@ -15,11 +15,45 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/favicon.png">
     <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/academicons/1.9.1/css/academicons.min.css">
-    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Lora:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet"
+        href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/academicons/1.9.1/css/academicons.min.css">
+    <link rel="stylesheet"
+        href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet"
+        href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Lora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
     
+    <style>
+        /* 返回顶部按钮样式 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background-color: #f0f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,16 +64,23 @@
                 <div class="profile-info">
                     <h1>Yang Yang</h1>
                     <p class="bio">
-                        Hi, I am Yang Yang (杨杨), a Computer Technology MS student at <a href="https://www.scuec.edu.cn/jky/index.htm" target="_blank">School of Computer Science (School of Artificial Intelligence)</a><img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/icon-title.svg" alt="SCUEC Logo" style="width: 25px; height: 25px; vertical-align: middle;">,
-                        <a href="https://www.scuec.edu.cn/" target="_blank">South-Central Minzu University</a><img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/scuec.png" alt="SCUEC Logo" style="width: 100px; height: 30px; vertical-align: middle;">, 
-                        where I am fortunate to be advised by  
-                        <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm" target="_blank">Dr. Jianlin Zhu</a>. 
+                        Hi, I am Yang Yang (杨杨), a Computer Technology MS student at <a
+                            href="https://www.scuec.edu.cn/jky/index.htm" target="_blank">School of Computer Science
+                            (School of Artificial Intelligence)</a><img
+                            src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/icon-title.svg"
+                            alt="SCUEC Logo" style="width: 25px; height: 25px; vertical-align: middle;">,
+                        <a href="https://www.scuec.edu.cn/" target="_blank">South-Central Minzu University</a><img
+                            src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/scuec.png" alt="SCUEC Logo"
+                            style="width: 100px; height: 30px; vertical-align: middle;">,
+                        where I am fortunate to be advised by
+                        <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm" target="_blank">Dr. Jianlin Zhu</a>.
                         I received my B.S. degree in Network Engineering from South-Central Minzu University in 2024.
                     </p>
                     <p class="research-interests">
-                        My research focuses on <strong>Multimodal Medical Image Analysis</strong> and 
-                        <strong>Computer Vision</strong>. I am particularly interested in developing innovative 
-                        deep learning methodologies for multimodal medical image analysis and healthcare technology applications.
+                        My research focuses on <strong>Multimodal Medical Image Analysis</strong> and
+                        <strong>Computer Vision</strong>. I am particularly interested in developing innovative
+                        deep learning methodologies for multimodal medical image analysis and healthcare technology
+                        applications.
                     </p>
                     <div class="contact-links">
                         <a href="mailto:yangyang@scuec.edu.cn">Email</a> |
@@ -51,7 +92,8 @@
                     </div>
                 </div>
                 <div class="profile-photo">
-                    <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/profile.png" alt="YangYang Profile Photo">
+                    <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/profile.png"
+                        alt="YangYang Profile Photo">
                 </div>
             </div>
         </header>
@@ -66,15 +108,18 @@
                 </div>
                 <div class="news-item">
                     <span class="news-date">[May. 2025]</span>
-                    <span class="news-content">🎉 Submitted my first journal paper to The Visual Computer <strong>(TVC)</strong>!</span>
+                    <span class="news-content">🎉 Submitted my first journal paper to The Visual Computer
+                        <strong>(TVC)</strong>!</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">[Mar. 2025]</span>
-                    <span class="news-content">🎉 The first conference paper is accepted by <strong>CGI2024</strong>!</span>
+                    <span class="news-content">🎉 The first conference paper is accepted by
+                        <strong>CGI2024</strong>!</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">[Nov. 2024]</span>
-                    <span class="news-content">👩‍💻 Attended <strong>CNCC2024</strong> in Hengdian, Zhejiang, engaging with leading researchers in computer science and AI!</span>
+                    <span class="news-content">👩‍💻 Attended <strong>CNCC2024</strong> in Hengdian, Zhejiang, engaging
+                        with leading researchers in computer science and AI!</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">[Sep. 2024]</span>
@@ -94,10 +139,12 @@
                 <!-- Publication 1 -->
                 <div class="publication-item">
                     <div class="pub-image">
-                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/cgi.png" alt="CGI 2024 Paper">
+                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/cgi.png"
+                            alt="CGI 2024 Paper">
                     </div>
                     <div class="pub-content">
-                        <h3><a href="https://doi.org/10.1007/978-3-031-82024-3_8" target="_blank">An Improved YOLOv8-Based Rice Pest and Disease Detection Method</a></h3>
+                        <h3><a href="https://doi.org/10.1007/978-3-031-82024-3_8" target="_blank">An Improved
+                                YOLOv8-Based Rice Pest and Disease Detection Method</a></h3>
                         <p class="authors">
                             <strong>Yang Yang</strong>, Jianlin Zhu, Bo Yang, Xiao Zhang, Jin Huang
                         </p>
@@ -107,14 +154,17 @@
                         <div class="pub-links">
                             <a href="./pdf/978-3-031-82024-3_8.pdf" target="_blank">[paper]</a>
                             <a href="https://github.com/Louaq/CGI2024" target="_blank">[code]</a>
-                            <a href="https://drive.google.com/file/d/1UJcbH2cKLstZdyEJPGv_Hb3GP06MYJff/view?usp=sharing" target="_blank">[dataset]</a>
+                            <a href="https://drive.google.com/file/d/1UJcbH2cKLstZdyEJPGv_Hb3GP06MYJff/view?usp=sharing"
+                                target="_blank">[dataset]</a>
                             <a href="./citation/10.1007_978-3-031-82024-3_8-citation.bib">[bibtex]</a>
                             <a href="https://github.com/Louaq/CGI2024" target="_blank">
-                                <img src="https://img.shields.io/github/forks/Louaq/CGI2024" alt="GitHub forks" style="vertical-align: middle;">
+                                <img src="https://img.shields.io/github/forks/Louaq/CGI2024" alt="GitHub forks"
+                                    style="vertical-align: middle;">
                             </a>
                         </div>
                         <p class="pub-description">
-                            We propose an improved YOLOv8-based method for accurate detection of rice pests and diseases.
+                            We propose an improved YOLOv8-based method for accurate detection of rice pests and
+                            diseases.
                         </p>
                     </div>
                 </div>
@@ -128,7 +178,8 @@
                 <!-- Project 1 -->
                 <div class="publication-item">
                     <div class="pub-image">
-                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/project_1.gif" alt="Rice Pest Detection Project">
+                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/project_1.gif"
+                            alt="Rice Pest Detection Project">
                     </div>
                     <div class="pub-content">
                         <h3>Rice Pest and Disease Detection System</h3>
@@ -139,7 +190,8 @@
                             Online Project, 2024
                         </p>
                         <div class="pub-links">
-                            <a href="https://drive.google.com/file/d/1Six0T71DQEEsr7OH-iI0AiNGi1UrYrDh/view?usp=sharing" target="_blank">[demo]</a>
+                            <a href="https://drive.google.com/file/d/1Six0T71DQEEsr7OH-iI0AiNGi1UrYrDh/view?usp=sharing"
+                                target="_blank">[demo]</a>
                         </div>
                         <p class="pub-description">
                             A simple and effective method for rice pest and disease detection.
@@ -150,7 +202,8 @@
                 <!-- Project 2 -->
                 <div class="publication-item">
                     <div class="pub-image">
-                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/bandicam%202025-07-02%2021-33-14-661.gif" alt="SimpleTex-OCR">
+                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/bandicam%202025-07-02%2021-33-14-661.gif"
+                            alt="SimpleTex-OCR">
                     </div>
                     <div class="pub-content">
                         <h3>SimpleTex-OCR TypeScript Version</h3>
@@ -164,11 +217,13 @@
                             <a href="https://github.com/Louaq/SimpleTex-OCR" target="_blank">[code]</a>
                             <a href="https://github.com/Louaq/SimpleTex-OCR/releases" target="_blank">[download]</a>
                             <a href="https://github.com/Louaq/SimpleTex-OCR" target="_blank">
-                                <img src="https://img.shields.io/github/stars/Louaq/SimpleTex-OCR" alt="GitHub stars" style="vertical-align: middle;">
+                                <img src="https://img.shields.io/github/stars/Louaq/SimpleTex-OCR" alt="GitHub stars"
+                                    style="vertical-align: middle;">
                             </a>
                         </div>
                         <p class="pub-description">
-                            A modern LaTeX formula recognition desktop application based on Electron+React+TypeScript. It supports screenshot recognition, file upload, multi-format copy and export.
+                            A modern LaTeX formula recognition desktop application based on Electron+React+TypeScript.
+                            It supports screenshot recognition, file upload, multi-format copy and export.
                         </p>
                     </div>
                 </div>
@@ -182,13 +237,16 @@
             <div class="projects-list">
                 <div class="project-item">
                     <div class="project-image">
-                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/cgi_demo.png" alt="Medical Image Segmentation">
+                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/cgi_demo.png"
+                            alt="Medical Image Segmentation">
                     </div>
                     <div class="project-content">
                         <h3>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
                         <div class="project-links">
-                            <a href="https://drive.google.com/file/d/1MYGWupPT0zrqpIpRvBc7m3qs2gzznOiw/view?usp=drive_link" target="_blank">[video]</a>
-                            <a href="https://1drv.ms/p/c/87439b1db4c0a88e/EfPb6UjmgDVJrmWO5WnCa7QBkKay9Ekml2K0cpgCOxeAHA?e=rWphPE" target="_blank">[slide]</a>
+                            <a href="https://drive.google.com/file/d/1MYGWupPT0zrqpIpRvBc7m3qs2gzznOiw/view?usp=drive_link"
+                                target="_blank">[video]</a>
+                            <a href="https://1drv.ms/p/c/87439b1db4c0a88e/EfPb6UjmgDVJrmWO5WnCa7QBkKay9Ekml2K0cpgCOxeAHA?e=rWphPE"
+                                target="_blank">[slide]</a>
                         </div>
                         <p>This talk presents an improved YOLOv8-based rice pest and disease detection method.</p>
 
@@ -206,10 +264,11 @@
                     <div class="edu-content">
                         <h3>Master of Computer Technology</h3>
                         <p>South-Central Minzu University</p>
-                        <p>Supervisor: <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm" target="_blank">Dr. Jianlin Zhu</a></p>
+                        <p>Supervisor: <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm" target="_blank">Dr.
+                                Jianlin Zhu</a></p>
                     </div>
                 </div>
-                
+
                 <div class="education-item">
                     <div class="edu-period">2020 - 2024 (Completed)</div>
                     <div class="edu-content">
@@ -222,15 +281,47 @@
 
         <!-- Footer -->
         <footer class="main-footer">
-            <div style="width: 120px; height: 120px; margin: 0 auto; overflow: hidden;">
-                <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=_AhZGM9DqgNcORvW5D0isv0WXJPU1XWopy7ZarZtYuA"></script>
+            <div class="visitor-counter">
+                <script type="text/javascript" id="clustrmaps"
+                    src="//clustrmaps.com/map_v2.js?d=_AhZGM9DqgNcORvW5D0isv0WXJPU1XWopy7ZarZtYuA&cl=ffffff&w=300">
+                </script>
             </div>
 
             <div class="footer-info">
-                <p>&copy; Yang Yang | Last updated: July 5th, 2025</p>
+                <p class="quote">The only way to do great work is to love what you do.</p>
+                <p>&copy; Yang Yang | Last updated: July 6th, 2025</p>
             </div>
         </footer>
     </div>
+    
+    <!-- 返回顶部按钮 -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- 返回顶部功能脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            // 监听滚动事件
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            // 点击返回顶部
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

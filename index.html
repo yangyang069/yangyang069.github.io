@@ -24,38 +24,6 @@
     <link rel="stylesheet"
         href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Lora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
-    
-    <style>
-        /* 返回顶部按钮样式 */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 40px;
-            height: 40px;
-            background-color: #f0f0f0;
-            color: #333;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            text-align: center;
-            line-height: 40px;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background-color: #e0e0e0;
-        }
-    </style>
 </head>
 
 <body>
@@ -295,35 +263,6 @@
             </div>
         </footer>
     </div>
-    
-    <!-- 返回顶部按钮 -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    
-    <!-- 返回顶部功能脚本 -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const backToTopBtn = document.getElementById('backToTop');
-            
-            // 监听滚动事件
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTopBtn.classList.add('visible');
-                } else {
-                    backToTopBtn.classList.remove('visible');
-                }
-            });
-            
-            // 点击返回顶部
-            backToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

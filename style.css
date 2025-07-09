@@ -96,9 +96,22 @@ strong {
 
 .profile-photo img {
     width: 250px;
-    height: 250px;
+    height: 270px;
     border-radius: 0;
     object-fit: cover;
+}
+
+.profile-photo figcaption {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* 桌面端和移动端图片显示控制 */
+.mobile-photo {
+    display: none;
 }
 
 .bio {
@@ -450,18 +463,33 @@ strong {
     
     .header-content {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         gap: 15px;
     }
     
-    .profile-photo {
-        align-self: center;
-        flex: none;
+    .desktop-photo {
+        display: none;
     }
     
-    .profile-photo img {
-        width: 160px;
-        height: 160px;
+    .desktop-photo figcaption {
+        display: none;
+    }
+    
+    .mobile-photo {
+        display: block;
+        float: right;
+        margin: 0 0 10px 10px;
+        width: 120px;
+    }
+    
+    .mobile-photo img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+    }
+    
+    .profile-info h1 {
+        text-align: left;
     }
     
     .bio, .research-interests {
@@ -653,6 +681,7 @@ strong {
         font-size: 1.8rem;
         line-height: 1.1;
         margin-bottom: 8px;
+        text-align: left;
     }
     
     h2 {
@@ -666,9 +695,13 @@ strong {
         line-height: 1.2;
     }
     
-    .profile-photo img {
-        width: 140px;
-        height: 140px;
+    .mobile-photo {
+        width: 100px;
+    }
+    
+    .mobile-photo img {
+        width: 120px;
+        height: 200px;
     }
     
     .bio, .research-interests {

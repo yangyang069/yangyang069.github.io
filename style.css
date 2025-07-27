@@ -1,3 +1,118 @@
+/* 全局平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 顶部导航栏 */
+.top-nav {
+    background-color: #0a3159;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: padding 0.3s;
+}
+
+.nav-title a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: font-size 0.3s;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+/* 导航链接样式 */
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+
+/* 移动端导航栏样式 */
+@media (max-width: 768px) {
+    .top-nav {
+        background-color: #0a3159;
+    }
+    
+    .nav-container {
+        flex-direction: row;
+        padding: 8px 15px;
+        width: 100%;
+    }
+    
+    .nav-title {
+        font-size: 0.9rem;
+        flex-shrink: 0;
+        margin-right: 15px;
+    }
+    
+    .nav-title a {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        margin-top: 0;
+        gap: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+    
+    .nav-links::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        flex-shrink: 0;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 8px 10px;
+    }
+    
+    .nav-title a {
+        font-size: 1.1rem;
+    }
+    
+    .nav-links {
+        gap: 0;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -28,10 +143,11 @@ body::after{
     pointer-events: none;
 }
 
+/* 调整container顶部内边距，为固定导航栏腾出空间 */
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 80px 20px 20px;
 }
 
 /* Typography */
@@ -77,60 +193,88 @@ strong {
 
 /* Header Section */
 .main-header {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .header-content {
     display: flex;
     gap: 30px;
-    align-items: center;
-}
-
-.profile-info {
-    flex: 1;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
 .profile-photo {
-    flex: 0 0 250px;
+    flex: 0 0 230px;
 }
 
 .profile-photo img {
-    width: 250px;
-    height: 270px;
-    border-radius: 0;
+    width: 230px;
+    height: 250px;
     object-fit: cover;
+    border-radius: 0;
 }
 
-.profile-photo figcaption {
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
-    margin-top: 5px;
-    text-align: center;
+.profile-content {
+    flex: 1;
 }
 
-/* 桌面端和移动端图片显示控制 */
-.mobile-photo {
-    display: none;
+.profile-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.title {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.affiliation {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.email {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.social-links {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.social-links a {
+    color: #0066cc;
+    text-decoration: none;
+    margin-right: 3px;
+}
+
+.bio-content {
+    margin-top: 0;
+    max-width: 100%;
 }
 
 .bio {
     margin-bottom: 15px;
     font-size: 1.1rem;
+    text-align: justify;
+    line-height: 1.5;
 }
 
-.research-interests {
+.looking {
+    color: #cc0000;
     margin-bottom: 15px;
     font-size: 1.1rem;
 }
 
-.contact-links {
+.student-note {
+    margin-bottom: 15px;
     font-size: 1.1rem;
-    margin-top: 10px;
-}
-
-.contact-links a {
-    margin-right: 5px;
 }
 
 /* News Section */
@@ -428,7 +572,6 @@ strong {
 
 .footer-info {
     margin-top: 10px;
-    border-top: 1px solid #eee;
     padding-top: 10px;
 }
 
@@ -544,42 +687,60 @@ strong {
 }
 
 @media (max-width: 768px) {
+    .top-nav, .top-nav.scrolled {
+        background-color: #0a3159 !important;
+    }
+    
     .container {
-        padding: 10px;
+        padding: 60px 15px 20px;
     }
     
     .header-content {
         flex-direction: column;
-        text-align: left;
+        align-items: flex-start;
         gap: 15px;
     }
     
-    .desktop-photo {
-        display: none;
+    .profile-photo {
+        margin: 0;
+        width: 230px;
     }
     
-    .desktop-photo figcaption {
-        display: none;
+    .profile-photo img {
+        width: 230px;
+        height: 250px;
+        margin: 0;
     }
     
-    .mobile-photo {
-        display: block;
-        float: right;
-        margin: 0 0 10px 10px;
-        width: 120px;
+    .profile-content {
+        text-align: left;
+        margin-top: 10px;
+        padding-left: 0;
     }
     
-    .mobile-photo img {
-        width: 120px;
-        height: 120px;
-        object-fit: cover;
-    }
-    
-    .profile-info h1 {
+    .title, .affiliation, .email {
         text-align: left;
     }
     
-    .bio, .research-interests {
+    .social-links {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    
+    .bio-content {
+        margin-top: 20px;
+        padding-left: 0;
+    }
+    
+    .bio, .looking, .student-note {
+        text-align: left;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        padding-left: 0;
+    }
+    
+    .research-interests {
         text-align: left;
         font-size: 1.1rem;
         line-height: 1.5;
@@ -589,6 +750,9 @@ strong {
     .contact-links {
         font-size: 1rem;
         line-height: 1.5;
+        text-align: center;
+        margin-bottom: 15px;
+        order: 3;
     }
     
     .contact-links a {
@@ -785,7 +949,7 @@ strong {
 
 @media (max-width: 480px) {
     .container {
-        padding: 8px;
+        padding: 50px 10px 15px;
     }
     
     body {
@@ -810,19 +974,44 @@ strong {
         line-height: 1.2;
     }
     
-    .mobile-photo {
-        width: 100px;
+    .profile-photo {
+        width: 230px;
     }
     
-    .mobile-photo img {
-        width: 120px;
-        height: 200px;
+    .profile-photo img {
+        width: 230px;
+        height: 250px;
+    }
+    
+    .profile-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+    
+    .title, .affiliation, .email {
+        font-size: 1rem;
+    }
+    
+    .social-links {
+        font-size: 0.9rem;
+    }
+    
+    .bio, .looking, .student-note {
+        font-size: 1rem;
+        line-height: 1.4;
+        text-align: left;
+    }
+    
+    .contact-links {
+        text-align: center;
+        margin-bottom: 15px;
     }
     
     .bio, .research-interests {
         font-size: 1rem;
         line-height: 1.4;
         margin-bottom: 8px;
+        text-align: left;
     }
     
     .contact-links {
@@ -1008,4 +1197,9 @@ strong {
     .visitor-counter > * {
         max-width: 100%;
     }
+} 
+
+/* 确保导航栏在所有情况下都保持深蓝色背景 */
+.top-nav, .top-nav.scrolled {
+    background-color: #0a3159 !important;
 } 

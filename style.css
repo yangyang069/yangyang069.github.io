@@ -545,7 +545,6 @@ strong {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15px 0;
     padding: 0 10px;
 }
 
@@ -572,7 +571,6 @@ strong {
 
 .footer-info {
     margin-top: 10px;
-    padding-top: 10px;
 }
 
 .footer-info p {

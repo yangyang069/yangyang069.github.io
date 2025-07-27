@@ -25,6 +25,120 @@
     <link rel="stylesheet"
         href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fonts-googleapis/css2?family=Lora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .main-header {
+            padding-top: 40px;
+        }
+        
+        .header-content {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-top: 20px; 
+        }
+      
+        @media (max-width: 768px) {
+            .main-header {
+                padding-top: 30px;
+            }
+              
+            .header-content {
+                margin-top: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-header {
+                padding-top: 25px;
+            }
+              
+            .header-content {
+                margin-top: 20px;
+            }
+        }
+        
+        /* 新闻部分滚动样式 */
+        .news-section {
+            margin-bottom: 30px;
+        }
+        
+        .news-list {
+            max-height: 200px; /* 设置最大高度，超出部分显示滚动条 */
+            overflow-y: auto; /* 垂直滚动 */
+            overflow-x: auto; /* 整体水平滚动 */
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 10px;
+            margin-left: 0;
+            background-color: #f9f9f9;
+            white-space: nowrap; /* 防止文本换行 */
+        }
+        
+        .news-item {
+            display: flex;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .news-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .news-date {
+            flex: 0 0 auto; /* 改为自动宽度 */
+            color: #0066cc;
+            font-weight: bold;
+            padding-right: 5px; /* 添加少量右内边距 */
+        }
+        
+        .news-content {
+            flex: 1;
+            padding-right: 10px;
+            margin-left: 0; /* 移除左边距 */
+            overflow: visible; /* 移除单独的水平滚动 */
+        }
+        
+        /* 自定义滚动条样式 */
+        .news-list::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        
+        .news-list::-webkit-scrollbar-thumb {
+            background-color: #c1c1c1;
+            border-radius: 3px;
+        }
+        
+        .news-list::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+            border-radius: 3px;
+        }
+        
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .news-date {
+                font-size: 0.9rem;
+                padding-right: 3px; /* 减少右内边距 */
+            }
+            
+            .news-content {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .news-list {
+                max-height: 180px;
+            }
+            
+            .news-date {
+                font-size: 0.85rem;
+                padding-right: 2px; /* 进一步减少右内边距 */
+            }
+        }
+    </style>
     <script>
         // 获取最新的 git 提交日期
         async function updateLastCommitDate() {

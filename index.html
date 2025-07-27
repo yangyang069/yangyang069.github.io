@@ -417,6 +417,7 @@
                             <a href="https://drive.google.com/file/d/1UJcbH2cKLstZdyEJPGv_Hb3GP06MYJff/view?usp=sharing"
                                 target="_blank">[dataset]</a>
                             <a href="./citation/bibtex.html" target="_blank">[bibtex]</a>
+                            <span class="venue-rank">CCF C</span>
                             <a href="https://github.com/Louaq/CGI2024" target="_blank">
                                 <img src="https://img.shields.io/github/forks/Louaq/CGI2024" alt="GitHub forks"
                                     style="vertical-align: middle;">
@@ -570,6 +571,35 @@
             </div>
         </footer>
     </div>
+    
+    <!-- 回到顶部按钮 -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script>
+        // 回到顶部按钮功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            
+            // 监听滚动事件
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            // 点击事件
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -5,301 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YangYang (杨杨) - Homepage</title>
-    <meta name="description" content="YangYang's Homepage, computer technology MS student at South-Central Minzu University, focusing on Multimodal Medical Image Analysis and Computer Vision">
+    <meta name="description"
+        content="YangYang's Homepage, computer technology MS student at South-Central Minzu University, focusing on Multimodal Medical Image Analysis and Computer Vision">
     <meta name="msvalidate.01" content="8C5DEA4BC4C5D459B62F2190B1C21807" />
     <meta name="google-site-verification" content="BQFGVLyhneER-dR3-w8JppqO1y_TG5vPSgJ3n8zH5lk" />
     <meta name="baidu-site-verification" content="codeva-0VVFigLcVz" />
-    <script>
-        (function () {
-            document.documentElement.setAttribute('data-theme', 'light');
-        })();
-    </script>
-
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <style>
         .main-header {
             padding-top: 40px;
         }
-        
+
         .header-content {
             display: flex;
             gap: 30px;
             align-items: flex-start;
-            margin-top: 20px; 
+            margin-top: 20px;
         }
-      
+
         @media (max-width: 768px) {
             .main-header {
                 padding-top: 30px;
             }
-              
+
             .header-content {
                 margin-top: 20px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .main-header {
                 padding-top: 25px;
             }
-              
+
             .header-content {
                 margin-top: 20px;
             }
         }
-        
+
         /* 新闻部分滚动样式 */
         .news-section {
             margin-bottom: 30px;
         }
-        
+
         .news-list {
-            max-height: 200px; /* 设置最大高度，超出部分显示滚动条 */
-            overflow-y: auto; /* 垂直滚动 */
-            overflow-x: auto; /* 整体水平滚动 */
-            border: 1px solid #e0e0e0;
+            max-height: 200px;
+            /* 设置最大高度，超出部分显示滚动条 */
+            overflow-y: auto;
+            /* 垂直滚动 */
+            overflow-x: auto;
+            /* 整体水平滚动 */
             border-radius: 5px;
             padding: 10px;
             margin-left: 0;
-            background-color: #f9f9f9;
-            white-space: nowrap; /* 防止文本换行 */
+            white-space: nowrap;
+            /* 防止文本换行 */
         }
-        
+
         .news-item {
             display: flex;
             margin-bottom: 8px;
             padding-bottom: 8px;
         }
-        
+
         .news-item:last-child {
             margin-bottom: 0;
             border-bottom: none;
         }
-        
+
         .news-date {
-            flex: 0 0 auto; /* 改为自动宽度 */
+            flex: 0 0 auto;
+            /* 改为自动宽度 */
             color: #0066cc;
             font-weight: bold;
-            padding-right: 5px; /* 添加少量右内边距 */
+            padding-right: 5px;
+            /* 添加少量右内边距 */
         }
-        
+
         .news-content {
             flex: 1;
             padding-right: 10px;
-            margin-left: 0; /* 移除左边距 */
-            overflow: visible; /* 移除单独的水平滚动 */
+            margin-left: 0;
+            /* 移除左边距 */
+            overflow: visible;
+            /* 移除单独的水平滚动 */
         }
-        
+
         /* 自定义滚动条样式 */
         .news-list::-webkit-scrollbar {
             width: 6px;
             height: 6px;
         }
-        
+
         .news-list::-webkit-scrollbar-thumb {
             background-color: #c1c1c1;
             border-radius: 3px;
         }
-        
+
         .news-list::-webkit-scrollbar-track {
             background-color: #f1f1f1;
             border-radius: 3px;
         }
-        
+
         /* 移动端适配 */
         @media (max-width: 768px) {
             .news-date {
                 font-size: 0.9rem;
-                padding-right: 3px; /* 减少右内边距 */
+                padding-right: 3px;
+                /* 减少右内边距 */
             }
-            
+
             .news-content {
                 font-size: 0.9rem;
             }
         }
-        
+
         @media (max-width: 480px) {
             .news-list {
                 max-height: 180px;
             }
-            
+
             .news-date {
                 font-size: 0.85rem;
-                padding-right: 2px; /* 进一步减少右内边距 */
+                padding-right: 2px;
+                /* 进一步减少右内边距 */
             }
         }
     </style>
-    <script>
-        // 获取最新的 git 提交日期
-        async function updateLastCommitDate() {
-            try {
-                // 使用 GitHub API 获取最新提交信息
-                const response = await fetch('https://api.github.com/repos/yangyang069/yangyang069.github.io/commits?per_page=1');
-                const commits = await response.json();
-                
-                if (commits && commits.length > 0) {
-                    const lastCommitDate = new Date(commits[0].commit.committer.date);
-                    const options = { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric'
-                    };
-                    const formattedDate = lastCommitDate.toLocaleDateString('en-US', options);
-                    document.getElementById('last-updated').textContent = formattedDate;
-                } else {
-                    // 如果无法获取提交信息，使用当前日期作为备用
-                    const now = new Date();
-                    const options = { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric'
-                    };
-                    const currentDate = now.toLocaleDateString('en-US', options);
-                    document.getElementById('last-updated').textContent = currentDate;
-                }
-            } catch (error) {
-                console.log('Failed to fetch commit date:', error);
-                // 如果 API 调用失败，使用当前日期作为备用
-                const now = new Date();
-                const options = { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric'
-                };
-                const currentDate = now.toLocaleDateString('en-US', options);
-                document.getElementById('last-updated').textContent = currentDate;
-            }
-        }
-        
-        // 处理导航栏链接点击事件，实现平滑滚动
-        function setupSmoothScrolling() {
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const navTitle = document.querySelector('.nav-title a');
-            
-            // 处理导航栏标题链接点击事件
-            navTitle.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // 平滑滚动到顶部
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-                
-                // 更新活动链接
-                navLinks.forEach(link => link.classList.remove('active'));
-                const homeLink = document.querySelector('.nav-links a[href="#home"]');
-                if (homeLink) homeLink.classList.add('active');
-            });
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // 只处理页内链接
-                    if (this.getAttribute('href').startsWith('#')) {
-                        e.preventDefault();
-                        
-                        const targetId = this.getAttribute('href');
-                        
-                        // 如果是Home链接，滚动到顶部
-                        if (targetId === '#home') {
-                            window.scrollTo({
-                                top: 0,
-                                behavior: 'smooth'
-                            });
-                        } else {
-                            const targetElement = document.querySelector(targetId);
-                            
-                            if (targetElement) {
-                                // 获取导航栏高度
-                                const navHeight = document.querySelector('.top-nav').offsetHeight;
-                                
-                                // 计算目标位置，考虑导航栏高度
-                                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                                
-                                // 平滑滚动到目标位置
-                                window.scrollTo({
-                                    top: targetPosition,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                        
-                        // 更新活动链接
-                        navLinks.forEach(link => link.classList.remove('active'));
-                        this.classList.add('active');
-                    }
-                });
-            });
-        }
-        
-        // 处理滚动时导航栏的活动状态更新
-        function handleScroll() {
-            const sections = document.querySelectorAll('section[id], header[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const navHeight = document.querySelector('.top-nav').offsetHeight;
-            const homeLink = document.querySelector('.nav-links a[href="#home"]');
-            
-            // 监听滚动事件
-            window.addEventListener('scroll', function() {
-                let current = '';
-                
-                // 如果在页面顶部，高亮Home链接
-                if (window.pageYOffset < 100) {
-                    current = '#home';
-                } else {
-                    sections.forEach(section => {
-                        const sectionTop = section.offsetTop - navHeight - 10;
-                        const sectionHeight = section.offsetHeight;
-                        
-                        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-                            current = '#' + section.getAttribute('id');
-                        }
-                    });
-                }
-                
-                // 更新活动链接
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === current) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-        }
-        
-        // 处理滚动时导航栏的样式变化
-        function handleNavbarScroll() {
-            const topNav = document.querySelector('.top-nav');
-            const navContainer = document.querySelector('.nav-container');
-            const navTitle = document.querySelector('.nav-title a');
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    topNav.classList.add('scrolled');
-                    navContainer.classList.add('scrolled');
-                    navTitle.classList.add('scrolled');
-                } else {
-                    topNav.classList.remove('scrolled');
-                    navContainer.classList.remove('scrolled');
-                    navTitle.classList.remove('scrolled');
-                }
-            });
-        }
-        
-        // 页面加载完成后执行
-        document.addEventListener('DOMContentLoaded', function() {
-            updateLastCommitDate();
-            setupSmoothScrolling();
-            handleScroll();
-            handleNavbarScroll();
-        });
-    </script>
 </head>
 
 <body>
@@ -336,28 +175,38 @@
                         </p>
                         <p class="profile-affiliation">South-Central Minzu University</p>
                         <p class="profile-location">Wuhan, China</p>
-                        
+
                         <div class="social-icons">
-                            <a href="mailto:yangyang@mail.scuec.edu.cn" target="_blank"><i class="fas fa-envelope"></i></a>
-                            <a href="https://scholar.google.com/citations?user=ph6q3aQAAAAJ" target="_blank"><i class="ai ai-google-scholar"></i></a>
+                            <a href="mailto:yangyang@mail.scuec.edu.cn" target="_blank"><i
+                                    class="fas fa-envelope"></i></a>
+                            <a href="https://scholar.google.com/citations?user=ph6q3aQAAAAJ" target="_blank"><i
+                                    class="ai ai-google-scholar"></i></a>
                             <a href="https://github.com/Louaq" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://orcid.org/0009-0009-6670-7889" target="_blank"><i class="ai ai-orcid"></i></a>
-                            <a href="https://www.researchgate.net/profile/Yang-Yang-826" target="_blank"><i class="ai ai-researchgate"></i></a>
+                            <a href="https://orcid.org/0009-0009-6670-7889" target="_blank"><i
+                                    class="ai ai-orcid"></i></a>
+                            <a href="https://www.researchgate.net/profile/Yang-Yang-826" target="_blank"><i
+                                    class="ai ai-researchgate"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="bio-content">
                 <p class="bio">
 
-                    I am a Computer Technology MS student at <a href="https://www.scuec.edu.cn/jky/index.htm" target="_blank">School of Computer Science
+                    I am a Computer Technology MS student at <a href="https://www.scuec.edu.cn/jky/index.htm"
+                        target="_blank">School of Computer Science
 
-                    (School of Artificial Intelligence)</a>, <a href="https://www.scuec.edu.cn/" target="_blank">South-Central Minzu University</a>, advised by <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm" target="_blank">Dr. Jianlin Zhu (朱剑林)</a>. My research lies in the interdisciplinary
+                        (School of Artificial Intelligence)</a>, <a href="https://www.scuec.edu.cn/"
+                        target="_blank">South-Central Minzu University</a>, advised by <a
+                        href="https://www.scuec.edu.cn/jky/info/1165/4995.htm" target="_blank">Dr. Jianlin Zhu
+                        (朱剑林)</a>. My research lies in the interdisciplinary
 
-                    areas of artificial intelligence and medical image analysis, aiming at advancing healthcare with machine intelligence. My research focuses on Multimodal Medical Image Analysis and Computer Vision. 
+                    areas of artificial intelligence and medical image analysis, aiming at advancing healthcare with
+                    machine intelligence. My research focuses on Multimodal Medical Image Analysis and Computer Vision.
 
-                    I am particularly interested in developing innovative deep learning methodologies for multimodal medical image analysis and healthcare technology applications.
+                    I am particularly interested in developing innovative deep learning methodologies for multimodal
+                    medical image analysis and healthcare technology applications.
 
                     I also received my B.S. degree in Network Engineering from South-Central Minzu University in 2024.
 
@@ -365,9 +214,6 @@
 
             </div>
         </header>
-
-
-    
         <!-- News Section -->
         <section class="news-section">
             <h2>🔥 News</h2>
@@ -383,8 +229,9 @@
                 </div>
                 <div class="news-item">
                     <span class="news-date">[Mar. 2025]</span>
-                    <span class="news-content">🎉 <a href="https://www.scuec.edu.cn/jky/info/1141/4382.htm">The first conference paper is accepted by <strong>CGI2024</strong>!</a>
-                        </span>
+                    <span class="news-content">🎉 <a href="https://www.scuec.edu.cn/jky/info/1141/4382.htm">The first
+                            conference paper is accepted by <strong>CGI2024</strong>!</a>
+                    </span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">[Nov. 2024]</span>
@@ -444,7 +291,7 @@
         <div id="citationModal" class="citation-modal">
             <div class="citation-modal-content">
                 <span class="citation-close">&times;</span>
-                <h2>BibTeX Citation</h2>
+                <h2 style="padding-top: 0px;">BibTeX Citation</h2>
                 <div class="citation-text-container">
                     <pre id="citation-text">@InProceedings{10.1007/978-3-031-82024-3_8,
 author="Yang, Yang
@@ -499,7 +346,8 @@ isbn="978-3-031-82024-3"
                                 target="_blank">[demo]
                             </a>
                             <a href="https://github.com/Louaq/CGI2024" target="_blank">
-                                <img alt="GitHub Repo stars" style="vertical-align: middle;" src="https://img.shields.io/github/stars/Louaq/CGI2024">
+                                <img alt="GitHub Repo stars" style="vertical-align: middle;"
+                                    src="https://img.shields.io/github/stars/Louaq/CGI2024">
                             </a>
                         </div>
                         <p class="pub-description">
@@ -594,12 +442,12 @@ isbn="978-3-031-82024-3"
             <div class="visitor-counter">
                 <script type="text/javascript" id="clustrmaps"
                     src="//clustrmaps.com/map_v2.js?d=_AhZGM9DqgNcORvW5D0isv0WXJPU1XWopy7ZarZtYuA&cl=ffffff&w=300">
-                </script>
+                    </script>
             </div>
 
             <div class="footer-links">
                 <div class="footer-follow">
-                    FOLLOW: 
+                    FOLLOW:
                     <a href="https://github.com/Louaq" target="_blank"><i class="fab fa-github"></i> GITHUB</a>
                     <a href="feed.xml" target="_blank"><i class="fas fa-rss"></i> FEED</a>
                     <a href="sitemap.xml"><i class="fas fa-sitemap"></i> SITEMAP</a>
@@ -611,71 +459,11 @@ isbn="978-3-031-82024-3"
             </div>
         </footer>
     </div>
-    
+
     <!-- 回到顶部按钮 -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
-    
-    <script>
-        // 回到顶部按钮功能
-        document.addEventListener('DOMContentLoaded', function() {
-            const backToTopButton = document.getElementById('backToTop');
-            
-            // 监听滚动事件
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('visible');
-                } else {
-                    backToTopButton.classList.remove('visible');
-                }
-            });
-            
-            // 点击事件
-            backToTopButton.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // 引用弹窗功能
-            const modal = document.getElementById('citationModal');
-            const closeBtn = document.querySelector('.citation-close');
-            
-            // 关闭弹窗
-            closeBtn.addEventListener('click', function() {
-                modal.style.display = 'none';
-            });
-            
-            // 点击弹窗外部关闭
-            window.addEventListener('click', function(event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        });
-        
-        // 显示引用弹窗
-        function showCitationModal(event) {
-            event.preventDefault();
-            const modal = document.getElementById('citationModal');
-            modal.style.display = 'block';
-        }
-        
-        // 复制引用内容
-        function copyCitation() {
-            const citationText = document.getElementById('citation-text').textContent;
-            navigator.clipboard.writeText(citationText)
-                .then(() => {
-                    alert('Copied to clipboard!');
-                })
-                .catch(err => {
-                    console.error('复制失败:', err);
-                    alert('复制失败，请手动选择文本并复制');
-                });
-        }
-    </script>
 </body>
 
 </html>

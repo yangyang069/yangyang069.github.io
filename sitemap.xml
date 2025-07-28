@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://yangyang.scuec.edu.cn/</loc>
-        <lastmod>2025-07-26</lastmod>
+        <lastmod>2025-07-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://yangyang.scuec.edu.cn/pdf/978-3-031-82024-3_8.pdf</loc>
-        <lastmod>2025-07-26</lastmod>
+        <lastmod>2025-07-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://yangyang.scuec.edu.cn/citation/10.1007_978-3-031-82024-3_8-citation.bib</loc>
-        <lastmod>2025-07-26</lastmod>
+        <lastmod>2025-07-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
-</urlset> 
+</urlset>

@@ -1,47 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+    <atom:link href="https://yangyang.scuec.edu.cn/feed.xml" rel="self" type="application/rss+xml" />
     <title>Yang Yang - Homepage</title>
     <description>YangYang's Homepage, computer technology MS student at South-Central Minzu University, focusing on Multimodal Medical Image Analysis and Computer Vision</description>
     <link>https://yangyang.scuec.edu.cn/</link>
-    <atom:link href="https://yangyang.scuec.edu.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 26 Jul 2025 12:00:00 +0800</pubDate>
-    <lastBuildDate>Wed, 26 Jul 2025 12:00:00 +0800</lastBuildDate>
+    <pubDate>Mon, 28 Jul 2025 13:01:47 +0800</pubDate>
+    <lastBuildDate>Mon, 28 Jul 2025 13:01:47 +0800</lastBuildDate>
     <generator>Custom RSS Generator</generator>
     <language>en-US</language>
-    
     <item>
       <title>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</title>
-      <description>
-        We propose an improved YOLOv8-based method for accurate detection of rice pests and diseases.
-      </description>
+      <description>We propose an improved YOLOv8-based method for accurate detection of rice pests and diseases.</description>
       <pubDate>Sat, 01 Mar 2025 00:00:00 +0800</pubDate>
       <link>https://doi.org/10.1007/978-3-031-82024-3_8</link>
       <guid isPermaLink="false">publication-cgi2024</guid>
       <category>Publication</category>
     </item>
-    
     <item>
       <title>Rice Pest and Disease Detection System</title>
-      <description>
-        A simple and effective method for rice pest and disease detection.
-      </description>
+      <description>A simple and effective method for rice pest and disease detection.</description>
       <pubDate>Wed, 01 Jan 2025 00:00:00 +0800</pubDate>
       <link>https://drive.google.com/file/d/1Six0T71DQEEsr7OH-iI0AiNGi1UrYrDh/view?usp=sharing</link>
       <guid isPermaLink="false">project-rice-pest</guid>
       <category>Project</category>
     </item>
-    
     <item>
       <title>SimpleTex-OCR TypeScript Version</title>
-      <description>
-        A modern LaTeX formula recognition desktop application based on Electron+React+TypeScript.
-        It supports screenshot recognition, file upload, multi-format copy and export.
-      </description>
+      <description>A modern LaTeX formula recognition desktop application based on Electron+React+TypeScript. It supports screenshot recognition, file upload, multi-format copy and export.</description>
       <pubDate>Mon, 01 Jul 2025 00:00:00 +0800</pubDate>
       <link>https://github.com/Louaq/SimpleTex-OCR</link>
       <guid isPermaLink="false">project-simpletex</guid>
       <category>Project</category>
     </item>
   </channel>
-</rss> 
+</rss>

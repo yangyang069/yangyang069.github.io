@@ -69,7 +69,7 @@
 <body>
     <h1>BibTeX Citation</h1>
     <div class="container">
-        <button class="copy-btn" onclick="copyBibTeX()">复制引用</button>
+        <button class="copy-btn" onclick="copyBibTeX()">Copy Citation</button>
         <pre id="bibtex-content">@InProceedings{10.1007/978-3-031-82024-3_8,
 author="Yang, Yang
 and Zhu, Jianlin
@@ -92,22 +92,17 @@ abstract="While rice pests and diseases significantly impact crop yields, existi
 isbn="978-3-031-82024-3"
 }</pre>
     </div>
-    <div class="copy-notification" id="copyNotification">已复制到剪贴板！</div>
-    <a href="../index.html" class="back-link">返回主页</a>
+    <div class="copy-notification" id="copyNotification">Copied to clipboard!</div>
+    <a href="../index.html" class="back-link">Back to Home</a>
 
     <script>
         function copyBibTeX() {
-            // 获取BibTeX内容
             const bibtexContent = document.getElementById('bibtex-content').textContent;
-            
-            // 使用Clipboard API复制文本
             navigator.clipboard.writeText(bibtexContent)
                 .then(() => {
-                    // 显示复制成功通知
                     const notification = document.getElementById('copyNotification');
                     notification.style.display = 'block';
-                    
-                    // 2秒后隐藏通知
+            
                     setTimeout(() => {
                         notification.style.display = 'none';
                     }, 2000);

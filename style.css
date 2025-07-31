@@ -130,12 +130,13 @@ html {
 }
 
 .mobile-nav a:hover {
+    text-decoration: none;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.mobile-nav a:active {
+/* .mobile-nav a:active {
     background-color: rgba(255, 255, 255, 0.2);
-}
+} */
 
 /* 导航链接样式 */
 .nav-links a {

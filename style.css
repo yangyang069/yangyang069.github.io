@@ -33,12 +33,108 @@ html {
     text-decoration: none;
     transition: font-size 0.3s;
     white-space: nowrap;
+    /* 移除移动端点击时的白色背景高亮效果 */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.nav-title a:active {
+    background-color: transparent !important;
+}
+.nav-title a:focus {
+    outline: none;
+    background-color: transparent !important;
 }
 
 .nav-links {
     display: flex;
     gap: 20px;
     flex-wrap: nowrap;
+}
+
+/* 汉堡菜单按钮样式 */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    /* 移除移动端点击时的背景高亮效果 */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 2px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* 汉堡菜单动画 */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* 移动端下拉菜单样式 */
+.mobile-nav {
+    display: none;
+    background-color: #0a3159;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.mobile-nav.active {
+    max-height: 300px;
+}
+
+.mobile-nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s;
+    /* 移除移动端点击时的背景高亮效果 */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.mobile-nav a:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav a:active {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* 导航链接样式 */
@@ -48,9 +144,24 @@ html {
     padding: 5px 10px;
     border-radius: 3px;
     white-space: nowrap;
+    /* 移除移动端点击时的白色背景高亮效果 */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .nav-links a:hover {
     text-decoration: none;
+}
+.nav-links a:active {
+    background-color: transparent !important;
+}
+.nav-links a:focus {
+    outline: none;
+    background-color: transparent !important;
 }
 
 /* 移动端导航栏样式 */
@@ -58,41 +169,37 @@ html {
     .top-nav {
         background-color: #0a3159;
     }
-    
+
     .nav-container {
         flex-direction: row;
         padding: 8px 15px;
         width: 100%;
+        justify-content: space-between;
+        align-items: center;
     }
-    
+
     .nav-title {
         font-size: 0.9rem;
         flex-shrink: 0;
-        margin-right: 15px;
     }
-    
+
     .nav-title a {
         font-size: 1.2rem;
     }
-    
-    .nav-links {
-        margin-top: 0;
-        gap: 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE and Edge */
+
+    /* 隐藏桌面端导航链接 */
+    .desktop-nav {
+        display: none !important;
     }
-    
-    .nav-links::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
+
+    /* 显示汉堡菜单按钮 */
+    .mobile-menu-toggle {
+        display: flex !important;
     }
-    
-    .nav-links a {
-        font-size: 0.9rem;
-        padding: 5px 10px;
-        flex-shrink: 0;
-        border-radius: 0;
+
+    /* 显示移动端下拉菜单 */
+    .mobile-nav {
+        display: block;
     }
 }
 
@@ -100,18 +207,15 @@ html {
     .nav-container {
         padding: 8px 10px;
     }
-    
+
     .nav-title a {
         font-size: 1.1rem;
     }
-    
-    .nav-links {
-        gap: 0;
-    }
-    
-    .nav-links a {
-        font-size: 0.8rem;
-        padding: 5px 8px;
+
+    /* 移动端下拉菜单在小屏幕上的样式调整 */
+    .mobile-nav a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
     }
 }
 
@@ -1221,7 +1325,6 @@ strong {
     
     body {
         -webkit-overflow-scrolling: touch;
-        overflow-scrolling: touch;
     }
     
     /* 优化文本选择 */
@@ -1286,6 +1389,14 @@ strong {
     transition: opacity 0.3s, visibility 0.3s;
     z-index: 1000;
     font-size: 20px;
+    /* 移除移动端点击时的背景高亮效果 */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .back-to-top.visible {
@@ -1295,7 +1406,17 @@ strong {
 
 .back-to-top:hover {
     background-color: #f5f5f5;
-} 
+}
+
+.back-to-top:active {
+    background-color: white !important;
+    transform: scale(0.95);
+}
+
+.back-to-top:focus {
+    outline: none;
+    background-color: white !important;
+}
 
 /* 个人资料内容样式更新 */
 .profile-content {

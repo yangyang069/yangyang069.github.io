@@ -42,9 +42,9 @@ async function updateLastCommitDate() {
     }
 }
 
-// 处理导航栏链接点击事件，实现平滑滚动
+// 处理导航栏链接点击事件，实现平滑滚动（仅桌面端）
 function setupSmoothScrolling() {
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const desktopNavLinks = document.querySelectorAll('.desktop-nav a');
     const navTitle = document.querySelector('.nav-title a');
 
     // 处理导航栏标题链接点击事件
@@ -58,12 +58,12 @@ function setupSmoothScrolling() {
         });
 
         // 更新活动链接
-        navLinks.forEach(link => link.classList.remove('active'));
-        const homeLink = document.querySelector('.nav-links a[href="#home"]');
+        desktopNavLinks.forEach(link => link.classList.remove('active'));
+        const homeLink = document.querySelector('.desktop-nav a[href="#home"]');
         if (homeLink) homeLink.classList.add('active');
     });
 
-    navLinks.forEach(link => {
+    desktopNavLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             // 只处理页内链接
             if (this.getAttribute('href').startsWith('#')) {
@@ -96,7 +96,7 @@ function setupSmoothScrolling() {
                 }
 
                 // 更新活动链接
-                navLinks.forEach(link => link.classList.remove('active'));
+                desktopNavLinks.forEach(link => link.classList.remove('active'));
                 this.classList.add('active');
             }
         });
@@ -106,9 +106,8 @@ function setupSmoothScrolling() {
 // 处理滚动时导航栏的活动状态更新
 function handleScroll() {
     const sections = document.querySelectorAll('section[id], header[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const desktopNavLinks = document.querySelectorAll('.desktop-nav a');
     const navHeight = document.querySelector('.top-nav').offsetHeight;
-    const homeLink = document.querySelector('.nav-links a[href="#home"]');
 
     // 监听滚动事件
     window.addEventListener('scroll', function () {
@@ -128,8 +127,8 @@ function handleScroll() {
             });
         }
 
-        // 更新活动链接
-        navLinks.forEach(link => {
+        // 更新活动链接（仅桌面端）
+        desktopNavLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === current) {
                 link.classList.add('active');
@@ -157,12 +156,82 @@ function handleNavbarScroll() {
     });
 }
 
+// 移动端汉堡菜单功能
+function setupMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+    // 汉堡菜单点击事件
+    mobileMenuToggle.addEventListener('click', function() {
+        mobileMenuToggle.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    });
+
+    // 移动端菜单链接点击事件
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // 只处理页内链接
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+
+                // 关闭移动端菜单
+                mobileMenuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+
+                // 如果是Home链接，滚动到顶部
+                if (targetId === '#home') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // 获取导航栏高度
+                        const navHeight = document.querySelector('.top-nav').offsetHeight;
+
+                        // 计算目标位置，考虑导航栏高度
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+                        // 平滑滚动到目标位置
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+
+                // 更新活动链接（桌面端）
+                const desktopNavLinks = document.querySelectorAll('.desktop-nav a');
+                desktopNavLinks.forEach(link => link.classList.remove('active'));
+                const correspondingDesktopLink = document.querySelector(`.desktop-nav a[href="${targetId}"]`);
+                if (correspondingDesktopLink) {
+                    correspondingDesktopLink.classList.add('active');
+                }
+            }
+        });
+    });
+
+    // 点击页面其他地方关闭菜单
+    document.addEventListener('click', function(e) {
+        if (!mobileMenuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+            mobileMenuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+        }
+    });
+}
+
 // 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', function () {
     updateLastCommitDate();
     setupSmoothScrolling();
     handleScroll();
     handleNavbarScroll();
+    setupMobileMenu();
 });
 
 // 回到顶部按钮功能

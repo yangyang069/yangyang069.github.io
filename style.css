@@ -134,9 +134,14 @@ html {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* .mobile-nav a:active {
-    background-color: rgba(255, 255, 255, 0.2);
-} */
+.mobile-nav a:active {
+    background-color: transparent !important;
+}
+
+.mobile-nav a:focus {
+    outline: none;
+    background-color: transparent !important;
+}
 
 /* 导航链接样式 */
 .nav-links a {

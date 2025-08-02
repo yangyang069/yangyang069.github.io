@@ -176,8 +176,6 @@ function setupMobileMenu() {
                 e.preventDefault();
 
                 const targetId = this.getAttribute('href');
-
-                // 关闭移动端菜单
                 mobileMenuToggle.classList.remove('active');
                 mobileNav.classList.remove('active');
 
@@ -191,11 +189,13 @@ function setupMobileMenu() {
                     const targetElement = document.querySelector(targetId);
 
                     if (targetElement) {
-                        // 获取导航栏高度
-                        const navHeight = document.querySelector('.top-nav').offsetHeight;
+                        const navHeight = document.querySelector('.nav-container').offsetHeight;
 
-                        // 计算目标位置，考虑导航栏高度
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                        // 使用 offsetTop 获取元素相对于文档的绝对位置
+                        const elementTop = targetElement.offsetTop;
+
+                        // 滚动到目标位置，让目标元素顶部紧贴导航栏下方
+                        const targetPosition = elementTop - navHeight-10;
 
                         // 平滑滚动到目标位置
                         window.scrollTo({

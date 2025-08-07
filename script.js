@@ -254,40 +254,4 @@ document.addEventListener('DOMContentLoaded', function () {
             behavior: 'smooth'
         });
     });
-
-    // 引用弹窗功能
-    const modal = document.getElementById('citationModal');
-    const closeBtn = document.querySelector('.citation-close');
-
-    // 关闭弹窗
-    closeBtn.addEventListener('click', function () {
-        modal.style.display = 'none';
-    });
-
-    // 点击弹窗外部关闭
-    window.addEventListener('click', function (event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    });
 });
-
-// 显示引用弹窗
-function showCitationModal(event) {
-    event.preventDefault();
-    const modal = document.getElementById('citationModal');
-    modal.style.display = 'block';
-}
-
-// 复制引用内容
-function copyCitation() {
-    const citationText = document.getElementById('citation-text').textContent;
-    navigator.clipboard.writeText(citationText)
-        .then(() => {
-            alert('Copied to clipboard!');
-        })
-        .catch(err => {
-            console.error('复制失败:', err);
-            alert('复制失败，请手动选择文本并复制');
-        });
-}

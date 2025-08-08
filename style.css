@@ -544,9 +544,22 @@ strong {
 }
 
 .pub-links .link-disabled {
-    color: #999;
+    color: #b39ddb;
     margin-right: 10px;
 }
+
+/* 禁用态链接（Under Review）- pub-links 与标题 */
+.pub-links a.link-disabled {
+    pointer-events: none;
+    cursor: default;
+}
+.pub-content h3 a.link-disabled {
+    color: #b39ddb;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+}
+
 
 .pub-description {
     font-style: italic;

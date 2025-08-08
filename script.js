@@ -232,7 +232,29 @@ document.addEventListener('DOMContentLoaded', function () {
     handleScroll();
     handleNavbarScroll();
     setupMobileMenu();
+    disableUnderReviewLinks();
 });
+
+// 禁用包含“Under Review”的条目的链接（标题和 pub-links）
+function disableUnderReviewLinks() {
+    document.querySelectorAll('.publication-item').forEach(item => {
+        const hasUnderReview = item.querySelector('.venue-rank')?.textContent.trim().toLowerCase() === 'under review';
+        if (!hasUnderReview) return;
+        // 标题链接
+        const titleLink = item.querySelector('.pub-content h3 a');
+        if (titleLink) {
+            titleLink.classList.add('link-disabled');
+            titleLink.removeAttribute('href');
+            titleLink.removeAttribute('target');
+        }
+        // pub-links 内的链接
+        item.querySelectorAll('.pub-links a').forEach(a => {
+            a.classList.add('link-disabled');
+            a.removeAttribute('href');
+            a.removeAttribute('target');
+        });
+    });
+}
 
 // 回到顶部按钮功能
 document.addEventListener('DOMContentLoaded', function () {

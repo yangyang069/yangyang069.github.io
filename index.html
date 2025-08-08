@@ -10,6 +10,8 @@
     <meta name="msvalidate.01" content="8C5DEA4BC4C5D459B62F2190B1C21807" />
     <meta name="google-site-verification" content="BQFGVLyhneER-dR3-w8JppqO1y_TG5vPSgJ3n8zH5lk" />
     <meta name="baidu-site-verification" content="codeva-0VVFigLcVz" />
+        <meta name="theme-color" content="#4b2e83">
+        <meta name="msapplication-TileColor" content="#4b2e83">
     <link rel="icon" type="image/x-icon" href="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.webstatic.cn/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.webstatic.cn/ajax/libs/academicons/1.9.4/css/academicons.min.css">
@@ -50,69 +52,7 @@
             }
         }
 
-        /* 新闻部分滚动样式 */
-        .news-section {
-            margin-bottom: 30px;
-        }
-
-        .news-list {
-            max-height: 200px;
-            /* 设置最大高度，超出部分显示滚动条 */
-            overflow-y: auto;
-            /* 垂直滚动 */
-            overflow-x: auto;
-            /* 整体水平滚动 */
-            border-radius: 5px;
-            padding: 10px;
-            margin-left: 0;
-            white-space: nowrap;
-            /* 防止文本换行 */
-        }
-
-        .news-item {
-            display: flex;
-            margin-bottom: 8px;
-            padding-bottom: 8px;
-        }
-
-        .news-item:last-child {
-            margin-bottom: 0;
-            border-bottom: none;
-        }
-
-        .news-date {
-            flex: 0 0 auto;
-            /* 改为自动宽度 */
-            color: #0066cc;
-            font-weight: bold;
-            padding-right: 5px;
-            /* 添加少量右内边距 */
-        }
-
-        .news-content {
-            flex: 1;
-            padding-right: 10px;
-            margin-left: 0;
-            /* 移除左边距 */
-            overflow: visible;
-            /* 移除单独的水平滚动 */
-        }
-
-        /* 自定义滚动条样式 */
-        .news-list::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-
-        .news-list::-webkit-scrollbar-thumb {
-            background-color: #c1c1c1;
-            border-radius: 3px;
-        }
-
-        .news-list::-webkit-scrollbar-track {
-            background-color: #f1f1f1;
-            border-radius: 3px;
-        }
+        
 
         /* 移动端适配 */
         @media (max-width: 768px) {
@@ -189,7 +129,7 @@
                             School of Computer Science (School of Artificial Intelligence)
                         </p>
                         <p class="profile-affiliation">South-Central Minzu University</p>
-                        <p class="profile-location">Wuhan, China</p>
+                        <p class="profile-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Wuhan, China</p>
 
                         <div class="social-icons">
                             <a href="mailto:yangyang@mail.scuec.edu.cn" target="_blank"><i

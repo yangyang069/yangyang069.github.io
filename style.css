@@ -5,7 +5,7 @@ html {
 
 /* 顶部导航栏 */
 .top-nav {
-    background-color: #0a3159;
+    background-color: #4b2e83;
     color: #fff;
     width: 100%;
     position: fixed;
@@ -42,9 +42,11 @@ html {
     -ms-user-select: none;
     user-select: none;
 }
+
 .nav-title a:active {
     background-color: transparent !important;
 }
+
 .nav-title a:focus {
     outline: none;
     background-color: transparent !important;
@@ -97,7 +99,7 @@ html {
 /* 移动端下拉菜单样式 */
 .mobile-nav {
     display: none;
-    background-color: #0a3159;
+    background-color: #4b2e83;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     max-height: 0;
     overflow: hidden;
@@ -159,12 +161,15 @@ html {
     -ms-user-select: none;
     user-select: none;
 }
+
 .nav-links a:hover {
     text-decoration: none;
 }
+
 .nav-links a:active {
     background-color: transparent !important;
 }
+
 .nav-links a:focus {
     outline: none;
     background-color: transparent !important;
@@ -173,7 +178,7 @@ html {
 /* 移动端导航栏样式 */
 @media (max-width: 768px) {
     .top-nav {
-        background-color: #0a3159;
+        background-color: #4b2e83;
     }
 
     .nav-container {
@@ -238,10 +243,10 @@ body {
     color: #333;
     background-color: #fff;
     font-size: 16px;
-    
+
 }
 
-body::after{
+body::after {
     content: '';
     position: fixed;
     top: 0;
@@ -249,7 +254,7 @@ body::after{
     right: 0;
     bottom: 0;
     background-image: linear-gradient(to right, rgba(240, 240, 235, 0.4) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(240, 240, 235, 0.4) 1px, transparent 1px);
+        linear-gradient(to bottom, rgba(240, 240, 235, 0.4) 1px, transparent 1px);
     background-size: 20px 20px;
     z-index: -1;
     pointer-events: none;
@@ -290,7 +295,7 @@ p {
 }
 
 a {
-    color: #0066cc;
+    color: #673ab7;
     text-decoration: none;
 }
 
@@ -360,7 +365,7 @@ strong {
 }
 
 .social-links a {
-    color: #0066cc;
+    color: #673ab7;
     text-decoration: none;
     margin-right: 3px;
 }
@@ -390,30 +395,68 @@ strong {
     font-size: 1.1rem;
 }
 
-/* News Section */
+/* 新闻部分滚动样式 */
 .news-section {
     margin-bottom: 30px;
 }
 
 .news-list {
-    margin-left: 20px;
+    max-height: 200px;
+    /* 设置最大高度，超出部分显示滚动条 */
+    overflow-y: auto;
+    /* 垂直滚动 */
+    overflow-x: auto;
+    /* 整体水平滚动 */
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 0;
+    white-space: nowrap;
+    /* 防止文本换行 */
 }
 
 .news-item {
-    margin-bottom: 10px;
     display: flex;
-    gap: 10px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+.news-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
 }
 
 .news-date {
-    color: #0066cc;
+    flex: 0 0 auto;
+    /* 改为自动宽度 */
+    color: #673ab7;
     font-weight: bold;
-    min-width: 100px;
+    padding-right: 5px;
+    /* 添加少量右内边距 */
 }
 
 .news-content {
-    font-size: 1.1rem;
     flex: 1;
+    padding-right: 10px;
+    margin-left: 0;
+    /* 移除左边距 */
+    overflow: visible;
+    /* 移除单独的水平滚动 */
+}
+
+/* 自定义滚动条样式 */
+.news-list::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 3px;
+}
+
+.news-list::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 3px;
 }
 
 /* Publications Section */
@@ -458,9 +501,9 @@ strong {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #0066cc;
+    background-color: #673ab7;
     color: white;
-    padding: 4px 8px;
+    padding: 2px 8px;
     font-size: 0.8rem;
     font-weight: bold;
     z-index: 2;
@@ -497,7 +540,7 @@ strong {
 
 .pub-links a {
     margin-right: 10px;
-    color: #0066cc;
+    color: #673ab7;
 }
 
 .pub-links .link-disabled {
@@ -560,9 +603,9 @@ strong {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #0066cc;
+    background-color: #673ab7;
     color: white;
-    padding: 4px 8px;
+    padding: 2px 8px;
     font-size: 0.8rem;
     font-weight: bold;
     z-index: 2;
@@ -594,7 +637,7 @@ strong {
 
 .project-links a {
     margin-right: 10px;
-    color: #0066cc;
+    color: #673ab7;
 }
 
 .project-links .link-disabled {
@@ -621,7 +664,7 @@ strong {
 .edu-period {
     flex: 0 0 100px;
     font-weight: bold;
-    color: #0066cc;
+    color: #673ab7;
     font-size: 0.9rem;
 }
 
@@ -767,14 +810,14 @@ strong {
 
 .copy-citation-link {
     display: inline-block;
-    color: #0066cc;
+    color: #673ab7;
     text-decoration: underline;
     font-size: 16px;
     cursor: pointer;
 }
 
 .copy-citation-link:hover {
-    color: #004499;
+    color: #5e35b1;
 }
 
 /* Responsive Design */
@@ -783,33 +826,33 @@ strong {
         max-width: 90%;
         padding: 20px;
     }
-    
+
     .header-content {
         gap: 20px;
     }
-    
+
     .profile-photo {
         flex: 0 0 200px;
     }
-    
+
     .profile-photo img {
         width: 200px;
         height: 200px;
     }
-    
+
     .pub-image {
         flex: 0 0 240px;
     }
-    
+
     .pub-image img {
         width: 240px;
         height: 132px;
     }
-    
+
     .project-image {
         flex: 0 0 240px;
     }
-    
+
     .project-image img {
         width: 240px;
         height: 132px;
@@ -817,52 +860,58 @@ strong {
 }
 
 @media (max-width: 768px) {
-    .top-nav, .top-nav.scrolled {
-        background-color: #0a3159 !important;
+
+    .top-nav,
+    .top-nav.scrolled {
+        background-color: #4b2e83 !important;
     }
-    
+
     .container {
         padding: 60px 15px 20px;
     }
-    
+
     .header-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
     }
-    
+
     .profile-photo {
         margin: 0;
         width: 230px;
     }
-    
+
     .profile-photo img {
         width: 230px;
         height: 250px;
         margin: 0;
     }
-    
+
     .profile-content {
         text-align: left;
         margin-top: 10px;
         padding-left: 0;
     }
-    
-    .title, .affiliation, .email {
+
+    .title,
+    .affiliation,
+    .email {
         text-align: left;
     }
-    
+
     .social-links {
         text-align: left;
         margin-bottom: 15px;
     }
-    
+
     .bio-content {
         margin-top: 20px;
         padding-left: 0;
     }
-    
-    .bio, .looking, .student-note {
+
+    .bio,
+    .looking,
+    .student-note {
         text-align: justify;
         font-size: 1.1rem;
         line-height: 1.5;
@@ -876,7 +925,7 @@ strong {
         line-height: 1.5;
         margin-bottom: 10px;
     }
-    
+
     .contact-links {
         font-size: 1rem;
         line-height: 1.5;
@@ -884,11 +933,11 @@ strong {
         margin-bottom: 15px;
         order: 3;
     }
-    
+
     .contact-links a {
         margin-right: 8px;
     }
-    
+
     .publication-item,
     .project-item {
         flex-direction: column;
@@ -898,16 +947,16 @@ strong {
         border-bottom: 1px solid #eaeaea;
         align-items: center;
     }
-    
+
     .publication-item:last-child,
     .project-item:last-child {
         border-bottom: none;
     }
-    
+
     .research-projects-section .projects-list {
         margin-left: 20px;
     }
-    
+
     .pub-image,
     .project-image {
         align-self: center;
@@ -919,7 +968,7 @@ strong {
         height: auto;
         aspect-ratio: 284/156;
     }
-    
+
     .pub-image img,
     .project-image img {
         width: 100%;
@@ -927,142 +976,142 @@ strong {
         object-fit: cover;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     }
-    
+
     .pub-badge,
     .project-badge {
         padding: 3px 6px;
         font-size: 0.75rem;
     }
-    
+
     .education-item {
         flex-direction: column;
         gap: 5px;
         margin-bottom: 15px;
         padding-bottom: 8px;
     }
-    
+
     .edu-period {
         flex: none;
         font-size: 1rem;
-        color: #0066cc;
+        color: #673ab7;
         font-weight: bold;
         margin-bottom: 0;
         order: 1;
     }
-    
+
     .edu-content {
         order: 2;
     }
-    
+
     .edu-content h3 {
         margin-top: 0;
         margin-bottom: 1px;
         font-size: 19.2px;
         line-height: 1.2;
     }
-    
+
     .edu-content p {
         margin-bottom: 1px;
         font-size: 19.2px;
     }
-    
+
     h1 {
         font-size: 2rem;
         margin-bottom: 10px;
         line-height: 1.2;
     }
-    
+
     h2 {
         font-size: 1.6rem;
         margin: 20px 0 8px 0;
         line-height: 1.2;
     }
-    
+
     h3 {
         font-size: 1.2rem;
         line-height: 1.3;
     }
-    
+
     .news-item {
         flex-direction: column;
         gap: 2px;
         margin-bottom: 10px;
     }
-    
+
     .news-date {
         min-width: auto;
-        color: #0066cc;
+        color: #673ab7;
         font-size: 0.9rem;
         font-weight: bold;
     }
-    
+
     .news-content {
         font-size: 1rem;
         line-height: 1.3;
     }
-    
+
     .pub-links a,
     .project-links a {
         margin-right: 8px;
         font-size: 1rem;
     }
-    
+
     .citation-modal-content {
         margin: 15% auto;
         width: 90%;
         padding: 20px;
     }
-    
+
     .citation-text-container {
         max-height: 250px;
         padding: 12px;
     }
-    
+
     #citation-text {
         font-size: 13px;
     }
-    
+
     .copy-citation-link {
         font-size: 15px;
     }
-    
+
     .visitor-counter {
         transform: scale(0.8);
     }
-    
+
     .footer-links {
         margin: 10px 0;
     }
-    
+
     .footer-follow {
         font-size: 0.85rem;
         gap: 8px;
     }
-    
+
     /* 移动端学校图标调整 */
     .bio img[src*="icon-title"] {
         width: 18px !important;
         height: 18px !important;
         margin-left: 3px !important;
     }
-    
+
     .bio img[src*="scuec.png"] {
         width: 65px !important;
         height: 25px !important;
         margin-left: 3px !important;
     }
-    
+
     .contact-links a {
         padding: 0 !important;
         margin: 0 8px 0 0 !important;
         background-color: transparent !important;
         border-radius: 0 !important;
     }
-    
+
     .contact-links a:hover {
         background-color: transparent !important;
     }
-    
+
     .pub-links a,
     .project-links a {
         padding: 0 !important;
@@ -1070,13 +1119,13 @@ strong {
         background-color: transparent !important;
         border-radius: 0 !important;
     }
-    
+
     .pub-links a:hover,
     .project-links a:hover {
         background-color: transparent !important;
     }
-    
-    
+
+
     .news-item {
         background-color: transparent !important;
         border-radius: 0 !important;
@@ -1088,77 +1137,82 @@ strong {
     .container {
         padding: 50px 10px 15px;
     }
-    
+
     body {
         font-size: 16px;
     }
-    
+
     h1 {
         font-size: 1.8rem;
         line-height: 1.1;
         margin-bottom: 8px;
         text-align: left;
     }
-    
+
     h2 {
         font-size: 1.4rem;
         margin: 15px 0 6px 0;
         line-height: 1.1;
     }
-    
+
     h3 {
         font-size: 1.1rem;
         line-height: 1.2;
     }
-    
+
     .profile-photo {
         width: 230px;
     }
-    
+
     .profile-photo img {
         width: 230px;
         height: 250px;
     }
-    
+
     .profile-content h1 {
         font-size: 1.8rem;
         margin-bottom: 5px;
     }
-    
-    .title, .affiliation, .email {
+
+    .title,
+    .affiliation,
+    .email {
         font-size: 1rem;
     }
-    
+
     .social-links {
         font-size: 0.9rem;
     }
-    
-    .bio, .looking, .student-note {
+
+    .bio,
+    .looking,
+    .student-note {
         font-size: 1rem;
         line-height: 1.4;
         text-align: justify;
     }
-    
+
     .contact-links {
         text-align: center;
         margin-bottom: 15px;
     }
-    
-    .bio, .research-interests {
+
+    .bio,
+    .research-interests {
         font-size: 1rem;
         line-height: 1.4;
         margin-bottom: 8px;
         text-align: justify;
     }
-    
+
     .contact-links {
         font-size: 0.9rem;
     }
-    
+
     .contact-links a {
         margin-right: 6px;
     }
-    
+
     .news-list,
     .publications-list,
     .research-projects-section .projects-list,
@@ -1166,21 +1220,21 @@ strong {
     .education-list {
         margin-left: 5px;
     }
-    
+
     .news-item {
         margin-bottom: 8px;
     }
-    
+
     .news-date {
         font-size: 0.85rem;
         margin-bottom: 1px;
     }
-    
+
     .news-content {
         font-size: 0.9rem;
         line-height: 1.2;
     }
-    
+
     .pub-image,
     .project-image {
         max-width: 100%;
@@ -1188,120 +1242,120 @@ strong {
         height: auto;
         aspect-ratio: 16/9;
     }
-    
+
     .pub-image img,
     .project-image img {
         width: 100%;
         height: 100%;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     }
-    
+
     .pub-badge,
     .project-badge {
         padding: 2px 5px;
         font-size: 0.8rem;
     }
-    
+
     .pub-content,
     .project-content {
         padding: 0;
         text-align: left;
         display: block;
     }
-    
+
     .authors {
         font-size: 0.9rem;
         margin-bottom: 2px;
     }
-    
+
     .venue {
         font-size: 0.9rem;
         margin-bottom: 4px;
     }
-    
+
     .pub-description,
     .project-content p {
         font-size: 0.85rem;
         line-height: 1.2;
     }
-    
+
     .pub-links a,
     .project-links a {
         margin-right: 6px;
         font-size: 0.85rem;
     }
-    
+
     .education-item {
         flex-direction: column;
         gap: 3px;
         margin-bottom: 12px;
         padding-bottom: 2px;
     }
-    
+
     .edu-period {
         flex: none;
         font-size: 0.9rem;
         order: 1;
         margin-bottom: 2px;
     }
-    
+
     .edu-content {
         order: 2;
     }
-    
+
     .edu-content h3 {
         font-size: 1rem;
     }
-    
+
     .edu-content p {
         font-size: 0.85rem;
     }
-    
+
     .visitor-counter {
         transform: scale(0.7);
         margin-bottom: 5px;
     }
-    
+
     .footer-links a,
     .footer-follow,
     .footer-info p {
         font-size: 0.8rem;
     }
-    
+
     /* 移动端学校图标调整 */
     .bio img[src*="icon-title"] {
         width: 15px !important;
         height: 15px !important;
         margin-left: 2px !important;
     }
-    
+
     .bio img[src*="scuec.png"] {
         width: 60px !important;
         height: 20px !important;
         margin-left: 2px !important;
     }
-    
+
     .citation-modal-content {
         margin: 20% auto;
         width: 95%;
         padding: 15px;
     }
-    
+
     .citation-text-container {
         max-height: 200px;
         padding: 10px;
     }
-    
+
     #citation-text {
         font-size: 12px;
     }
-    
+
     .citation-close {
         top: 10px;
         right: 15px;
         font-size: 24px;
     }
-    
+
     .copy-citation-link {
         font-size: 14px;
     }
@@ -1312,11 +1366,11 @@ strong {
     .visitor-counter {
         display: none;
     }
-    
+
     .citation-modal {
         display: none;
     }
-    
+
     a {
         color: #000;
         text-decoration: underline;
@@ -1328,24 +1382,29 @@ strong {
     html {
         scroll-behavior: smooth;
     }
-    
+
     body {
         -webkit-overflow-scrolling: touch;
     }
-    
+
     /* 优化文本选择 */
-    p, h1, h2, h3 {
+    p,
+    h1,
+    h2,
+    h3 {
         -webkit-user-select: text;
         -moz-user-select: text;
         -ms-user-select: text;
         user-select: text;
     }
-    
+
     /* 防止文本缩放 */
-    input, textarea, select {
+    input,
+    textarea,
+    select {
         font-size: 16px;
     }
-    
+
     /* Visitor Counter 溢出处理 */
     .visitor-counter {
         overflow-x: auto;
@@ -1354,16 +1413,17 @@ strong {
         display: flex;
         justify-content: center;
     }
-    
-    .visitor-counter > * {
+
+    .visitor-counter>* {
         max-width: 100%;
     }
-} 
+}
 
 /* 确保导航栏在所有情况下都保持深蓝色背景 */
-.top-nav, .top-nav.scrolled {
-    background-color: #0a3159 !important;
-} 
+.top-nav,
+.top-nav.scrolled {
+    background-color: #4b2e83 !important;
+}
 
 /* 会议或期刊等级样式 */
 .venue-rank {
@@ -1373,7 +1433,7 @@ strong {
     /* 斜体 */
     font-style: italic;
     margin: 0 5px;
-} 
+}
 
 /* 回到顶部按钮样式 */
 .back-to-top {
@@ -1383,7 +1443,7 @@ strong {
     width: 50px;
     height: 50px;
     background-color: white;
-    color: #0a3159;
+    color: #4b2e83;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -1438,7 +1498,7 @@ strong {
     font-size: 28px;
     font-weight: bold;
     margin: 10px 0;
-    color: #003366;
+    color: #2e0e5f;
     text-align: center;
     width: 100%;
 }
@@ -1533,7 +1593,7 @@ strong {
     object-fit: cover;
     border: 3px solid #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-} 
+}
 
 /* 个人资料容器样式 */
 .profile-container {
@@ -1554,7 +1614,7 @@ strong {
     width: 100%;
     margin-top: 20px;
     text-align: center;
-} 
+}
 
 /* 主标题样式 */
 .main-header {
@@ -1563,4 +1623,4 @@ strong {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-} 
+}

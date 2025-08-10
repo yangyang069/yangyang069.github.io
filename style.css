@@ -536,16 +536,24 @@ strong {
 
 .pub-links {
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .pub-links a {
-    margin-right: 10px;
     color: #673ab7;
+    display: inline-flex;
+    align-items: center;
+}
+
+.pub-links img {
+    vertical-align: middle;
 }
 
 .pub-links .link-disabled {
     color: #b39ddb;
-    margin-right: 10px;
 }
 
 /* 禁用态链接（Under Review）- pub-links 与标题 */
@@ -561,10 +569,10 @@ strong {
 }
 
 
-.pub-description {
+/* .pub-description {
     font-style: italic;
     color: #666;
-}
+} */
 
 /* Research Projects Section */
 .research-projects-section {
@@ -655,7 +663,6 @@ strong {
 
 .project-links .link-disabled {
     color: #999;
-    margin-right: 10px;
 }
 
 /* Education Section */
@@ -1125,10 +1132,14 @@ strong {
         background-color: transparent !important;
     }
 
+    .pub-links {
+        gap: 8px;
+    }
+
     .pub-links a,
     .project-links a {
         padding: 0 !important;
-        margin: 0 8px 0 0 !important;
+        margin: 0 !important;
         background-color: transparent !important;
         border-radius: 0 !important;
     }
@@ -1292,9 +1303,13 @@ strong {
         line-height: 1.2;
     }
 
+    .pub-links {
+        gap: 6px;
+    }
+
     .pub-links a,
     .project-links a {
-        margin-right: 6px;
+        margin-right: 0;
         font-size: 0.85rem;
     }
 

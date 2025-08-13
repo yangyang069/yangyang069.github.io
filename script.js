@@ -225,6 +225,102 @@ function setupMobileMenu() {
     });
 }
 
+// 文章筛选功能
+function setupPublicationFilter() {
+    const showSelectedLink = document.getElementById('show-selected-link');
+    const showAllLink = document.getElementById('show-all-link');
+    const publicationItems = document.querySelectorAll('.publications-section .publication-item');
+
+    let isShowingSelected = false; // 默认显示所有文章
+
+    // 定义精选文章的索引（从0开始）
+    const selectedIndices = [0]; // 第一篇文章为精选
+
+    // 更新UI状态
+    function updateUI() {
+        if (isShowingSelected) {
+            // 显示精选模式：show selected 是当前状态，show all by date 是链接
+            showSelectedLink.style.color = '#4b2e83';
+            showSelectedLink.style.cursor = 'default';
+            showSelectedLink.style.textDecoration = 'none';
+
+            showAllLink.style.color = '';
+            showAllLink.style.cursor = 'pointer';
+            showAllLink.style.textDecoration = 'none';
+        } else {
+            // 显示全部模式：show all by date 是当前状态，show selected 是链接
+            showAllLink.style.color = '#4b2e83';
+            showAllLink.style.cursor = 'default';
+            showAllLink.style.textDecoration = 'none';
+
+            showSelectedLink.style.color = '';
+            showSelectedLink.style.cursor = 'pointer';
+            showSelectedLink.style.textDecoration = 'none';
+        }
+    }
+
+    // 显示精选文章
+    function showSelectedPublications() {
+        publicationItems.forEach((item, index) => {
+            if (selectedIndices.includes(index)) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        isShowingSelected = true;
+        updateUI();
+    }
+
+    // 显示所有文章
+    function showAllPublications() {
+        publicationItems.forEach(item => {
+            item.style.display = 'flex';
+        });
+        isShowingSelected = false;
+        updateUI();
+    }
+
+    // 点击事件
+    showSelectedLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (!isShowingSelected) {
+            showSelectedPublications();
+        }
+    });
+
+    showAllLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (isShowingSelected) {
+            showAllPublications();
+        }
+    });
+
+    // 悬停效果
+    showSelectedLink.addEventListener('mouseenter', function() {
+        if (!isShowingSelected) {
+            this.style.textDecoration = 'underline';
+        }
+    });
+
+    showSelectedLink.addEventListener('mouseleave', function() {
+        this.style.textDecoration = 'none';
+    });
+
+    showAllLink.addEventListener('mouseenter', function() {
+        if (isShowingSelected) {
+            this.style.textDecoration = 'underline';
+        }
+    });
+
+    showAllLink.addEventListener('mouseleave', function() {
+        this.style.textDecoration = 'none';
+    });
+
+    // 初始化
+    showAllPublications();
+}
+
 // 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', function () {
     updateLastCommitDate();
@@ -233,6 +329,7 @@ document.addEventListener('DOMContentLoaded', function () {
     handleNavbarScroll();
     setupMobileMenu();
     disableUnderReviewLinks();
+    setupPublicationFilter();
 });
 
 // 禁用包含“Under Review”的条目的链接（标题和 pub-links）

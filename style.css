@@ -464,6 +464,15 @@ strong {
     margin-bottom: 30px;
 }
 
+.publications-section h2 {
+    margin-bottom: 20px;
+}
+
+.publications-section h2 #show-selected-link,
+.publications-section h2 #show-all-link {
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
 .publications-list {
     margin-left: 20px;
 }

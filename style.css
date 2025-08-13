@@ -398,6 +398,7 @@ strong {
 /* 新闻部分滚动样式 */
 .news-section {
     margin-bottom: 30px;
+    font-size: 1.1rem;
 }
 
 .news-list {

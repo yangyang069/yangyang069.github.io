@@ -402,7 +402,7 @@ strong {
 }
 
 .news-list {
-    max-height: 200px;
+    max-height: 280px;
     /* 设置最大高度，超出部分显示滚动条 */
     overflow-y: auto;
     /* 垂直滚动 */

@@ -110,42 +110,36 @@
     <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
     <div class="container">
-        <!-- Header Section -->
-        <header class="main-header" id="home">
-            <div class="header-content">
-                <div class="profile-container">
+        <!-- Main Content Layout -->
+        <div class="main-layout" id="home">
+            <!-- Left Sidebar -->
+            <div class="left-sidebar">
+                <div class="profile-section">
                     <div class="profile-photo">
                         <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/profile.png"
                             alt="YangYang Profile Photo">
                     </div>
-                    <div class="profile-content">
-                        <h1 class="profile-name">Yang Yang</h1>
-                        <p class="profile-title">Computer Technology MS Student</p>
-                        <p class="profile-affiliation">
-                            School of Computer Science (School of Artificial Intelligence)
-                        </p>
-                        <p class="profile-affiliation"><i class="fas fa-university" aria-hidden="true"></i> South-Central Minzu University</p>
-                        <p class="profile-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Wuhan, China</p>
+                    <h1 class="profile-name">Yang Yang</h1>
+                    <p class="profile-title">MS Student</p>
+                    <p class="profile-affiliation">School of Computer Science (School of Artificial Intelligence)</p>
+                    <p class="profile-affiliation">South-Central Minzu University</p>
 
-                        <div class="social-icons">
-                            <a href="mailto:yangyang@mail.scuec.edu.cn" target="_blank"><i
-                                    class="fas fa-envelope"></i></a>
-                            <a href="https://scholar.google.com/citations?user=ph6q3aQAAAAJ" target="_blank"><i
-                                    class="ai ai-google-scholar"></i></a>
-                            <a href="https://github.com/Louaq" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://orcid.org/0009-0009-6670-7889" target="_blank"><i
-                                    class="ai ai-orcid"></i></a>
-                            <a href="https://www.researchgate.net/profile/Yang-Yang-826" target="_blank"><i
-                                    class="ai ai-researchgate"></i></a>
-                        </div>
+                    <div class="social-icons">
+                        <a href="mailto:yangyang@mail.scuec.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/citations?user=ph6q3aQAAAAJ" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+                        <a href="https://github.com/Louaq" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://orcid.org/0009-0009-6670-7889" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a>
+                        <a href="https://www.researchgate.net/profile/Yang-Yang-826" target="_blank" title="ResearchGate"><i class="ai ai-researchgate"></i></a>
                     </div>
                 </div>
             </div>
 
-            <div class="bio-content">
-                <p class="bio">
-
-                    I am a Computer Technology MS student at <a href="https://www.scuec.edu.cn/jky/index.htm"
+            <!-- Right Content -->
+            <div class="right-content">
+                <!-- About Me Section -->
+                <section class="about-section">
+                    <h2>About Me</h2>
+                    <p> I am a Computer Technology MS student at <a href="https://www.scuec.edu.cn/jky/index.htm"
                         target="_blank">School of Computer Science
 
                         (School of Artificial Intelligence)</a>, <a href="https://www.scuec.edu.cn/"
@@ -160,293 +154,174 @@
                     medical image analysis and healthcare technology applications.
 
                     I also received my B.S. degree in Network Engineering from South-Central Minzu University in 2024.
+</p>
+                </section>
 
-                </p>
-
-            </div>
-        </header>
-        <!-- News Section -->
-        <section class="news-section">
-            <h2>🔥 News</h2>
-            <div class="news-list">
-                <div class="news-item">
-                    <span class="news-date">[May. 2025]</span>
-                    <span class="news-content">🎉 Completed my second journal paper!</span>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">[May. 2025]</span>
-                    <span class="news-content">🎉 Submitted my first journal paper to The Visual Computer
-                        <strong>(TVC)</strong>!</span>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">[Mar. 2025]</span>
-                    <span class="news-content">🎉 <a href="https://www.scuec.edu.cn/jky/info/1141/4382.htm">The first
-                            conference paper is accepted by <strong>CGI2024</strong>!</a>
-                    </span>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">[Nov. 2024]</span>
-                    <span class="news-content">👩‍💻 Attended <strong>CNCC2024</strong> in Hengdian, Zhejiang, engaging
-                        with leading researchers in computer science and AI!</span>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">[Sep. 2024]</span>
-                    <span class="news-content">🎓 Started my MS studies at South-Central Minzu University!</span>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">[Jun. 2024]</span>
-                    <span class="news-content">🎉 Graduated with B.S. in Network Engineering!</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publications Section -->
-        <section class="publications-section" id="publications">
-            <h2>📝 Publications (<span id="show-all-link">show all by date</span> / <span id="show-selected-link">show selected</span>)</h2>
-            <div class="publications-list">
-                <!-- Publication 1 -->
-                <div class="publication-item">
-                    <div class="pub-image">
-                        <div class="pub-badge">CGI2024</div>
-                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/cgi.png"
-                            alt="CGI 2024 Paper">
-                    </div>
-                    <div class="pub-content">
-                        <h3>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
-                        <p class="authors">
-                            <strong>Yang Yang</strong>, Jianlin Zhu*, Bo Yang, Xiao Zhang, Jin Huang
-                        </p>
-                        <p class="pub-description">
-                            International Conference on Computer Graphics (<b>CGI</b>), 2024
-                        </p>
-                        <div class="pub-links">
-                            <a href="./pdf/978-3-031-82024-3_8.pdf">[paper]</a>
-                            <a href="https://github.com/Louaq/CGI2024" >[code]</a>
-                            <a href="https://drive.google.com/file/d/1UJcbH2cKLstZdyEJPGv_Hb3GP06MYJff/view?usp=sharing">[dataset]</a>
-                            <a href="bibtex.html">[bibtex]</a>
-                            <span class="venue-rank">CCF C</span>
-                            <a href="https://github.com/Louaq/CGI2024">
-                                <img src="https://img.shields.io/github/forks/Louaq/CGI2024" alt="GitHub forks">
-                            </a>
+                <!-- News Section -->
+                <section class="news-section">
+                    <h2>News</h2>
+                    <div class="news-list">
+                        <div class="news-item">
+                            <span class="news-date">[May. 2025]</span>
+                            <span class="news-content">🎉 Completed my second journal paper!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">[May. 2025]</span>
+                            <span class="news-content">🎉 Submitted my first journal paper to The Visual Computer (TVC)!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">[Mar. 2025]</span>
+                            <span class="news-content">🎉 The first conference paper is accepted by CGI2024!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">[Nov. 2024]</span>
+                            <span class="news-content">👩‍💻 Attended CNCC2024 in Hengdian, Zhejiang, engaging with leading researchers in computer science and AI!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">[Sep. 2024]</span>
+                            <span class="news-content">🎓 Started my MS studies at South-Central Minzu University!</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-date">[Jun. 2024]</span>
+                            <span class="news-content">🎉 Graduated with B.S. in Network Engineering!</span>
                         </div>
 
                     </div>
-                </div>
-
-                <div class="publication-item">
-                    <div class="pub-image">
-                        <div class="pub-badge">TVC</div>
-                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/mou.png" alt="The Visual Computer">
-                    </div>
-                    <div class="pub-content">
-                        <h3>HSFPN-Det: An Effective Model for Detecting Rice Pests and Diseases</h3>
-                        <p class="authors">
-                            <strong>Yang Yang</strong>, Yuxin Hong, Wenjie Yu, Xiao Zhang, Bo Yang, Meng Shi, Yangguang Sun, Jun Wang, Jianlin Zhu*
-                        </p>
-                        <div class="pub-links">
-                            <a href="#" style="color: #b39ddb;">[paper]</a>
-                            <a href="#" style="color: #b39ddb;">[code]</a>
-                            <a href="#" style="color: #b39ddb;">[dataset]</a>
-                            <a href="#" style="color: #b39ddb;">[bibtex]</a>
-                            <span class="venue-rank">Under Review</span>
-                            <!-- <a href="https://github.com/Louaq/CGI2024">
-                                <img src="https://img.shields.io/github/forks/Louaq/CGI2024" alt="GitHub forks"
-                                    style="vertical-align: middle;">
-                            </a> -->
-                        </div>
-                        <!-- <p class="pub-description">
-                            We propose an improved YOLOv8-based method for accurate detection of rice pests and
-                            diseases.
-                        </p> -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <script>
-        // 文章筛选功能
-        (function() {
-            let currentFilter = 'all';
-
-            function initFilter() {
-                const showAllLink = document.getElementById('show-all-link');
-                const showSelectedLink = document.getElementById('show-selected-link');
-                const publications = document.querySelectorAll('.publications-section .publication-item');
-
-                if (!showAllLink || !showSelectedLink) return;
-
-                function updateView() {
-                    if (currentFilter === 'selected') {
-                        // 只显示第一篇文章
-                        publications.forEach((pub, index) => {
-                            pub.style.display = index === 0 ? 'flex' : 'none';
-                        });
-                        // 设置选中状态
-                        showSelectedLink.classList.add('active');
-                        showSelectedLink.classList.remove('inactive');
-                        showAllLink.classList.add('inactive');
-                        showAllLink.classList.remove('active');
-                        // 清除内联样式
-                        showSelectedLink.style.color = '';
-                        showSelectedLink.style.textDecoration = '';
-                        showAllLink.style.color = '';
-                        showAllLink.style.textDecoration = '';
-                    } else {
-                        // 显示所有文章
-                        publications.forEach(pub => {
-                            pub.style.display = 'flex';
-                        });
-                        // 设置选中状态
-                        showAllLink.classList.add('active');
-                        showAllLink.classList.remove('inactive');
-                        showSelectedLink.classList.add('inactive');
-                        showSelectedLink.classList.remove('active');
-                        // 清除内联样式
-                        showSelectedLink.style.color = '';
-                        showSelectedLink.style.textDecoration = '';
-                        showAllLink.style.color = '';
-                        showAllLink.style.textDecoration = '';
-                    }
-                }
-
-                showSelectedLink.onclick = function(e) {
-                    e.preventDefault();
-                    currentFilter = 'selected';
-                    updateView();
-                    return false;
-                };
-
-                showAllLink.onclick = function(e) {
-                    e.preventDefault();
-                    currentFilter = 'all';
-                    updateView();
-                    return false;
-                };
-
-                // 不需要初始化调用，CSS已经设置了默认状态
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initFilter);
-            } else {
-                initFilter();
-            }
-        })();
-        </script>
-
-        <!-- Research Projects Section -->
-        <section class="research-projects-section" id="projects">
-            <h2>💻 Projects</h2>
-            <div class="projects-list">
-                <!-- Project 1 -->
-                <div class="publication-item">
-                    <div class="pub-image">
-                        <div class="pub-badge">CGI2024</div>
-                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/project_1.gif"
-                            alt="Rice Pest Detection Project">
-                    </div>
-                    <div class="pub-content">
-                        <h3>Rice Pest and Disease Detection System</h3>
-                        <p class="authors">
-                            <strong>Yang Yang</strong>, Jianlin Zhu, Bo Yang, Xiao Zhang, Jin Huang
-                        </p>
-                        <p class="pub-description">
-                            International Conference on Computer Graphics (<b>CGI</b>), 2024
-                        </p>
-                        <div class="pub-links">
-                            <a href="https://github.com/Louaq/CGI2024">
-                                [code]
-                            </a>
-                            <a href="https://drive.google.com/file/d/1Six0T71DQEEsr7OH-iI0AiNGi1UrYrDh/view?usp=sharing">[demo]
-                            </a>
-                            <a href="https://github.com/Louaq/CGI2024">
-                                <img alt="GitHub Repo stars"
-                                    src="https://img.shields.io/github/stars/Louaq/CGI2024">
-                            </a>
+                </section>
+                <!-- Publications Section -->
+                <section class="publications-section" id="publications">
+                    <h2>Publications</h2>
+                    <div class="publications-list">
+                        <!-- Publication 1 -->
+                        <div class="publication-item">
+                            <div class="pub-image">
+                                <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/cgi.png" alt="Publication Image">
+                            </div>
+                            <div class="pub-content">
+                                <h3>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
+                                <p class="authors"><b>Yang Yang</b>, Jianlin Zhu*, Bo Yang, Xiao Zhang, Jin Huang (*Corresponding authors)</p>
+                                <p class="venue">International Conference on Computer Graphics (<b>CGI</b>), 2024</p>
+                                <div class="pub-links">
+                                    <a href="https://yangyang.wiki/pdf/978-3-031-82024-3_8.pdf">[paperr]</a>
+                                    <a href="https://github.com/Louaq/CGI2024">[code]</a>
+                                    <a href="https://drive.google.com/file/d/1UJcbH2cKLstZdyEJPGv_Hb3GP06MYJff/view?usp=sharing">[dataset]</a>
+                                    <a href="bibtex.html">[bibtex]</a>
+                                </div>
+                            </div>
                         </div>
 
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="publication-item">
-                    <div class="pub-image">
-                        <div class="pub-badge">TexStudio</div>
-                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/bandicam%202025-07-02%2021-33-14-661.gif"
-                            alt="SimpleTex-OCR">
-                    </div>
-                    <div class="pub-content">
-                        <h3>SimpleTex-OCR TypeScript Version</h3>
-                        <p class="authors">
-                            <strong>Yang Yang</strong>
-                        </p>
-                        <p class="pub-description">
-                            A modern LaTeX formula recognition desktop application, 2025
-                        </p>
-
-                        <div class="pub-links">
-                            <a href="https://github.com/Louaq/SimpleTex-OCR">[code]</a>
-                            <a href="https://github.com/Louaq/SimpleTex-OCR/releases">[demo]</a>
-                            <a href="https://github.com/Louaq/SimpleTex-OCR">
-                                <img src="https://img.shields.io/github/stars/Louaq/SimpleTex-OCR" alt="GitHub stars">
-                            </a>
+                        <!-- Publication 2 -->
+                        <div class="publication-item">
+                            <div class="pub-image">
+                                <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/mou.png" alt="Publication Image">
+                            </div>
+                            <div class="pub-content">
+                                <h3>HSFPN-Det: An Effective Model for Detecting Rice Pests and Diseases</h3>
+                                <p class="authors"><b>Yang Yang</b>, Yuxin Hong, Wenjie Yu, Xiao Zhang, Bo Yang, Meng Shi, Yangguang Sun, Jun Wang, Jianlin Zhu* (*Corresponding authors)</p>
+                                <!-- <p class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2020.</p> -->
+                                <div class="pub-links">
+                                    <a href="#">[paper]</a>
+                                    <a href="#">[code]</a>
+                                    <a href="#">[dataset]</a>
+                                    <a href="#">[bibtex]</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-            </div>
-        </section>
-
-        <!-- Talks Section -->
-        <section class="projects-section" id="talks">
-            <h2>👄 Talks</h2>
-            <div class="projects-list">
-                <div class="project-item">
-                    <div class="project-image">
-                        <div class="project-badge">Talk</div>
-                        <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/cgi_demo.png"
-                            alt="Medical Image Segmentation">
-                    </div>
-                    <div class="project-content">
-                        <h3>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
-                        <p class="authors">
-                            <strong>Yang Yang</strong>
-                        </p>
-                        <p class="pub-description">
-                            International Conference on Computer Graphics (<b>CGI</b>), 2024
-                        </p>
-                        <div class="project-links">
-                            <a href="https://drive.google.com/file/d/1MYGWupPT0zrqpIpRvBc7m3qs2gzznOiw/view?usp=drive_link">[video]</a>
+                <!-- Projects Section -->
+                <section class="projects-section" id="projects">
+                    <h2>Projects</h2>
+                    <div class="projects-list">
+                        <!-- Project 1 -->
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/project_1.gif" alt="Rice Pest Detection Project">
+                            </div>
+                            <div class="project-content">
+                                <h3>Rice Pest and Disease Detection System</h3>
+                                <p class="authors"><strong>Yang Yang</strong>, Jianlin Zhu, Bo Yang, Xiao Zhang, Jin Huang</p>
+                                <p class="project-description">An intelligent system for automated detection and classification of rice pests and diseases using deep learning techniques.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Louaq/CGI2024">[code]</a>
+                                    <a href="https://drive.google.com/file/d/1Six0T71DQEEsr7OH-iI0AiNGi1UrYrDh/view?usp=sharing">[demo]</a>
+                                    <a href="https://github.com/Louaq/CGI2024">
+                                        <img src="https://img.shields.io/github/stars/Louaq/CGI2024" alt="GitHub stars">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Education Section -->
-        <section class="education-section" id="education">
-            <h2>🎓 Education</h2>
-            <div class="education-list">
-                <div class="education-item">
-                    <div class="edu-period">2024 - 2027 (Expected)</div>
-                    <div class="edu-content">
-                        <h3>Master of Computer Technology</h3>
-                        <p>South-Central Minzu University</p>
-                        <p>Supervisor: <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm">Dr.
-                                Jianlin Zhu (朱剑林)</a></p>
+                        <!-- Project 2 -->
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/bandicam%202025-07-02%2021-33-14-661.gif" alt="SimpleTex-OCR">
+                            </div>
+                            <div class="project-content">
+                                <h3>SimpleTex-OCR TypeScript Version</h3>
+                                <p class="authors"><strong>Yang Yang</strong></p>
+                                <p class="project-description">A modern LaTeX formula recognition desktop application built with TypeScript and Electron.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Louaq/SimpleTex-OCR">[code]</a>
+                                    <a href="https://github.com/Louaq/SimpleTex-OCR/releases">[demo]</a>
+                                    <a href="https://github.com/Louaq/SimpleTex-OCR">
+                                        <img src="https://img.shields.io/github/stars/Louaq/SimpleTex-OCR" alt="GitHub stars">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="education-item">
-                    <div class="edu-period">2020 - 2024 (Completed)</div>
-                    <div class="edu-content">
-                        <h3>Bachelor of Network Engineering</h3>
-                        <p>South-Central Minzu University</p>
+                <!-- Talks Section -->
+                <section class="talks-section" id="talks">
+                    <h2>Talks</h2>
+                    <div class="talks-list">
+                        <div class="talk-item">
+                            <div class="talk-image">
+                                <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/cgi_demo.png" alt="CGI 2024 Talk">
+                            </div>
+                            <div class="talk-content">
+                                <h3>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
+                                <p class="talk-venue">International Conference on Computer Graphics (<b>CGI</b>), 2024</p>
+                                <p class="talk-description">Presented our novel approach for rice pest and disease detection using improved YOLOv8 architecture.</p>
+                                <div class="talk-links">
+                                    <a href="https://drive.google.com/file/d/1MYGWupPT0zrqpIpRvBc7m3qs2gzznOiw/view?usp=drive_link">[video]</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="education-section" id="education">
+                    <h2>Education</h2>
+                    <div class="education-list">
+                        <div class="education-item">
+                            <div class="edu-period">2024 - 2027 (Expected)</div>
+                            <div class="edu-content">
+                                <h3>Master of Computer Technology</h3>
+                                <p class="edu-institution">South-Central Minzu University</p>
+                                <p class="edu-advisor">Supervisor: <a href="https://www.scuec.edu.cn/jky/info/1165/4995.htm">Dr. Jianlin Zhu (朱剑林)</a></p>
+                                <p class="edu-focus">Focus: Multimodal Medical Image Analysis and Computer Vision</p>
+                            </div>
+                        </div>
+
+                        <div class="education-item">
+                            <div class="edu-period">2020 - 2024</div>
+                            <div class="edu-content">
+                                <h3>Bachelor of Network Engineering</h3>
+                                <p class="edu-institution">South-Central Minzu University</p>
+                                <p class="edu-achievement">Graduated with honors</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
+
+
 
         <!-- Footer -->
         <footer class="main-footer">

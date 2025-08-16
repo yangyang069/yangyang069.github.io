@@ -1,5 +1,17 @@
 (function () {
     document.documentElement.setAttribute('data-theme', 'light');
+
+    // 阻止页面加载时的默认锚点跳转
+    if (window.location.hash) {
+        // 临时移除锚点，防止浏览器自动跳转
+        const hash = window.location.hash;
+        window.history.replaceState(null, null, window.location.pathname + window.location.search);
+
+        // 页面加载完成后恢复锚点并正确定位
+        window.addEventListener('load', function() {
+            window.history.replaceState(null, null, window.location.pathname + window.location.search + hash);
+        });
+    }
 })();
 // 获取最新的 git 提交日期
 async function updateLastCommitDate() {

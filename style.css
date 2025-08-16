@@ -326,8 +326,12 @@ strong {
 .profile-photo img {
     width: 230px;
     height: 230px;
-    object-fit: cover;
-    border-radius: 50%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.profile-photo img:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .profile-content {
@@ -866,7 +870,8 @@ strong {
     .profile-photo img {
         width: 200px;
         height: 200px;
-        border-radius: 50%;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
     }
 
     .pub-image {
@@ -914,7 +919,8 @@ strong {
         width: 230px;
         height: 230px;
         margin: 0;
-        border-radius: 50%;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
     }
 
     .profile-content {
@@ -1201,7 +1207,8 @@ strong {
     .profile-photo img {
         width: 230px;
         height: 230px;
-        border-radius: 50%;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
     }
 
     .profile-content h1 {
@@ -1622,15 +1629,6 @@ strong {
         height: 34px;
         font-size: 34px;
     }
-}
-
-/* 圆形头像样式 */
-.rounded-profile-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* 个人资料容器样式 */

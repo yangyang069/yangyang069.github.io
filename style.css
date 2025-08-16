@@ -61,9 +61,10 @@ html {
 /* 汉堡菜单按钮样式 */
 .mobile-menu-toggle {
     display: none;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    padding: 5px;
+    padding: 8px;
     /* 移除移动端点击时的背景高亮效果 */
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -74,26 +75,14 @@ html {
     user-select: none;
 }
 
-.mobile-menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 2px 0;
-    transition: 0.3s;
-    border-radius: 2px;
+.mobile-menu-toggle i {
+    color: #fff;
+    font-size: 20px;
+    transition: transform 0.3s ease;
 }
 
-/* 汉堡菜单动画 */
-.mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
+.mobile-menu-toggle:hover i {
+    transform: scale(1.1);
 }
 
 /* 移动端下拉菜单样式 */
@@ -111,7 +100,8 @@ html {
 }
 
 .mobile-nav a {
-    display: block;
+    display: flex;
+    align-items: center;
     color: #fff;
     text-decoration: none;
     padding: 15px 20px;
@@ -173,6 +163,20 @@ html {
 .nav-links a:focus {
     outline: none;
     background-color: transparent !important;
+}
+
+/* 导航栏图标样式 */
+.nav-links a i {
+    margin-right: 6px;
+    font-size: 0.9em;
+}
+
+.mobile-nav a i {
+    margin-right: 8px;
+    font-size: 1em;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 /* 移动端导航栏样式 */

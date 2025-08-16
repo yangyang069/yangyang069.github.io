@@ -164,8 +164,16 @@ function setupMobileMenu() {
 
     // 汉堡菜单点击事件
     mobileMenuToggle.addEventListener('click', function() {
+        const icon = mobileMenuToggle.querySelector('i');
         mobileMenuToggle.classList.toggle('active');
         mobileNav.classList.toggle('active');
+
+        // 切换图标
+        if (mobileMenuToggle.classList.contains('active')) {
+            icon.className = 'fas fa-times';
+        } else {
+            icon.className = 'fas fa-bars';
+        }
     });
 
     // 移动端菜单链接点击事件
@@ -176,8 +184,10 @@ function setupMobileMenu() {
                 e.preventDefault();
 
                 const targetId = this.getAttribute('href');
+                const icon = mobileMenuToggle.querySelector('i');
                 mobileMenuToggle.classList.remove('active');
                 mobileNav.classList.remove('active');
+                icon.className = 'fas fa-bars';
 
                 // 如果是Home链接，滚动到顶部
                 if (targetId === '#home') {
@@ -219,8 +229,10 @@ function setupMobileMenu() {
     // 点击页面其他地方关闭菜单
     document.addEventListener('click', function(e) {
         if (!mobileMenuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+            const icon = mobileMenuToggle.querySelector('i');
             mobileMenuToggle.classList.remove('active');
             mobileNav.classList.remove('active');
+            icon.className = 'fas fa-bars';
         }
     });
 }

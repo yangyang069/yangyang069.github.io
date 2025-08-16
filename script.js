@@ -160,6 +160,8 @@ function handleNavbarScroll() {
 function setupMobileMenu() {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const mobileNav = document.getElementById('mobileNav');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const mobileNavClose = document.getElementById('mobileNavClose');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
     // 汉堡菜单点击事件
@@ -167,12 +169,15 @@ function setupMobileMenu() {
         const icon = mobileMenuToggle.querySelector('i');
         mobileMenuToggle.classList.toggle('active');
         mobileNav.classList.toggle('active');
+        mobileNavOverlay.classList.toggle('active');
 
-        // 切换图标
+        // 切换图标和页面滚动
         if (mobileMenuToggle.classList.contains('active')) {
             icon.className = 'fas fa-times';
+            document.body.classList.add('mobile-menu-open');
         } else {
             icon.className = 'fas fa-bars';
+            document.body.classList.remove('mobile-menu-open');
         }
     });
 
@@ -187,6 +192,8 @@ function setupMobileMenu() {
                 const icon = mobileMenuToggle.querySelector('i');
                 mobileMenuToggle.classList.remove('active');
                 mobileNav.classList.remove('active');
+                mobileNavOverlay.classList.remove('active');
+                document.body.classList.remove('mobile-menu-open');
                 icon.className = 'fas fa-bars';
 
                 // 如果是Home链接，滚动到顶部
@@ -232,8 +239,30 @@ function setupMobileMenu() {
             const icon = mobileMenuToggle.querySelector('i');
             mobileMenuToggle.classList.remove('active');
             mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.classList.remove('mobile-menu-open');
             icon.className = 'fas fa-bars';
         }
+    });
+
+    // 点击遮罩层关闭菜单
+    mobileNavOverlay.addEventListener('click', function() {
+        const icon = mobileMenuToggle.querySelector('i');
+        mobileMenuToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+        mobileNavOverlay.classList.remove('active');
+        document.body.classList.remove('mobile-menu-open');
+        icon.className = 'fas fa-bars';
+    });
+
+    // 点击关闭按钮关闭菜单
+    mobileNavClose.addEventListener('click', function() {
+        const icon = mobileMenuToggle.querySelector('i');
+        mobileMenuToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+        mobileNavOverlay.classList.remove('active');
+        document.body.classList.remove('mobile-menu-open');
+        icon.className = 'fas fa-bars';
     });
 }
 

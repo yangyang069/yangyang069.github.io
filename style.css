@@ -679,6 +679,33 @@ strong {
 .publications-section h2 #show-selected-link,
 .publications-section h2 #show-all-link {
     transition: color 0.3s ease, text-decoration 0.3s ease;
+    cursor: pointer;
+    color: #000000;
+    font-weight: 600;
+}
+
+/* 默认状态：show all by date 高亮 */
+.publications-section h2 #show-all-link:not(.inactive) {
+    color: #4b2e83;
+    text-decoration: underline;
+}
+
+.publications-section h2 #show-selected-link:hover,
+.publications-section h2 #show-all-link:hover {
+    text-decoration: underline;
+}
+
+.publications-section h2 #show-selected-link.active,
+.publications-section h2 #show-all-link.active {
+    color: #4b2e83;
+    text-decoration: underline;
+}
+
+/* 非活跃状态 */
+.publications-section h2 #show-selected-link.inactive,
+.publications-section h2 #show-all-link.inactive {
+    color: #000000;
+    text-decoration: none;
 }
 
 .publications-list {

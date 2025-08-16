@@ -47,9 +47,6 @@
                 margin-top: 20px;
             }
         }
-
-        
-
         /* 移动端适配 */
         @media (max-width: 768px) {
             .news-date {
@@ -90,32 +87,22 @@
             </div>
             <!-- 桌面端导航链接 -->
             <div class="nav-links desktop-nav">
-                <a href="#home"><i class="fas fa-home"></i> Home</a>
-                <a href="#publications"><i class="fas fa-file-alt"></i> Publications</a>
-                <a href="#projects"><i class="fas fa-code"></i> Projects</a>
-                <a href="#talks"><i class="fas fa-chalkboard-teacher"></i> Talks</a>
-                <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-                <a href="feed.xml" target="_blank"><i class="fas fa-rss"></i> RSS</a>
+                <a href="#home">Home</a>
+                <a href="#publications">Publications</a>
+                <a href="#projects">Projects</a>
+                <a href="#talks">Talks</a>
+                <a href="#education">Education</a>
+                <a href="feed.xml" target="_blank">RSS</a>
             </div>
         </div>
         <!-- 移动端侧边栏菜单 -->
         <div class="mobile-nav" id="mobileNav">
-            <div class="mobile-nav-profile">
-                <div class="mobile-nav-avatar">
-                    <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/profile.png" alt="Yang Yang">
-                </div>
-                <div class="mobile-nav-info">
-                    <h3 class="mobile-nav-name">Yang Yang</h3>
-                    <p class="mobile-nav-title">Computer Technology MS Student</p>
-                    <p class="mobile-nav-affiliation"><i class="fas fa-university" aria-hidden="true"></i>South-Central Minzu University</p>
-                </div>
-            </div>
-            <a href="#home"><i class="fas fa-home"></i> Home</a>
-            <a href="#publications"><i class="fas fa-file-alt"></i> Publications</a>
-            <a href="#projects"><i class="fas fa-code"></i> Projects</a>
-            <a href="#talks"><i class="fas fa-chalkboard-teacher"></i> Talks</a>
-            <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-            <a href="feed.xml" target="_blank"><i class="fas fa-rss"></i> RSS</a>
+            <a href="#home">Home</a>
+            <a href="#publications">Publications</a>
+            <a href="#projects">Projects</a>
+            <a href="#talks">Talks</a>
+            <a href="#education">Education</a>
+            <a href="feed.xml" target="_blank">RSS</a>
         </div>
     </nav>
 
@@ -225,8 +212,7 @@
                             alt="CGI 2024 Paper">
                     </div>
                     <div class="pub-content">
-                        <h3><a href="https://doi.org/10.1007/978-3-031-82024-3_8" target="_blank">An Improved
-                                YOLOv8-Based Rice Pest and Disease Detection Method</a></h3>
+                        <h3>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
                         <p class="authors">
                             <strong>Yang Yang</strong>, Jianlin Zhu*, Bo Yang, Xiao Zhang, Jin Huang
                         </p>
@@ -253,7 +239,7 @@
                         <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/mou.png" alt="The Visual Computer">
                     </div>
                     <div class="pub-content">
-                        <h3><a href="#" target="_blank">HSFPN-Det: An Effective Model for Detecting Rice Pests and Diseases</a></h3>
+                        <h3>HSFPN-Det: An Effective Model for Detecting Rice Pests and Diseases</h3>
                         <p class="authors">
                             <strong>Yang Yang</strong>, Yuxin Hong, Wenjie Yu, Xiao Zhang, Bo Yang, Meng Shi, Yangguang Sun, Jun Wang, Jianlin Zhu*
                         </p>
@@ -276,6 +262,78 @@
                 </div>
             </div>
         </section>
+
+        <script>
+        // 文章筛选功能
+        (function() {
+            let currentFilter = 'all';
+
+            function initFilter() {
+                const showAllLink = document.getElementById('show-all-link');
+                const showSelectedLink = document.getElementById('show-selected-link');
+                const publications = document.querySelectorAll('.publications-section .publication-item');
+
+                if (!showAllLink || !showSelectedLink) return;
+
+                function updateView() {
+                    if (currentFilter === 'selected') {
+                        // 只显示第一篇文章
+                        publications.forEach((pub, index) => {
+                            pub.style.display = index === 0 ? 'flex' : 'none';
+                        });
+                        // 设置选中状态
+                        showSelectedLink.classList.add('active');
+                        showSelectedLink.classList.remove('inactive');
+                        showAllLink.classList.add('inactive');
+                        showAllLink.classList.remove('active');
+                        // 清除内联样式
+                        showSelectedLink.style.color = '';
+                        showSelectedLink.style.textDecoration = '';
+                        showAllLink.style.color = '';
+                        showAllLink.style.textDecoration = '';
+                    } else {
+                        // 显示所有文章
+                        publications.forEach(pub => {
+                            pub.style.display = 'flex';
+                        });
+                        // 设置选中状态
+                        showAllLink.classList.add('active');
+                        showAllLink.classList.remove('inactive');
+                        showSelectedLink.classList.add('inactive');
+                        showSelectedLink.classList.remove('active');
+                        // 清除内联样式
+                        showSelectedLink.style.color = '';
+                        showSelectedLink.style.textDecoration = '';
+                        showAllLink.style.color = '';
+                        showAllLink.style.textDecoration = '';
+                    }
+                }
+
+                showSelectedLink.onclick = function(e) {
+                    e.preventDefault();
+                    currentFilter = 'selected';
+                    updateView();
+                    return false;
+                };
+
+                showAllLink.onclick = function(e) {
+                    e.preventDefault();
+                    currentFilter = 'all';
+                    updateView();
+                    return false;
+                };
+
+                // 不需要初始化调用，CSS已经设置了默认状态
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initFilter);
+            } else {
+                initFilter();
+            }
+        })();
+        </script>
+
         <!-- Research Projects Section -->
         <section class="research-projects-section" id="projects">
             <h2>💻 Projects</h2>

@@ -164,6 +164,11 @@ function setupMobileMenu() {
     const mobileNavClose = document.getElementById('mobileNavClose');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
+    // 检查必要元素是否存在
+    if (!mobileMenuToggle || !mobileNav || !mobileNavOverlay) {
+        return;
+    }
+
     // 汉堡菜单点击事件
     mobileMenuToggle.addEventListener('click', function() {
         const icon = mobileMenuToggle.querySelector('i');
@@ -255,123 +260,20 @@ function setupMobileMenu() {
         icon.className = 'fas fa-bars';
     });
 
-    // 点击关闭按钮关闭菜单
-    mobileNavClose.addEventListener('click', function() {
-        const icon = mobileMenuToggle.querySelector('i');
-        mobileMenuToggle.classList.remove('active');
-        mobileNav.classList.remove('active');
-        mobileNavOverlay.classList.remove('active');
-        document.body.classList.remove('mobile-menu-open');
-        icon.className = 'fas fa-bars';
-    });
+    // 点击关闭按钮关闭菜单（如果存在的话）
+    if (mobileNavClose) {
+        mobileNavClose.addEventListener('click', function() {
+            const icon = mobileMenuToggle.querySelector('i');
+            mobileMenuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.classList.remove('mobile-menu-open');
+            icon.className = 'fas fa-bars';
+        });
+    }
 }
 
-// 文章筛选功能
-function setupPublicationFilter() {
-    const showSelectedLink = document.getElementById('show-selected-link');
-    const showAllLink = document.getElementById('show-all-link');
-    const publicationItems = document.querySelectorAll('.publications-section .publication-item');
 
-    let isShowingSelected = false; // 默认显示所有文章
-
-    // 定义精选文章的索引（从0开始）
-    const selectedIndices = [0]; // 第一篇文章为精选
-
-    // 更新UI状态
-    function updateUI() {
-        if (isShowingSelected) {
-            // 显示精选模式：show selected 是当前状态，show all by date 是链接
-            showSelectedLink.style.color = '#4b2e83';
-            showSelectedLink.style.cursor = 'default';
-            showSelectedLink.style.textDecoration = 'none';
-
-            showAllLink.style.color = '';
-            showAllLink.style.cursor = 'pointer';
-            showAllLink.style.textDecoration = 'none';
-        } else {
-            // 显示全部模式：show all by date 是当前状态，show selected 是链接
-            showAllLink.style.color = '#4b2e83';
-            showAllLink.style.cursor = 'default';
-            showAllLink.style.textDecoration = 'none';
-
-            showSelectedLink.style.color = '';
-            showSelectedLink.style.cursor = 'pointer';
-            showSelectedLink.style.textDecoration = 'none';
-        }
-    }
-
-    // 显示精选文章
-    function showSelectedPublications() {
-        publicationItems.forEach((item, index) => {
-            if (selectedIndices.includes(index)) {
-                item.style.display = 'flex';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-        isShowingSelected = true;
-        updateUI();
-    }
-
-    // 显示所有文章
-    function showAllPublications() {
-        publicationItems.forEach(item => {
-            item.style.display = 'flex';
-        });
-        isShowingSelected = false;
-        updateUI();
-    }
-
-    // 点击事件
-    showSelectedLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (!isShowingSelected) {
-            showSelectedPublications();
-        }
-    });
-
-    showAllLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (isShowingSelected) {
-            showAllPublications();
-        }
-    });
-
-    // 悬停效果
-    showSelectedLink.addEventListener('mouseenter', function() {
-        if (!isShowingSelected) {
-            this.style.textDecoration = 'underline';
-        }
-    });
-
-    showSelectedLink.addEventListener('mouseleave', function() {
-        this.style.textDecoration = 'none';
-    });
-
-    showAllLink.addEventListener('mouseenter', function() {
-        if (isShowingSelected) {
-            this.style.textDecoration = 'underline';
-        }
-    });
-
-    showAllLink.addEventListener('mouseleave', function() {
-        this.style.textDecoration = 'none';
-    });
-
-    // 初始化
-    showAllPublications();
-}
-
-// 页面加载完成后执行
-document.addEventListener('DOMContentLoaded', function () {
-    updateLastCommitDate();
-    setupSmoothScrolling();
-    handleScroll();
-    handleNavbarScroll();
-    setupMobileMenu();
-    disableUnderReviewLinks();
-    setupPublicationFilter();
-});
 
 // 禁用包含“Under Review”的条目的链接（标题和 pub-links）
 function disableUnderReviewLinks() {
@@ -394,9 +296,21 @@ function disableUnderReviewLinks() {
     });
 }
 
+// 页面加载完成后执行
+document.addEventListener('DOMContentLoaded', function () {
+    updateLastCommitDate();
+    setupSmoothScrolling();
+    handleScroll();
+    handleNavbarScroll();
+    setupMobileMenu();
+    disableUnderReviewLinks();
+});
+
 // 回到顶部按钮功能
 document.addEventListener('DOMContentLoaded', function () {
     const backToTopButton = document.getElementById('backToTop');
+
+    if (!backToTopButton) return;
 
     // 监听滚动事件
     window.addEventListener('scroll', function () {

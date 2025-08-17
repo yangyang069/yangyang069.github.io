@@ -630,6 +630,7 @@ body::after {
     width: 284px;
     height: 156px;
     align-self: center;
+    position: relative;
 }
 
 .pub-image img {
@@ -707,6 +708,7 @@ body::after {
     width: 284px;
     height: 156px;
     align-self: center;
+    position: relative;
 }
 
 .project-image img {
@@ -780,6 +782,7 @@ body::after {
     width: 284px;
     height: 156px;
     align-self: center;
+    position: relative;
 }
 
 .talk-image img {
@@ -788,6 +791,55 @@ body::after {
     object-fit: cover;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge styles for publications, projects, and talks */
+.image-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    border-radius: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #2c5aa0;
+}
+
+.badge-publication {
+    background-color: #0342a0;
+}
+
+.badge-project {
+    background-color: #0342a0;
+}
+
+.badge-talk {
+    background-color: #0342a0;
+}
+
+/* Mobile responsive badge styles */
+@media (max-width: 768px) {
+    .image-badge {
+        font-size: 10px;
+        padding: 3px 6px;
+        top: 6px;
+        left: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-badge {
+        font-size: 9px;
+        padding: 2px 5px;
+        top: 4px;
+        left: 4px;
+        border-radius: 0;
+    }
 }
 
 .talk-content {

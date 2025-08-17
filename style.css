@@ -800,7 +800,7 @@ body::after {
     left: 8px;
     padding: 4px 8px;
     border-radius: 0;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     color: white;
     text-transform: uppercase;
@@ -808,18 +808,25 @@ body::after {
     z-index: 10;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-color: #2c5aa0;
+    /* 文字垂直对齐 */
+    display: flex;
+    align-items: center;
 }
 
 .badge-publication {
-    background-color: #0342a0;
+    height: 18px;
+    background-color: #002D72;
+    
 }
 
 .badge-project {
-    background-color: #0342a0;
+    height: 18px;
+    background-color: #002D72;
 }
 
 .badge-talk {
-    background-color: #0342a0;
+    height: 18px;
+    background-color: #002D72;
 }
 
 /* Mobile responsive badge styles */

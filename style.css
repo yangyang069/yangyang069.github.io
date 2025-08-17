@@ -1385,6 +1385,13 @@ strong {
         width: 140px;
         height: 140px;
     }
+
+    /* 隐藏publications、projects、talks部分的图片 */
+    .pub-image,
+    .project-image,
+    .talk-image {
+        display: none;
+    }
 }
 
 /* 特定宽度820px左右的布局调整 */
@@ -1475,7 +1482,6 @@ strong {
     .publication-item,
     .project-item,
     .talk-item {
-        flex-direction: column;
         gap: 15px;
         text-align: center;
 
@@ -1637,7 +1643,6 @@ strong {
 
     .publication-item,
     .project-item {
-        flex-direction: column;
         gap: 12px;
         margin-bottom: 20px;
         padding: 12px 0;

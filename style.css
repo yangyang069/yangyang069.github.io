@@ -27,7 +27,7 @@ html {
 }
 
 .nav-title a {
-    color: #fff;
+    color: #2c5aa0;
     font-size: var(--font-size-2xl);
     font-weight: bold;
     text-decoration: none;
@@ -76,7 +76,7 @@ html {
 }
 
 .mobile-menu-toggle i {
-    color: #fff;
+    color: #2c5aa0;
     font-size: 20px;
     transition: transform 0.3s ease;
 }
@@ -289,7 +289,7 @@ body.mobile-menu-open {
 
 /* 导航链接样式 */
 .nav-links a {
-    color: #fff;
+    color: #2c5aa0;
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 3px;
@@ -332,7 +332,7 @@ body.mobile-menu-open {
 }
 
 /* 移动端导航栏样式 */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .top-nav {
         background-color: #4b2e83;
     }
@@ -623,7 +623,7 @@ body::after {
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #eee;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .publication-item:last-child {
@@ -634,7 +634,7 @@ body::after {
     flex: 0 0 284px;
     width: 284px;
     height: 156px;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .pub-image img {
@@ -697,7 +697,7 @@ body::after {
     margin-bottom: 25px;
     padding-bottom: 20px;
     border-bottom: 1px solid #eee;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .project-item:last-child {
@@ -708,7 +708,7 @@ body::after {
     flex: 0 0 284px;
     width: 284px;
     height: 156px;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .project-image img {
@@ -770,7 +770,7 @@ body::after {
     margin-bottom: 25px;
     padding-bottom: 20px;
     border-bottom: 1px solid #eee;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .talk-item:last-child {
@@ -781,7 +781,7 @@ body::after {
     flex: 0 0 284px;
     width: 284px;
     height: 156px;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .talk-image img {
@@ -850,14 +850,6 @@ body::after {
 .education-item:last-child {
     border-bottom: none;
 }
-
-.edu-period {
-    flex: 0 0 120px;
-    font-size: var(--font-size-base);
-    font-weight: bold;
-    color: #2c5aa0;
-}
-
 .edu-content {
     flex: 1;
 }
@@ -954,8 +946,8 @@ p {
 }
 
 a {
-    color: #673ab7;
-    text-decoration: none;
+    color: #2c5aa0;
+    text-decoration: underline;
 }
 
 a:hover {
@@ -1092,7 +1084,7 @@ strong {
 .news-date {
     flex: 0 0 auto;
     /* 改为自动宽度 */
-    color: #673ab7;
+    color: #2c5aa0;
     font-weight: bold;
     padding-right: 5px;
     /* 添加少量右内边距 */
@@ -1183,7 +1175,7 @@ strong {
 .edu-period {
     flex: 0 0 100px;
     font-weight: bold;
-    color: #673ab7;
+    color: #2c5aa0;
     font-size: 0.9rem;
 }
 
@@ -1205,7 +1197,6 @@ strong {
 
 /* Footer */
 .main-footer {
-    margin-top: 40px;
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid #eee;
@@ -1360,7 +1351,57 @@ strong {
     }
 }
 
-@media (max-width: 768px) {
+/* 特定宽度820px左右的布局调整 */
+@media (max-width: 900px) and (min-width: 769px) {
+    .publication-item,
+    .project-item,
+    .talk-item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eee;
+        align-items: stretch; /* 确保子元素拉伸到相同宽度 */
+        text-align: left;
+    }
+
+    .pub-image,
+    .project-image,
+    .talk-image {
+        width: 100%;
+        height: auto;
+        flex: none; /* 防止flex收缩 */
+        margin: 0; /* 移除所有margin */
+        padding: 0; /* 移除所有padding */
+        box-sizing: border-box; /* 确保box-sizing一致 */
+    }
+
+    .pub-image img,
+    .project-image img,
+    .talk-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: block; /* 移除img默认的inline间距 */
+    }
+
+    .pub-content,
+    .project-content,
+    .talk-content {
+        width: 100%;
+        flex: none; /* 防止flex收缩 */
+        margin: 0; /* 移除所有margin */
+        padding: 0; /* 移除所有padding */
+        box-sizing: border-box; /* 确保box-sizing一致 */
+        text-align: left;
+    }
+}
+
+
+@media (max-width: 900px) {
     .main-layout {
         flex-direction: column;
         gap: 20px;
@@ -1400,6 +1441,7 @@ strong {
         flex-direction: column;
         gap: 15px;
         text-align: center;
+
     }
 
     .pub-image,
@@ -1447,11 +1489,11 @@ strong {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
     .top-nav,
     .top-nav.scrolled {
-        background-color: #4b2e83 !important;
+        background-color: #fff;
     }
 
     .container {
@@ -1531,11 +1573,10 @@ strong {
     .publication-item,
     .project-item {
         flex-direction: column;
-        gap: 10px;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
+        gap: 12px;
+        margin-bottom: 20px;
+        padding: 12px 0;
         border-bottom: 1px solid #eaeaea;
-        align-items: center;
     }
 
     .publication-item:last-child,
@@ -1585,7 +1626,7 @@ strong {
     .edu-period {
         flex: none;
         font-size: 1rem;
-        color: #673ab7;
+        color: #2c5aa0;
         font-weight: bold;
         margin-bottom: 0;
         order: 1;
@@ -1632,7 +1673,7 @@ strong {
 
     .news-date {
         min-width: auto;
-        color: #673ab7;
+        color: #2c5aa0;
         font-size: 18px;
         font-weight: bold;
     }
@@ -1753,7 +1794,8 @@ strong {
 
     h3 {
         font-size: 1.1rem;
-        line-height: 1.2;
+        line-height: 1.3;
+        margin-bottom: 8px;
     }
 
     .profile-section {
@@ -1868,25 +1910,27 @@ strong {
 
     .pub-content,
     .project-content {
-        padding: 0;
+        padding: 8px 0;
         text-align: left;
         display: block;
     }
 
     .authors {
-        font-size: 0.9rem;
-        margin-bottom: 2px;
+        font-size: 1rem;
+        margin-bottom: 4px;
+        line-height: 1.4;
     }
 
     .venue {
-        font-size: 0.9rem;
-        margin-bottom: 4px;
+        font-size: 1rem;
+        margin-bottom: 6px;
+        line-height: 1.4;
     }
 
     .pub-description,
     .project-content p {
         font-size: 16px;
-        line-height: 1.2;
+        line-height: 1.4;
     }
 
     .pub-links {
@@ -1897,6 +1941,7 @@ strong {
     .project-links a {
         margin-right: 0;
         font-size: 16px;
+        line-height: 1.4;
     }
 
     .education-item {
@@ -1973,6 +2018,25 @@ strong {
     .copy-citation-link {
         font-size: 14px;
     }
+
+    /* 改善publication内容在小屏幕上的显示 */
+    .pub-content h3 {
+        font-size: 1.1rem;
+        line-height: 1.3;
+        margin-bottom: 8px;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .publication-item {
+        margin-bottom: 25px;
+        padding: 15px 0;
+    }
+
+    .pub-links {
+        margin-top: 8px;
+        gap: 8px;
+    }
 }
 
 /* Print Styles */
@@ -1992,7 +2056,7 @@ strong {
 }
 
 /* 滚动和交互体验优化 */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     html {
         scroll-behavior: smooth;
     }
@@ -2036,7 +2100,7 @@ strong {
 /* 确保导航栏在所有情况下都保持深蓝色背景 */
 .top-nav,
 .top-nav.scrolled {
-    background-color: #4b2e83 !important;
+    background-color: #fff !important;
 }
 
 /* 会议或期刊等级样式 */
@@ -2112,7 +2176,7 @@ strong {
     font-size: 28px;
     font-weight: bold;
     margin: 10px 0;
-    color: #2e0e5f;
+    color: #2C5AA0;
     text-align: center;
     width: 100%;
 }
@@ -2175,7 +2239,7 @@ strong {
 
 
 /* 移动端适配 */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .social-icons {
         gap: 15px;
     }

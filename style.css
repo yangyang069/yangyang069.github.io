@@ -919,26 +919,6 @@ body::after {
     font-style: italic;
 }
 
-/* Services Section */
-.services-content h4 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.services-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.services-content li {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-    line-height: 1.4;
-}
-
 /* Typography - 统一字体大小系统 */
 :root {
     --font-size-xs: 14px;      /* 极小文字 */
@@ -1191,6 +1171,34 @@ strong {
 /* Education Section */
 .education-section {
     margin-bottom: 30px;
+}
+
+/* Education Info Container */
+.edu-info-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.edu-logo {
+    flex-shrink: 0;
+}
+
+/* University Logo */
+.university-logo {
+    width: 120px;
+    height: 120px;
+    display: block;
+    object-fit: contain;
+}
+
+.edu-details {
+    flex: 1;
+}
+
+.edu-details h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .edu-period {
@@ -1522,6 +1530,18 @@ strong {
         margin-bottom: 8px;
         font-size: 14px;
         display: inline-block;
+    }
+
+    .edu-info-container {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 15px;
+    }
+
+    .university-logo {
+        width: 80px;
+        height: 80px;
     }
 
     .news-item {
@@ -2034,6 +2054,18 @@ strong {
     .edu-content {
         margin-top: 0;
         padding: 15px;
+    }
+
+    .edu-info-container {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 10px;
+    }
+
+    .university-logo {
+        width: 60px;
+        height: 60px;
     }
 
     .edu-content h3 {

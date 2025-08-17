@@ -919,7 +919,8 @@ body::after {
     content: '';
     position: absolute;
     left: -8px;
-    top: 8px;
+    top: 50%;
+    transform: translateY(-50%); /* 垂直居中 */
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -1258,7 +1259,8 @@ strong {
 .edu-period {
     position: absolute;
     left: -140px; /* 调整到更左边，避免遮挡 */
-    top: 8px;
+    top: 50%;
+    transform: translateY(-50%); /* 垂直居中 */
     width: 120px; /* 增加宽度 */
     font-weight: bold;
     color: #2c5aa0;
@@ -1579,6 +1581,8 @@ strong {
 
     .education-item::before {
         left: 4px;
+        top: 50%;
+        transform: translateY(-50%); /* 垂直居中 */
         width: 10px;
         height: 10px;
     }
@@ -1755,6 +1759,8 @@ strong {
 
     .education-item::before {
         left: 2px;
+        top: 50%;
+        transform: translateY(-50%); /* 垂直居中 */
         width: 8px;
         height: 8px;
     }
@@ -1771,7 +1777,7 @@ strong {
     }
 
     .edu-content {
-        margin-top: 0;
+        margin-top: -30px;
     }
 
     .edu-content h3 {
@@ -2097,6 +2103,8 @@ strong {
 
     .education-item::before {
         left: 1px;
+        top: 50%;
+        transform: translateY(-50%); /* 垂直居中 */
         width: 6px;
         height: 6px;
     }
@@ -2111,7 +2119,7 @@ strong {
     }
 
     .edu-content {
-        margin-top: 0;
+        margin-top: -30px;
         padding: 15px;
     }
 

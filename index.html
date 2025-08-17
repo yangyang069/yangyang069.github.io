@@ -138,42 +138,47 @@
                 </section>
                 <!-- Publications Section -->
                 <section class="publications-section" id="publications">
-                    <h2>Publications</h2>
+                    <h2>Publications
+                        (
+                            <span id="show-all-link" class="active">show all by date</span> /
+                            <span id="show-selected-link">show selected</span>
+                        )
+                    </h2>
                     <div class="publications-list">
                         <!-- Publication 1 -->
-                        <div class="publication-item">
+                        <div class="publication-item" data-date="2024-12" data-status="accepted">
                             <div class="pub-image">
                                 <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/cgi.png" alt="Publication Image">
                             </div>
                             <div class="pub-content">
                                 <h3>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
-                                <p class="authors"><b>Yang Yang</b>, Jianlin Zhu*, Bo Yang, Xiao Zhang, Jin Huang (*Corresponding authors)</p>
-                                <p class="venue">International Conference on Computer Graphics (<b>CGI</b>), 2024</p>
+                                <p class="authors"><b class="first-author">Yang Yang</b>, Jianlin Zhu*, Bo Yang, Xiao Zhang, Jin Huang (*Corresponding authors)</p>
+                                <p class="venue">International Conference on Computer Graphics (<b class="first-author">CGI</b>), 2024</p>
                                 <div class="pub-links">
                                     <a href="https://yangyang.wiki/pdf/978-3-031-82024-3_8.pdf">[paper]</a>
                                     <a href="https://github.com/Louaq/CGI2024">[code]</a>
                                     <a href="https://drive.google.com/file/d/1UJcbH2cKLstZdyEJPGv_Hb3GP06MYJff/view?usp=sharing">[dataset]</a>
                                     <a href="bibtex.html">[bibtex]</a>
-                                    <span style="color: red;font-style: italic;">CCF C</span>
+                                    <span class="venue-rank" style="color: red;font-style: italic;">CCF C</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Publication 2 -->
-                        <div class="publication-item">
+                        <div class="publication-item" data-date="2024-10" data-status="under-review">
                             <div class="pub-image">
                                 <img src="https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/mou.png" alt="Publication Image">
                             </div>
                             <div class="pub-content">
                                 <h3>HSFPN-Det: An Effective Model for Detecting Rice Pests and Diseases</h3>
-                                <p class="authors"><b>Yang Yang</b>, Yuxin Hong, Wenjie Yu, Xiao Zhang, Bo Yang, Meng Shi, Yangguang Sun, Jun Wang, Jianlin Zhu* (*Corresponding authors)</p>
-    
+                                <p class="authors"><b class="first-author">Yang Yang</b>, Yuxin Hong, Wenjie Yu, Xiao Zhang, Bo Yang, Meng Shi, Yangguang Sun, Jun Wang, Jianlin Zhu* (*Corresponding authors)</p>
+                                <p class="venue">The Visual Computer (<b class="first-author">TVC</b>), 2024</p>
                                 <div class="pub-links">
                                     <a href="#">[paper]</a>
                                     <a href="#">[code]</a>
                                     <a href="#">[dataset]</a>
                                     <a href="#">[bibtex]</a>
-                                    <span style="color: red;font-style: italic;">Under Review</span>
+                                    <span class="venue-rank" style="color: red;font-style: italic;">Under Review</span>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +196,7 @@
                             </div>
                             <div class="project-content">
                                 <h3>Rice Pest and Disease Detection System</h3>
-                                <p class="authors"><strong>Yang Yang</strong>, Jianlin Zhu, Bo Yang, Xiao Zhang, Jin Huang</p>
+                                
                                 <p class="project-description">An intelligent system for automated detection and classification of rice pests and diseases using deep learning techniques.</p>
                                 <div class="project-links">
                                     <a href="https://github.com/Louaq/CGI2024">[code]</a>
@@ -210,7 +215,7 @@
                             </div>
                             <div class="project-content">
                                 <h3>SimpleTex-OCR TypeScript Version</h3>
-                                <p class="authors"><strong>Yang Yang</strong></p>
+                                
                                 <p class="project-description">A modern LaTeX formula recognition desktop application built with TypeScript and Electron.</p>
                                 <div class="project-links">
                                     <a href="https://github.com/Louaq/SimpleTex-OCR">[code]</a>
@@ -234,7 +239,7 @@
                             </div>
                             <div class="talk-content">
                                 <h3>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</h3>
-                                <p class="talk-venue">International Conference on Computer Graphics (<b>CGI</b>), 2024</p>
+                                <p class="talk-venue">International Conference on Computer Graphics (<b class="first-author">CGI</b>), 2024</p>
                                 <p class="talk-description">Presented our novel approach for rice pest and disease detection using improved YOLOv8 architecture.</p>
                                 <div class="talk-links">
                                     <a href="https://drive.google.com/file/d/1MYGWupPT0zrqpIpRvBc7m3qs2gzznOiw/view?usp=drive_link">[video]</a>

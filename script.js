@@ -271,23 +271,9 @@ function setupMobileMenu() {
         document.body.classList.remove('mobile-menu-open');
         icon.className = 'fas fa-bars';
     });
-
-    // 点击关闭按钮关闭菜单（如果存在的话）
-    if (mobileNavClose) {
-        mobileNavClose.addEventListener('click', function() {
-            const icon = mobileMenuToggle.querySelector('i');
-            mobileMenuToggle.classList.remove('active');
-            mobileNav.classList.remove('active');
-            mobileNavOverlay.classList.remove('active');
-            document.body.classList.remove('mobile-menu-open');
-            icon.className = 'fas fa-bars';
-        });
-    }
 }
 
-
-
-// 禁用包含“Under Review”的条目的链接（标题和 pub-links）
+// 禁用包含"Under Review"的条目的链接（标题和 pub-links）
 function disableUnderReviewLinks() {
     document.querySelectorAll('.publication-item').forEach(item => {
         const hasUnderReview = item.querySelector('.venue-rank')?.textContent.trim().toLowerCase() === 'under review';
@@ -308,6 +294,78 @@ function disableUnderReviewLinks() {
     });
 }
 
+// Publications 过滤和排序功能
+function setupPublicationsFilter() {
+    const showSelectedLink = document.getElementById('show-selected-link');
+    const showAllLink = document.getElementById('show-all-link');
+    const publicationsList = document.querySelector('.publications-list');
+
+    if (!showSelectedLink || !showAllLink || !publicationsList) return;
+
+    // 获取所有publication项目
+    const allPublications = Array.from(document.querySelectorAll('.publication-item'));
+
+    // 显示已接收的文章（没有under review标志）
+    function showSelectedPublications() {
+        // 清空列表
+        publicationsList.innerHTML = '';
+
+        // 过滤已接收的文章
+        const acceptedPublications = allPublications.filter(item => {
+            return item.dataset.status === 'accepted';
+        });
+
+        // 按日期排序（最新的在前）
+        acceptedPublications.sort((a, b) => {
+            const dateA = new Date(a.dataset.date + '-01');
+            const dateB = new Date(b.dataset.date + '-01');
+            return dateB - dateA;
+        });
+
+        // 添加到列表
+        acceptedPublications.forEach(item => {
+            publicationsList.appendChild(item);
+        });
+
+        // 更新链接状态
+        showSelectedLink.classList.add('active');
+        showSelectedLink.classList.remove('inactive');
+        showAllLink.classList.remove('active');
+        showAllLink.classList.add('inactive');
+    }
+
+    // 显示所有文章，按时间排序
+    function showAllPublications() {
+        // 清空列表
+        publicationsList.innerHTML = '';
+
+        // 按日期排序（最新的在前）
+        const sortedPublications = [...allPublications].sort((a, b) => {
+            const dateA = new Date(a.dataset.date + '-01');
+            const dateB = new Date(b.dataset.date + '-01');
+            return dateB - dateA;
+        });
+
+        // 添加到列表
+        sortedPublications.forEach(item => {
+            publicationsList.appendChild(item);
+        });
+
+        // 更新链接状态
+        showAllLink.classList.add('active');
+        showAllLink.classList.remove('inactive');
+        showSelectedLink.classList.remove('active');
+        showSelectedLink.classList.add('inactive');
+    }
+
+    // 绑定点击事件
+    showSelectedLink.addEventListener('click', showSelectedPublications);
+    showAllLink.addEventListener('click', showAllPublications);
+
+    // 默认显示所有文章
+    showAllPublications();
+}
+
 // 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', function () {
     updateLastCommitDate();
@@ -316,6 +374,7 @@ document.addEventListener('DOMContentLoaded', function () {
     handleNavbarScroll();
     setupMobileMenu();
     disableUnderReviewLinks();
+    setupPublicationsFilter();
 });
 
 // 回到顶部按钮功能

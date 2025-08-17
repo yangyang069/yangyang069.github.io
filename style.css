@@ -534,15 +534,45 @@ body::after {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     margin-top: 20px;
 }
 
 .social-icons a {
-    color: #2c5aa0;
-    font-size: var(--font-size-lg);
-    transition: color 0.3s ease;
+    color: #495057;
+    font-size: 24px;
     text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons a:hover {
+    transform: translateY(-2px);
+}
+
+/* 学术平台专用颜色 */
+.social-icons a[href*="mailto"]:hover {
+    color: #dc3545;
+}
+
+.social-icons a[href*="scholar.google"]:hover {
+    color: #4285f4;
+}
+
+.social-icons a[href*="github"]:hover {
+    color: #24292e;
+}
+
+.social-icons a[href*="orcid"]:hover {
+    color: #a6ce39;
+}
+
+.social-icons a[href*="researchgate"]:hover {
+    color: #0cb755;
 }
 /* Right Content */
 .right-content {
@@ -910,7 +940,6 @@ body::after {
 .education-item {
     position: relative;
     margin-bottom: 30px;
-    padding-left: 25px;
     background: #fff;
 }
 
@@ -1764,6 +1793,7 @@ strong {
         width: 8px;
         height: 8px;
     }
+    
 
     .edu-period {
         position: static;
@@ -2414,25 +2444,23 @@ strong {
 /* 移动端适配 */
 @media (max-width: 900px) {
     .social-icons {
-        gap: 15px;
+        gap: 16px;
     }
 
     .social-icons a {
-        width: 32px;
-        height: 32px;
-        font-size: 32px;
+        font-size: 22px;
+        padding: 6px;
     }
 }
 
 @media (max-width: 480px) {
     .social-icons {
-        gap: 12px;
+        gap: 14px;
     }
 
     .social-icons a {
-        width: 28px;
-        height: 28px;
-        font-size: 28px;
+        font-size: 20px;
+        padding: 5px;
     }
 }
 

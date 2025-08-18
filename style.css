@@ -517,37 +517,13 @@ body::after {
     justify-content: center;
     font-weight: 500;
 }
-
 .social-icons a:hover {
-    transform: translateY(-1px);
     text-decoration: underline;
 }
-
 .social-icons .separator {
     color: #999;
     font-weight: normal;
     user-select: none;
-}
-
-/* 学术平台专用颜色 */
-.social-icons a[href*="mailto"]:hover {
-    color: #dc3545;
-}
-
-.social-icons a[href*="scholar.google"]:hover {
-    color: #4285f4;
-}
-
-.social-icons a[href*="github"]:hover {
-    color: #24292e;
-}
-
-.social-icons a[href*="orcid"]:hover {
-    color: #a6ce39;
-}
-
-.social-icons a[href*="researchgate"]:hover {
-    color: #0cb755;
 }
 /* Right Content */
 .right-content {
@@ -1053,7 +1029,7 @@ strong {
 }
 
 .news-list {
-    max-height: 390px;
+    max-height: 500px;
     /* 设置最大高度，超出部分显示滚动条 */
     overflow-y: auto;
     /* 垂直滚动 */
@@ -1094,21 +1070,6 @@ strong {
     /* 移除单独的水平滚动 */
 }
 
-/* 自定义滚动条样式 */
-.news-list::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-
-.news-list::-webkit-scrollbar-thumb {
-    background-color: #c1c1c1;
-    border-radius: 3px;
-}
-
-.news-list::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-}
 
 /* Publications Section */
 .publications-section {
@@ -2308,13 +2269,6 @@ strong {
     text-decoration: none;
     font-weight: 500;
 }
-
-.social-icons a:hover {
-    text-decoration: underline;
-    transform: translateY(-1px);
-}
-
-
 /* 移动端适配 */
 @media (max-width: 900px) {
     .social-icons {

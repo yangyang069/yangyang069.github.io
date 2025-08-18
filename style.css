@@ -852,57 +852,75 @@ body::after {
     text-decoration: underline;
 }
 
-/* Education Section - Timeline Style */
+/* Education Section - Reference Style */
 .education-list {
     margin: 0;
-    position: relative;
-    padding-left: 106.52px; /* 增加左边距为时间标签留出空间 */
+    padding: 0;
 }
 
 .education-item {
-    position: relative;
-    margin-bottom: 30px;
-    background: #fff;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 15px 0;
 }
 
 .education-item:last-child {
     margin-bottom: 0;
+    border-bottom: none;
+}
+
+.edu-logo {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.university-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
 }
 
 .edu-content {
-    border-radius: 8px;
-    padding: 20px;
-}
-
-
-.edu-content h3 {
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #2c5aa0;
-    line-height: 1.3;
+    flex: 1;
+    margin-right: 20px;
 }
 
 .edu-institution {
-    color: #333;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-.edu-advisor {
-    color: #666;
-    margin-bottom: 6px;
-}
-
-.edu-focus {
-    color: #666;
-    margin-bottom: 6px;
-    font-style: italic;
-}
-
-.edu-achievement {
-    color: #666;
+    font-weight: bold;
+    color: #000;
     margin-bottom: 4px;
-    font-style: italic;
+    font-size: 14.4px;
+}
+
+.edu-department {
+    color: #000;
+    margin-bottom: 4px;
+    font-size: 14.4px;
+}
+
+.edu-degree {
+    color: #000;
+    font-weight: 500;
+    font-size: 14.4px;
+}
+
+.edu-period {
+    flex-shrink: 0;
+    color: #000;
+    font-size: 14.4px;
+    text-align: right;
+    min-width: 120px;
+}
+
+/* 默认隐藏移动端日期 */
+.mobile-period {
+    display: none;
+}
+
+/* 显示桌面端日期 */
+.desktop-period {
+    display: block;
 }
 
 h2 {
@@ -1115,61 +1133,7 @@ strong {
     margin-bottom: 30px;
 }
 
-/* Education Info Container */
-.edu-info-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
 
-.edu-logo {
-    flex-shrink: 0;
-}
-
-/* University Logo */
-.university-logo {
-    width: 120px;
-    height: 120px;
-    display: block;
-    object-fit: contain;
-}
-
-.edu-details {
-    flex: 1;
-}
-
-.edu-details h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.edu-period {
-    position: absolute;
-    left: -140px; /* 调整到更左边，避免遮挡 */
-    top: 50%;
-    transform: translateY(-50%); /* 垂直居中 */
-    width: 120px; /* 增加宽度 */
-    font-weight: bold;
-    color: #2c5aa0;
-    text-align: right;
-    background: #fff;
-    padding: 4px 8px;
-    border-radius: 4px;
-}
-
-.edu-content {
-    flex: 1;
-}
-
-.edu-content h3 {
-    margin-bottom: 6px;
-    line-height: 1.3;
-}
-
-.edu-content p {
-    margin-bottom: 6px;
-    color: #000;
-}
 
 /* Footer */
 .main-footer {
@@ -1617,41 +1581,61 @@ strong {
         padding: 3px 6px;
     }
 
-    .education-list {
-        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
-    }
-
-    .education-list::before {
-        left: 8px;
-    }
-
     .education-item {
-        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
-        margin-bottom: 25px;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        padding: 15px 0;
+        gap: 12px;
     }
 
-    .education-item::before {
-        left: 2px;
-        top: 50%;
-        transform: translateY(-50%); /* 垂直居中 */
-        width: 8px;
-        height: 8px;
+    .edu-logo {
+        margin-right: 0;
+        margin-bottom: 0;
+        flex-shrink: 0;
     }
-    
 
-    .edu-period {
-        position: static;
-        width: auto;
-        text-align: left;
-        margin-bottom: 6px;
-        margin-left: 0; /* 确保与Education标题对齐 */
-        color: #2c5aa0;
-        font-weight: bold;
-        display: inline-block;
+    .university-logo {
+        width: 32px;
+        height: 32px;
     }
 
     .edu-content {
-        margin-top: -30px;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+        flex: 1;
+    }
+
+    .edu-institution {
+        font-size: 14.4px;
+        margin-bottom: 2px;
+    }
+
+    .edu-department {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+
+    .edu-degree {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .edu-period.desktop-period {
+        display: none;
+    }
+
+    .edu-period.mobile-period {
+        display: block;
+        text-align: left;
+        min-width: auto;
+        margin-bottom: 0;
+        margin-left: 0;
+        color: #000;
+        font-weight: normal;
+        font-size: 14.4px;
+        margin-top: 4px;
     }
 
     .edu-content h3 {
@@ -1944,52 +1928,37 @@ strong {
         line-height: 1.4;
     }
 
-    .education-list {
-        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
-    }
-
-    .education-list::before {
-        left: 6px;
-    }
-
     .education-item {
-        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
-        margin-bottom: 20px;
-        margin-left: -7px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        padding: 10px 0;
+        margin-left: 0;
     }
 
-    .education-item::before {
-        left: 1px;
-        top: 50%;
-        transform: translateY(-50%); /* 垂直居中 */
-        width: 6px;
-        height: 6px;
-    }
-
-    .edu-period {
-        position: static;
-        width: auto;
-        text-align: left;
-        margin-bottom: 4px;
-        margin-left: 0; /* 确保与Education标题对齐 */
-        display: inline-block;
-    }
-
-    .edu-content {
-        margin-top: -30px;
-        padding: 15px;
-    }
-
-    .edu-info-container {
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-        gap: 10px;
+    .edu-logo {
+        margin-right: 0;
+        margin-bottom: 8px;
     }
 
     .university-logo {
-        width: 60px;
-        height: 60px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .edu-content {
+        margin-right: 0;
+        margin-bottom: 6px;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .edu-period {
+        text-align: left;
+        min-width: auto;
+        margin-bottom: 0;
+        margin-left: 0;
+        display: block;
     }
 
     .visitor-counter {
@@ -2229,6 +2198,7 @@ strong {
     color: #000;
     text-align: center;
     width: 100%;
+    font-size: 16px;
 }
 
 .profile-location {
@@ -2293,6 +2263,61 @@ strong {
 
     .social-icons .separator {
         font-size: 10px;
+    }
+
+    /* 移动端教育部分样式 */
+    .education-item {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        padding: 12px 5px;
+        gap: 10px;
+    }
+
+    .edu-logo {
+        margin-right: 0;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .university-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .edu-content {
+        margin-right: 0;
+        margin-bottom: 0;
+        flex: 1;
+    }
+
+    .edu-institution {
+        font-size: 14.4px;
+        margin-bottom: 2px;
+    }
+
+    .edu-department {
+        font-size: 14.4px;
+        margin-bottom: 1px;
+    }
+
+    .edu-degree {
+        font-size: 14.4px;
+        margin-bottom: 0;
+    }
+
+    .edu-period.desktop-period {
+        display: none;
+    }
+
+    .edu-period.mobile-period {
+        display: block;
+        text-align: left;
+        min-width: auto;
+        font-size: 14.4px;
+        color: #000;
+        font-weight: normal;
+        margin-top: 3px;
     }
 }
 

@@ -1754,7 +1754,6 @@ strong {
 
 
     .visitor-counter {
-        transform: scale(0.8);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -2036,7 +2035,6 @@ strong {
     }
 
     .visitor-counter {
-        transform: scale(0.7);
         margin-bottom: 5px;
         text-align: center;
         display: flex;

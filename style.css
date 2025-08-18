@@ -882,39 +882,13 @@ body::after {
 .education-list {
     margin: 0;
     position: relative;
-    padding-left: 150px; /* 增加左边距为时间标签留出空间 */
-}
-
-/* Timeline vertical line */
-.education-list::before {
-    content: '';
-    position: absolute;
-    left: 135px; /* 调整时间线位置 */
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #2c5aa0;
+    padding-left: 106.52px; /* 增加左边距为时间标签留出空间 */
 }
 
 .education-item {
     position: relative;
     margin-bottom: 30px;
     background: #fff;
-}
-
-/* Timeline dot */
-.education-item::before {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 50%;
-    transform: translateY(-50%); /* 垂直居中 */
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #2c5aa0;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 2px #2c5aa0;
 }
 
 .education-item:last-child {
@@ -967,14 +941,6 @@ p {
     margin-bottom: 10px;
     text-align: justify;
 }
-
-/* 小屏幕设备优化：避免两端对齐导致的文字间距过大问题 */
-@media (max-width: 768px) {
-    p {
-        text-align: left;
-    }
-}
-
 a {
     color: #2c5aa0;
     text-decoration: none;
@@ -1251,11 +1217,14 @@ strong {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid #eee;
+    width: 100%;
 }
 
 .visitor-counter {
     display: inline-block;
     margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
 }
 
 .footer-links {
@@ -1286,13 +1255,17 @@ strong {
 
 .footer-info {
     margin-top: 10px;
+    text-align: center;
+    width: 100%;
 }
 
 .footer-info p {
     color: #666;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
     line-height: 1.5;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 /* Citation Modal */
@@ -1516,7 +1489,7 @@ strong {
     }
 
     .education-list {
-        padding-left: 20px;
+        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
     }
 
     .education-list::before {
@@ -1524,7 +1497,7 @@ strong {
     }
 
     .education-item {
-        padding-left: 20px;
+        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
     }
 
     .education-item::before {
@@ -1540,6 +1513,7 @@ strong {
         width: auto;
         text-align: left;
         margin-bottom: 8px;
+        margin-left: 0; /* 确保与Education标题对齐 */
         display: inline-block;
     }
 
@@ -1686,7 +1660,7 @@ strong {
     }
 
     .education-list {
-        padding-left: 15px;
+        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
     }
 
     .education-list::before {
@@ -1694,7 +1668,7 @@ strong {
     }
 
     .education-item {
-        padding-left: 18px;
+        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
         margin-bottom: 25px;
     }
 
@@ -1712,6 +1686,7 @@ strong {
         width: auto;
         text-align: left;
         margin-bottom: 6px;
+        margin-left: 0; /* 确保与Education标题对齐 */
         color: #2c5aa0;
         font-weight: bold;
         display: inline-block;
@@ -1780,14 +1755,39 @@ strong {
 
     .visitor-counter {
         transform: scale(0.8);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .footer-links {
         margin: 10px 0;
+        text-align: center;
     }
 
     .footer-follow {
         gap: 8px;
+        justify-content: center;
+    }
+
+    /* 中等屏幕页脚优化 */
+    .main-footer {
+        text-align: center !important;
+        padding: 20px 15px;
+    }
+
+    .footer-info {
+        text-align: center !important;
+        margin-top: 15px;
+    }
+
+    .footer-info p {
+        text-align: center !important;
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 0 auto;
+        word-wrap: break-word;
     }
 
     /* 移动端学校图标调整 */
@@ -1914,9 +1914,12 @@ strong {
     .news-list,
     .publications-list,
     .research-projects-section .projects-list,
-    .projects-list,
-    .education-list {
+    .projects-list {
         margin-left: 5px;
+    }
+
+    .education-list {
+        margin-left: 0; /* 教育列表与标题对齐 */
     }
 
     .news-item {
@@ -1986,7 +1989,7 @@ strong {
     }
 
     .education-list {
-        padding-left: 12px;
+        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
     }
 
     .education-list::before {
@@ -1994,7 +1997,7 @@ strong {
     }
 
     .education-item {
-        padding-left: 15px;
+        padding-left: 0; /* 移动端取消左边距，与标题对齐 */
         margin-bottom: 20px;
     }
 
@@ -2011,6 +2014,7 @@ strong {
         width: auto;
         text-align: left;
         margin-bottom: 4px;
+        margin-left: 0; /* 确保与Education标题对齐 */
         display: inline-block;
     }
 
@@ -2034,6 +2038,31 @@ strong {
     .visitor-counter {
         transform: scale(0.7);
         margin-bottom: 5px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* 小屏幕页脚优化 */
+    .main-footer {
+        text-align: center;
+        padding: 15px 5px;
+    }
+
+    .footer-info {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .footer-info p {
+        text-align: center;
+        font-size: 14.4px;
+        line-height: 1.5;
+        margin: 0 auto;
+        padding: 0 5px;
+        word-wrap: break-word;
+        hyphens: auto;
     }
 
     /* 移动端学校图标调整 */
@@ -2123,10 +2152,30 @@ strong {
         width: 100%;
         display: flex;
         justify-content: center;
+        text-align: center;
     }
 
     .visitor-counter>* {
         max-width: 100%;
+    }
+
+    /* 移动端页脚居中对齐 */
+    .main-footer {
+        text-align: center !important;
+        padding: 20px 10px;
+    }
+
+    .footer-info {
+        text-align: center !important;
+        margin-top: 15px;
+    }
+
+    .footer-info p {
+        text-align: center !important;
+        margin: 0 auto;
+        max-width: 100%;
+        word-wrap: break-word;
+        line-height: 1.6;
     }
 }
 
@@ -2331,18 +2380,7 @@ strong {
 /* 小屏幕设备文字对齐优化 - 统一处理所有两端对齐的文本 */
 @media (max-width: 768px) {
     /* 覆盖所有可能导致文字间距过大的两端对齐样式 */
-    .about-section p,
-    .publication-item p,
-    .project-item p,
-    .talk-item p,
-    .news-content,
-    .project-description,
-    .talk-description,
-    .authors,
-    .venue {
-        text-align: left !important;
-        text-align-last: left !important;
-    }
+ 
 
     /* 确保长段落文本在小屏幕上左对齐，但排除个人资料部分 */
     p:not(.profile-title):not(.profile-affiliation):not(.profile-location):not(.profile-email) {

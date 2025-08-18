@@ -1177,7 +1177,6 @@ strong {
 .main-footer {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #eee;
     width: 100%;
 }
 
@@ -1959,6 +1958,7 @@ strong {
     .education-item {
         padding-left: 0; /* 移动端取消左边距，与标题对齐 */
         margin-bottom: 20px;
+        margin-left: -7px;
     }
 
     .education-item::before {

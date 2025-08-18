@@ -708,7 +708,6 @@ body::after {
 .project-description {
     color: #000;
     margin-bottom: 6px;
-    line-height: 1.4;
 }
 
 .project-links {
@@ -836,7 +835,6 @@ body::after {
 .talk-description {
     color: #000;
     margin-bottom: 6px;
-    line-height: 1.4;
 }
 
 .talk-links {
@@ -1924,7 +1922,6 @@ strong {
 
     .authors {
         margin-bottom: 4px;
-        line-height: 1.4;
     }
 
     .venue {

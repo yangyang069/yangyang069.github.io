@@ -545,7 +545,7 @@ body::after {
 /* About Section */
 .about-section p {
     line-height: 1.6;
-    color: #555;
+    color: #000;
     text-align: justify;
 }
 
@@ -593,7 +593,7 @@ body::after {
 
 .news-content {
     flex: 1;
-    color: #555;
+    color: #000;
 }
 .publication-item {
     display: flex;
@@ -629,12 +629,12 @@ body::after {
 .pub-content h3 {
     font-weight: bold;
     margin-bottom: 6px;
-    color: #333;
+    color: #000;
     line-height: 1.3;
 }
 
 .authors {
-    color: #666;
+    color: #000;
     margin-bottom: 4px;
     font-style: italic;
 }
@@ -701,12 +701,12 @@ body::after {
 .project-content h3 {
     font-weight: bold;
     margin-bottom: 6px;
-    color: #333;
+    color: #000;
     line-height: 1.3;
 }
 
 .project-description {
-    color: #666;
+    color: #000;
     margin-bottom: 6px;
     line-height: 1.4;
 }
@@ -825,7 +825,7 @@ body::after {
 .talk-content h3 {
     font-weight: bold;
     margin-bottom: 6px;
-    color: #333;
+    color: #000;
     line-height: 1.3;
 }
 
@@ -834,7 +834,7 @@ body::after {
 }
 
 .talk-description {
-    color: #666;
+    color: #000;
     margin-bottom: 6px;
     line-height: 1.4;
 }
@@ -1170,7 +1170,7 @@ strong {
 
 .edu-content p {
     margin-bottom: 6px;
-    color: #333;
+    color: #000;
 }
 
 /* Footer */
@@ -1221,7 +1221,7 @@ strong {
 }
 
 .footer-info p {
-    color: #666;
+    color: #000;
     margin: 0 auto;
     text-align: center;
     line-height: 1.5;
@@ -2229,7 +2229,7 @@ strong {
 
 .profile-affiliation {
     margin: 5px 0;
-    color: #666;
+    color: #000;
     text-align: center;
     width: 100%;
 }

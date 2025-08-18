@@ -2347,4 +2347,9 @@ strong {
     .profile-name {
         text-align: center !important;
     }
+
+    /* 移动端隐藏返回顶部按钮 */
+    .back-to-top {
+        display: none !important;
+    }
 }

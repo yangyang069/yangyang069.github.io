@@ -334,21 +334,47 @@ function setupPublicationsFilter() {
         showAllLink.classList.add('inactive');
     }
 
-    // 显示所有文章，按时间排序
+    // 显示所有文章，按年份分组
     function showAllPublications() {
         // 清空列表
         publicationsList.innerHTML = '';
 
-        // 按日期排序（最新的在前）
-        const sortedPublications = [...allPublications].sort((a, b) => {
-            const dateA = new Date(a.dataset.date + '-01');
-            const dateB = new Date(b.dataset.date + '-01');
-            return dateB - dateA;
+        // 按年份分组
+        const publicationsByYear = {};
+        allPublications.forEach(item => {
+            const year = item.dataset.date.split('-')[0];
+            if (!publicationsByYear[year]) {
+                publicationsByYear[year] = [];
+            }
+            publicationsByYear[year].push(item);
         });
 
-        // 添加到列表
-        sortedPublications.forEach(item => {
-            publicationsList.appendChild(item);
+        // 按年份排序（最新的在前）
+        const sortedYears = Object.keys(publicationsByYear).sort((a, b) => b - a);
+
+        // 为每个年份创建分组
+        sortedYears.forEach(year => {
+            // 创建年份标题
+            const yearHeader = document.createElement('div');
+            yearHeader.className = 'year-header';
+            yearHeader.innerHTML = `<h3>${year} (${publicationsByYear[year].length})</h3>`;
+            publicationsList.appendChild(yearHeader);
+
+            // 按日期排序该年份的文章（最新的在前）
+            const yearPublications = publicationsByYear[year].sort((a, b) => {
+                const dateA = new Date(a.dataset.date + '-01');
+                const dateB = new Date(b.dataset.date + '-01');
+                return dateB - dateA;
+            });
+
+            // 添加该年份的文章
+            yearPublications.forEach(item => {
+                // 确保under-review文章在show all模式下可见
+                if (item.dataset.status === 'under-review') {
+                    item.style.display = 'flex';
+                }
+                publicationsList.appendChild(item);
+            });
         });
 
         // 更新链接状态
@@ -362,8 +388,8 @@ function setupPublicationsFilter() {
     showSelectedLink.addEventListener('click', showSelectedPublications);
     showAllLink.addEventListener('click', showAllPublications);
 
-    // 默认显示所有文章
-    showAllPublications();
+    // 默认显示已选择的文章
+    showSelectedPublications();
 }
 
 // 页面加载完成后执行

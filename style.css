@@ -1102,6 +1102,19 @@ strong {
     margin-bottom: 15px;
 }
 
+/* 年份分组标题样式 */
+.year-header {
+    padding-bottom: 8px;
+}
+
+.year-header h3 {
+    color: #2C5AA0
+}
+
+.year-header:first-child {
+    margin-top: 10px;
+}
+
 .publications-section h2 #show-selected-link,
 .publications-section h2 #show-all-link {
     transition: color 0.3s ease, text-decoration 0.3s ease;
@@ -1110,9 +1123,9 @@ strong {
     font-weight: 600;
 }
 
-/* 默认状态：show all by date 高亮 */
-.publications-section h2 #show-all-link:not(.inactive) {
-    color: #4b2e83;
+/* 默认状态：show selected 高亮 */
+.publications-section h2 #show-selected-link:not(.inactive) {
+    color: #2C5AA0;
     text-decoration: underline;
 }
 
@@ -1123,7 +1136,7 @@ strong {
 
 .publications-section h2 #show-selected-link.active,
 .publications-section h2 #show-all-link.active {
-    color: #4b2e83;
+    color: #2C5AA0;
     text-decoration: underline;
 }
 
@@ -1316,6 +1329,15 @@ strong {
         text-align: left;
     }
 
+    /* 中等屏幕年份标题样式 */
+    .year-header {
+        text-align: left;
+    }
+
+    .year-header h3 {
+        font-size: 1.25em;
+    }
+
     .pub-image,
     .project-image,
     .talk-image {
@@ -1390,6 +1412,15 @@ strong {
         gap: 15px;
         text-align: center;
 
+    }
+
+    /* 移动端年份标题样式 */
+    .year-header {
+        text-align: left;
+    }
+
+    .year-header h3 {
+        font-size: 1.25em;
     }
 
     .pub-image,
@@ -1554,6 +1585,11 @@ strong {
     .publication-item:last-child,
     .project-item:last-child {
         border-bottom: none;
+    }
+
+
+    .year-header h3 {
+        font-size: 1.2em;
     }
 
     .research-projects-section .projects-list {

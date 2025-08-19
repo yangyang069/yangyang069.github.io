@@ -1156,9 +1156,13 @@ strong {
 
 /* Footer */
 .main-footer {
-    text-align: center;
-    padding-top: 20px;
     width: 100%;
+    background-color: #f2f3f3;
+    display: flex;
+    align-items: center; /* vertical centering */
+    justify-content: center; /* horizontal centering */
+    padding: 25px 0; /* balanced vertical spacing */
+    text-align: center;
 }
 
 .visitor-counter {
@@ -1756,8 +1760,11 @@ strong {
 
     /* 中等屏幕页脚优化 */
     .main-footer {
-        text-align: center !important;
+        display: flex;
+        align-items: center; /* vertical centering */
+        justify-content: center;
         padding: 20px 15px;
+        text-align: center !important;
     }
 
     .footer-info {
@@ -2013,8 +2020,11 @@ strong {
 
     /* 小屏幕页脚优化 */
     .main-footer {
-        text-align: center;
+        display: flex;
+        align-items: center; /* vertical centering */
+        justify-content: center;
         padding: 15px 5px;
+        text-align: center;
     }
 
     .footer-info {

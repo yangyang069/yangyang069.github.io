@@ -500,30 +500,40 @@ body::after {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 16px;
     margin-top: 20px;
-    font-size: 14px;
-    line-height: 1.5;
 }
 
 .social-icons a {
-    color: #495057;
+    color: #2c5aa0;
     text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 4px 8px;
-    border-radius: 6px;
+    padding: 12px;
+    border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-weight: 500;
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    overflow: hidden;
 }
+
 .social-icons a:hover {
-    text-decoration: underline;
+    transform: scale(1.15);
+    background-color: transparent;
+    border: none;
+    color: #2c5aa0;
+    box-shadow: none;
 }
-.social-icons .separator {
-    color: #999;
-    font-weight: normal;
-    user-select: none;
+
+.social-icons a i {
+    font-size: 20px;
+}
+
+.social-icons a:hover i {
+    transform: scale(1.1);
 }
 /* Right Content */
 .right-content {
@@ -2273,48 +2283,73 @@ strong {
     align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
-    gap: 8px;
-    font-size: 14px;
+    gap: 16px;
 }
 
 .social-icons a {
     color: #2c5aa0;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 4px 8px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icons a:hover {
+    transform: scale(1.15);
+    background-color: transparent;
+    border: none;
+    color: #2c5aa0;
+    box-shadow: none;
+}
+
+.social-icons a i {
+    font-size: 20px;
+}
+
+.social-icons a:hover i {
+    transform: scale(1.1);
 }
 /* 移动端适配 */
 @media (max-width: 900px) {
     .social-icons {
-        gap: 6px;
-        font-size: 13px;
+        gap: 16px;
     }
 
     .social-icons a {
-        padding: 3px 6px;
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+    }
+
+    .social-icons a i {
+        font-size: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .social-icons {
-        gap: 3px;
-        font-size: 12px;
+        gap: 16px;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
 
     .social-icons a {
-        padding: 2px 4px;
+        width: 48px;
+        height: 48px;
+        padding: 12px;
     }
 
-    .social-icons .separator {
-        font-size: 10px;
+    .social-icons a i {
+        font-size: 20px;
     }
 
     /* 移动端教育部分样式 */

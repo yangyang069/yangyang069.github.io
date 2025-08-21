@@ -2265,7 +2265,7 @@ strong {
 @media (max-width: 900px) {
     .social-icons {
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 1px;
     }
 
     .social-icons a {
@@ -2281,7 +2281,7 @@ strong {
 
 @media (max-width: 480px) {
     .social-icons {
-        gap: 12px;
+        gap: 1px;
         flex-direction: row;
         align-items: center;
         justify-content: center;

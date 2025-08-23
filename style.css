@@ -2245,11 +2245,15 @@ strong {
     gap: 20px;
 }
 
+.social-icons a {
+    color: #000000;
+    text-decoration: none;
+}
+
 .social-icons a:hover {
     transform: scale(1.15);
     background-color: transparent;
     border: none;
-    color: #2C5AA0;
     box-shadow: none;
     text-decoration: none;
 }

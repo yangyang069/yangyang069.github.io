@@ -1258,7 +1258,7 @@ strong {
     }
     
     .page__footer-follow {
-        margin: 2px 0;
+        margin: 0;
     }
     
     .page__footer-follow .social-icons {
@@ -1298,8 +1298,8 @@ strong {
     }
     
     .page__footer-copyright {
-        margin-top: 4px;
-        padding-top: 4px;
+        margin-top: 1px;
+        padding-top: 0;
         color: #666;
         font-size: 14px;
         line-height: 1.4;
@@ -1325,7 +1325,7 @@ strong {
     }
     
     .page__footer-follow {
-        margin: 2px 0;
+        margin: 0;
     }
     
     .page__footer-follow .social-icons {
@@ -1365,8 +1365,8 @@ strong {
     }
     
     .page__footer-copyright {
-        margin-top: 2px;
-        padding-top: 2px;
+        margin-top: 0;
+        padding-top: 0;
         color: #666;
         font-size: 14px;
         line-height: 1.4;
@@ -2623,4 +2623,13 @@ strong {
 }
 .fa-rss-square{
     color: #fa9b39;
+}
+
+/* 移除页脚FEED图标的缩放动画 */
+.page__footer-follow .social-icons a:hover {
+    transform: none !important;
+}
+
+.page__footer-follow .social-icons a:hover i {
+    transform: none !important;
 }

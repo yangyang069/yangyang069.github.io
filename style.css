@@ -615,6 +615,7 @@ body::after {
 }
 .venue {
     margin-bottom: 6px;
+
 }
 
 .pub-links {
@@ -1007,6 +1008,7 @@ strong {
 .looking {
     color: #cc0000;
     margin-bottom: 15px;
+
 }
 
 .student-note {
@@ -1128,11 +1130,9 @@ strong {
 .main-footer {
     width: 100%;
     background-color: #f2f3f3;
-    display: flex;
-    align-items: center; /* vertical centering */
-    justify-content: center; /* horizontal centering */
-    padding: 25px 0; /* balanced vertical spacing */
-    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 0;
+    margin-top: 40px;
 }
 
 .visitor-counter {
@@ -1181,6 +1181,196 @@ strong {
     line-height: 1.5;
     max-width: 100%;
     word-wrap: break-word;
+}
+
+/* AcademicPages Footer Styles */
+.page__footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+/* Custom footer snippets */
+.page__footer > a {
+    color: #666;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Footer follow section */
+.page__footer-follow {
+    margin: 8px 0;
+}
+
+.page__footer-follow .social-icons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.page__footer-follow .social-icons li {
+    margin: 0;
+}
+
+.page__footer-follow .social-icons li:first-child {
+    color: #666;
+}
+
+.page__footer-follow .social-icons a {
+    color: #666;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+
+.page__footer-follow .social-icons i {
+    font-size: 16px;
+}
+
+/* Footer copyright */
+.page__footer-copyright {
+    margin-top: 8px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+    .page__footer {
+        padding: 0 15px;
+        text-align: left;
+    }
+    
+    .page__footer > a {
+        color: #666;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .page__footer-follow {
+        margin: 2px 0;
+    }
+    
+    .page__footer-follow .social-icons {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+    
+    .page__footer-follow .social-icons li {
+        margin: 0;
+    }
+    
+    .page__footer-follow .social-icons li:first-child {
+        color: #333;
+    }
+    
+    .page__footer-follow .social-icons a {
+        color: #666;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.3s ease;
+    }
+    
+    .page__footer-follow .social-icons a:hover {
+        color: #2c5aa0;
+    }
+    
+    .page__footer-follow .social-icons i {
+        font-size: 16px;
+    }
+    
+    .page__footer-copyright {
+        margin-top: 4px;
+        padding-top: 4px;
+        color: #666;
+        font-size: 14px;
+        line-height: 1.4;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .page__footer {
+        padding: 0 10px;
+    }
+    
+    .page__footer > a {
+        color: #666;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .page__footer > a:hover {
+        color: #2c5aa0;
+        text-decoration: underline;
+    }
+    
+    .page__footer-follow {
+        margin: 2px 0;
+    }
+    
+    .page__footer-follow .social-icons {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+    
+    .page__footer-follow .social-icons li {
+        margin: 0;
+    }
+    
+    .page__footer-follow .social-icons li:first-child {
+        color: #666;
+    }
+    
+    .page__footer-follow .social-icons a {
+        color: #666;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.3s ease;
+    }
+    
+    .page__footer-follow .social-icons a:hover {
+        color: #2c5aa0;
+    }
+    
+    .page__footer-follow .social-icons i {
+        font-size: 16px;
+    }
+    
+    .page__footer-copyright {
+        margin-top: 2px;
+        padding-top: 2px;
+        color: #666;
+        font-size: 14px;
+        line-height: 1.4;
+    }
 }
 
 /* Citation Modal */

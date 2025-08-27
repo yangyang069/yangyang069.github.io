@@ -2324,9 +2324,6 @@ strong {
 .venue-rank {
     display: inline-block;
     color: red;
-    font-weight: bold;
-    /* 斜体 */
-    font-style: italic;
     margin: 0 5px;
 }
 

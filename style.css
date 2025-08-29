@@ -543,29 +543,30 @@ body::after {
 }
 
 /* News Section */
-.news-list {
-    max-height: none;
-    overflow: visible;
+.news-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.news-item {
-    display: flex;
-    align-items: flex-start;
+.news-section li {
     margin-bottom: 10px;
     line-height: 1.5;
+    color: #000;
+    position: relative;
+    padding-left: 15px;
 }
 
-.news-item::before {
+.news-section li::before {
     content: '•';
     font-weight: bold;
-    margin-right: 10px;
-    flex-shrink: 0;
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
 }
 
-
-.news-content {
-    flex: 1;
-    color: #000;
+.news-section li:last-child {
+    margin-bottom: 0;
 }
 .publication-item {
     display: flex;

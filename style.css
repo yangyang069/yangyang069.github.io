@@ -820,6 +820,28 @@ body::after {
     text-decoration: underline;
 }
 
+/* Awards Section */
+.awards-section {
+    margin-bottom: 30px;
+}
+
+.awards-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.awards-section li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #000;
+    padding-left: 0;
+}
+
+.awards-section li:last-child {
+    margin-bottom: 0;
+}
+
 /* Education Section - Reference Style */
 .education-list {
     margin: 0;

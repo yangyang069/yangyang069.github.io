@@ -392,7 +392,258 @@ function setupPublicationsFilter() {
     showSelectedPublications();
 }
 
-// 页面加载完成后执行
+// Carousel functionality
+function setupCarousel() {
+    const carouselTrack = document.getElementById('carouselTrack');
+    const carouselPrev = document.getElementById('carouselPrev');
+    const carouselNext = document.getElementById('carouselNext');
+    const indicators = document.querySelectorAll('.indicator');
+    const carouselContainer = document.querySelector('.carousel-container');
+    const slides = document.querySelectorAll('.carousel-slide');
+    
+    if (!carouselTrack || !carouselPrev || !carouselNext) {
+        return;
+    }
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoPlayInterval;
+    const autoPlayDelay = 5000; // 5 seconds
+    let isAnimating = false;
+    
+    // 向前移动的函数 - 从最后一张到第一张也是向前移动
+    function moveNext() {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        // 先移除所有active类
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // 计算下一张幻灯片的索引
+        const nextSlide = (currentSlide + 1) % totalSlides;
+        
+        // 如果是从最后一张到第一张
+        if (currentSlide === totalSlides - 1 && nextSlide === 0) {
+            // 先将第一张幻灯片克隆并添加到轨道末尾
+            const firstSlideClone = slides[0].cloneNode(true);
+            carouselTrack.appendChild(firstSlideClone);
+            
+            // 向左移动到克隆的幻灯片
+            carouselTrack.style.transition = 'transform 0.5s ease';
+            carouselTrack.style.transform = `translateX(-${totalSlides * 50}%)`;
+            
+            // 动画结束后，重置位置
+            setTimeout(() => {
+                carouselTrack.style.transition = 'none';
+                carouselTrack.style.transform = 'translateX(0)';
+                carouselTrack.removeChild(firstSlideClone);
+                slides[0].classList.add('active');
+                isAnimating = false;
+            }, 500);
+            
+            currentSlide = 0;
+        } else {
+            // 正常向前移动
+            carouselTrack.style.transition = 'transform 0.5s ease';
+            carouselTrack.style.transform = `translateX(-${nextSlide * 50}%)`;
+            slides[nextSlide].classList.add('active');
+            
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
+            
+            currentSlide = nextSlide;
+        }
+        
+        // 更新指示器
+        if (indicators.length > 0) {
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+    }
+    
+    // 向后移动的函数 - 从第一张到最后一张也是向后移动
+    function movePrev() {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        // 先移除所有active类
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // 计算上一张幻灯片的索引
+        const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        
+        // 如果是从第一张到最后一张
+        if (currentSlide === 0 && prevSlide === totalSlides - 1) {
+            // 先将最后一张幻灯片克隆并添加到轨道开头
+            const lastSlideClone = slides[totalSlides - 1].cloneNode(true);
+            carouselTrack.insertBefore(lastSlideClone, carouselTrack.firstChild);
+            
+            // 立即调整位置，让克隆的幻灯片在左侧
+            carouselTrack.style.transition = 'none';
+            carouselTrack.style.transform = 'translateX(-50%)';
+            
+            // 强制浏览器重绘
+            carouselTrack.offsetHeight;
+            
+            // 向右移动到克隆的幻灯片
+            carouselTrack.style.transition = 'transform 0.5s ease';
+            carouselTrack.style.transform = 'translateX(0)';
+            
+            // 动画结束后，重置位置
+            setTimeout(() => {
+                carouselTrack.style.transition = 'none';
+                carouselTrack.style.transform = `translateX(-${prevSlide * 50}%)`;
+                carouselTrack.removeChild(lastSlideClone);
+                slides[prevSlide].classList.add('active');
+                isAnimating = false;
+            }, 500);
+            
+            currentSlide = prevSlide;
+        } else {
+            // 正常向后移动
+            carouselTrack.style.transition = 'transform 0.5s ease';
+            carouselTrack.style.transform = `translateX(-${prevSlide * 50}%)`;
+            slides[prevSlide].classList.add('active');
+            
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
+            
+            currentSlide = prevSlide;
+        }
+        
+        // 更新指示器
+        if (indicators.length > 0) {
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+    }
+    
+    // 自动播放
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(moveNext, autoPlayDelay);
+    }
+    
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+    }
+    
+    // 左右按钮分别控制不同方向的循环播放
+    carouselNext.addEventListener('click', function() {
+        moveNext(); // 向右按钮 - 向前移动
+        stopAutoPlay();
+        startAutoPlay();
+    });
+    
+    carouselPrev.addEventListener('click', function() {
+        movePrev(); // 向左按钮 - 向后移动
+        stopAutoPlay();
+        startAutoPlay();
+    });
+    
+    // 指示器 - 直接跳转到指定幻灯片
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            if (index !== currentSlide && !isAnimating) {
+                isAnimating = true;
+                
+                // 先移除所有active类
+                slides.forEach(slide => slide.classList.remove('active'));
+                
+                // 设置目标幻灯片为active
+                slides[index].classList.add('active');
+                
+                // 移动到目标幻灯片
+                carouselTrack.style.transition = 'transform 0.5s ease';
+                carouselTrack.style.transform = `translateX(-${index * 50}%)`;
+                
+                setTimeout(() => {
+                    isAnimating = false;
+                }, 500);
+                
+                currentSlide = index;
+                
+                // 更新指示器
+                indicators.forEach((ind, i) => {
+                    ind.classList.toggle('active', i === currentSlide);
+                });
+                
+                stopAutoPlay();
+                startAutoPlay();
+            }
+        });
+    });
+    
+    // 鼠标悬停
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+    }
+    
+    // 键盘导航 - 左右箭头分别控制不同方向的循环播放
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            movePrev(); // 左箭头 - 向后移动
+            stopAutoPlay();
+            startAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            moveNext(); // 右箭头 - 向前移动
+            stopAutoPlay();
+            startAutoPlay();
+        }
+    });
+    
+    // 触摸事件 - 左右滑动分别控制不同方向的循环播放
+    let touchStartX = 0;
+    
+    carouselContainer?.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoPlay();
+    });
+    
+    carouselContainer?.addEventListener('touchend', function(e) {
+        const touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                // 向左滑动 - 向前移动
+                moveNext();
+            } else {
+                // 向右滑动 - 向后移动
+                movePrev();
+            }
+        }
+        startAutoPlay();
+    });
+    
+    // 初始化
+    slides[0].classList.add('active');
+    carouselTrack.style.transform = 'translateX(0)';
+    if (indicators.length > 0) {
+        indicators[0].classList.add('active');
+    }
+    startAutoPlay();
+    
+    // 可见性变化
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            stopAutoPlay();
+        } else {
+            startAutoPlay();
+        }
+    });
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
     updateLastCommitDate();
     setupSmoothScrolling();
@@ -401,6 +652,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setupMobileMenu();
     disableUnderReviewLinks();
     setupPublicationsFilter();
+    setupCarousel(); // Initialize carousel
 });
 
 // 回到顶部按钮功能

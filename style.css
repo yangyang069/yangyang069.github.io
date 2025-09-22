@@ -820,7 +820,217 @@ body::after {
     text-decoration: underline;
 }
 
-/* Awards Section */
+/* Carousel Section Styles */
+.carousel-section {
+    margin-bottom: 40px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    border: 1px solid #d0d0d0;
+    background-color: #fff;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    position: relative;
+    flex: 0 0 50%;
+    width: 50%;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Slide Overlay for Activity Description */
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    transform: translateY(0);
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.carousel-slide:hover .slide-overlay {
+    opacity: 0;
+}
+
+.slide-content h3 {
+    color: #fff;
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.slide-content p {
+    color: #e0e0e0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 100%;
+    pointer-events: none;
+}
+
+.carousel-btn {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    color: #333;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 16px;
+    pointer-events: auto;
+}
+
+.carousel-prev {
+    left: 15px;
+}
+
+.carousel-next {
+    right: 15px;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #999;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 0;
+    background: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid #999;
+}
+
+.indicator.active {
+    background: #666;
+}
+
+.indicator:hover {
+    background: #999;
+}
+
+/* Responsive Design for Carousel */
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        height: 280px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .carousel-prev {
+        left: 10px;
+    }
+    
+    .carousel-next {
+        right: 10px;
+    }
+    
+    .slide-overlay {
+        padding: 15px;
+    }
+    
+    .slide-content h3 {
+        font-size: 15px;
+    }
+    
+    .slide-content p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-wrapper {
+        height: 220px;
+    }
+    
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+    
+    .carousel-prev {
+        left: 8px;
+    }
+    
+    .carousel-next {
+        right: 8px;
+    }
+    
+    .slide-overlay {
+        padding: 12px;
+    }
+    
+    .slide-content h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    
+    .slide-content p {
+        font-size: 12px;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+
 .awards-section {
     margin-bottom: 30px;
 }

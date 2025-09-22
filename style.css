@@ -830,7 +830,7 @@ body::after {
     max-width: 100%;
     margin: 0 auto;
     border: 1px solid #e0e0e0;
-    border-radius: 12px;
+    border-radius: 5px;
     background-color: #fff;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -991,20 +991,6 @@ body::after {
     transform: scale(1.1);
 }
 
-/* Progress ring animation for active indicator */
-.indicator.active::before {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    border: 2px solid #2c5aa0;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: pulse 2s infinite;
-}
-
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -1014,12 +1000,6 @@ body::after {
         transform: scale(1.1);
         opacity: 0.4;
     }
-}
-
-/* Focus state for indicators */
-.indicator:focus {
-    outline: 2px solid #2c5aa0;
-    outline-offset: 3px;
 }
 
 /* Responsive Design for Carousel */
@@ -1437,12 +1417,7 @@ strong {
     margin-top: 40px;
 }
 
-.visitor-counter {
-    display: inline-block;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
-}
+
 
 .footer-links {
     display: flex;
@@ -1493,8 +1468,54 @@ strong {
     text-align: left;
 }
 
+/* 页脚内容布局 */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-right {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    min-width: 60px; /* 确保最小宽度以容纳地球仪 */
+}
+
+/* 访客地球仪样式 - 页脚右侧 */
+.visitor-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px; /* 限制高度与页脚适配 */
+    overflow: hidden; /* 防止溢出 */
+}
+
+/* 地球仪大小控制 - 针对clstr_globe */
+.visitor-counter canvas,
+.visitor-counter div[id*="clustrmaps"],
+.visitor-counter iframe,
+.visitor-counter object,
+.visitor-counter embed {
+    max-width: 50px !important;
+    max-height: 50px !important;
+    width: 50px !important;
+    height: 50px !important;
+    transform: scale(0.8);
+    transform-origin: center;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 /* Custom footer snippets */
-.page__footer > a {
+.page__footer a {
     color: #666;
     text-decoration: none;
     display: inline-block;
@@ -1546,8 +1567,37 @@ strong {
     line-height: 1.4;
 }
 
-/* Responsive footer */
+/* 响应式页脚布局 */
 @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .footer-left {
+        text-align: left;
+        order: 1;
+    }
+    
+    .footer-right {
+        order: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .visitor-counter {
+        display: none !important; /* 移动端隐藏访客地球仪 */
+    }
+    
+    .visitor-counter canvas,
+    .visitor-counter div[id*="clustrmaps"],
+    .visitor-counter iframe,
+    .visitor-counter object,
+    .visitor-counter embed {
+        display: none !important; /* 移动端隐藏所有地球仪元素 */
+    }
     .page__footer {
         padding: 0 15px;
         text-align: left;
@@ -1610,6 +1660,35 @@ strong {
 }
 
 @media (max-width: 480px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .footer-left {
+        text-align: left;
+        order: 1;
+    }
+    
+    .footer-right {
+        order: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .visitor-counter {
+        display: none !important; /* 移动端隐藏访客地球仪 */
+    }
+    
+    .visitor-counter canvas,
+    .visitor-counter div[id*="clustrmaps"],
+    .visitor-counter iframe,
+    .visitor-counter object,
+    .visitor-counter embed {
+        display: none !important; /* 移动端隐藏所有地球仪元素 */
+    }
     
     .page__footer {
         padding: 0 10px;
@@ -1619,11 +1698,6 @@ strong {
         color: #666;
         text-decoration: none;
         display: inline-block;
-    }
-    
-    .page__footer > a:hover {
-        color: #2c5aa0;
-        text-decoration: underline;
     }
     
     .page__footer-follow {
@@ -1840,6 +1914,19 @@ strong {
 
 
 @media (max-width: 900px) {
+    /* 移动端隐藏访客地球仪 */
+    .visitor-counter {
+        display: none !important;
+    }
+    
+    .visitor-counter canvas,
+    .visitor-counter div[id*="clustrmaps"],
+    .visitor-counter iframe,
+    .visitor-counter object,
+    .visitor-counter embed {
+        display: none !important;
+    }
+    
     .main-layout {
         flex-direction: column;
         gap: 20px;
@@ -2231,12 +2318,7 @@ strong {
     }
 
 
-    .visitor-counter {
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
+    /* 移动端地球仪样式通过上方的@media queries控制 */
 
     .footer-links {
         margin: 10px 0;
@@ -2518,13 +2600,7 @@ strong {
         display: block;
     }
 
-    .visitor-counter {
-        margin-bottom: 5px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
+    /* 移动端地球仪样式已在上方@media queries中定义 */
 
     /* 小屏幕页脚优化 */
     .main-footer {
@@ -2630,19 +2706,7 @@ strong {
         user-select: text;
     }
 
-    /* Visitor Counter 溢出处理 */
-    .visitor-counter {
-        overflow-x: auto;
-        overflow-y: hidden;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .visitor-counter>* {
-        max-width: 100%;
-    }
+    /* 移动端地球仪样式通过上方@media queries控制 */
 
     /* 移动端页脚居中对齐 */
     .main-footer {
@@ -2681,7 +2745,7 @@ strong {
 .back-to-top {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    right: 10px;
     width: 40px;
     height: 40px;
     background-color: #f8f8f8;

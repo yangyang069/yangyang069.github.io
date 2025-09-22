@@ -2669,32 +2669,6 @@ strong {
 .fa-rss-square{
     color: #fa9b39;
 }
-
-.ai-orcid{
-    color: #a6ce39;
-}
-
-/* 社交媒体图标品牌色彩 */
-.fa-envelope{
-    color: #0072C6;
-}
-
-.fa-university{
-    color: #28a745;
-}
-
-.ai-google-scholar{
-    color: #4285F4;
-}
-
-.fa-github{
-    color: #333333;
-}
-
-.ai-researchgate{
-    color: #00D0B7;
-}
-
 /* 移除页脚FEED图标的缩放动画 */
 .page__footer-follow .social-icons a:hover {
     transform: none !important;

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <atom:link href="https://yangyang.scuec.edu.cn/feed.xml" rel="self" type="application/rss+xml" />
-    <title>Yang Yang - Homepage</title>
-    <description>Yang Yang's Homepage, Computer Technology MS student at South-Central Minzu University, focusing on Multimodal Medical Image Analysis and Computer Vision</description>
-    <link>https://yangyang.scuec.edu.cn/</link>
-    <pubDate>Tue, 13 Aug 2025 00:00:00 +0800</pubDate>
-    <lastBuildDate>Tue, 13 Aug 2025 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://yangyang.wiki/feed.xml" rel="self" type="application/rss+xml" />
+    <title>YangYang (杨杨) - Homepage</title>
+    <description>YangYang's Homepage, computer technology MS student at South-Central Minzu University, focusing on Multimodal Medical Image Analysis and Computer Vision</description>
+    <link>https://yangyang.wiki/</link>
+    <pubDate>Mon, 23 Sep 2025 00:00:00 +0800</pubDate>
+    <lastBuildDate>Mon, 23 Sep 2025 00:00:00 +0800</lastBuildDate>
     <generator>Custom RSS Generator</generator>
     <language>en-US</language>
     <webMaster>yangyang@mail.scuec.edu.cn (Yang Yang)</webMaster>
@@ -14,14 +14,14 @@
     <copyright>Copyright 2025 Yang Yang</copyright>
     <image>
       <url>https://yangyang666.oss-cn-chengdu.aliyuncs.com/academic/favicon.png</url>
-      <title>Yang Yang - Homepage</title>
-      <link>https://yangyang.scuec.edu.cn/</link>
+      <title>YangYang (杨杨) - Homepage</title>
+      <link>https://yangyang.wiki/</link>
     </image>
     <item>
       <title>HSFPN-Det: An Effective Model for Detecting Rice Pests and Diseases</title>
       <description>A novel deep learning model for rice pest and disease detection, currently under review at The Visual Computer journal.</description>
-      <pubDate>Mon, 01 May 2025 00:00:00 +0800</pubDate>
-      <link>https://yangyang.scuec.edu.cn/#publications</link>
+      <pubDate>Sun, 01 May 2025 00:00:00 +0800</pubDate>
+      <link>https://yangyang.wiki/#publications</link>
       <guid isPermaLink="false">publication-hsfpn-det-2025</guid>
       <category>Publication</category>
       <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
@@ -29,25 +29,25 @@
     <item>
       <title>An Improved YOLOv8-Based Rice Pest and Disease Detection Method</title>
       <description>We propose an improved YOLOv8-based method for accurate detection of rice pests and diseases. Published in Computer Graphics International Conference (CGI) 2024.</description>
-      <pubDate>Sat, 01 Mar 2025 00:00:00 +0800</pubDate>
-      <link>https://doi.org/10.1007/978-3-031-82024-3_8</link>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 +0800</pubDate>
+      <link>https://link.springer.com/chapter/10.1007/978-3-031-82024-3_8</link>
       <guid isPermaLink="false">publication-cgi2024</guid>
       <category>Publication</category>
       <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
     </item>
     <item>
-      <title>SimpleTex-OCR TypeScript Version</title>
-      <description>A modern LaTeX formula recognition desktop application based on Electron+React+TypeScript. It supports screenshot recognition, file upload, multi-format copy and export.</description>
-      <pubDate>Mon, 01 Jul 2025 00:00:00 +0800</pubDate>
-      <link>https://github.com/Louaq/SimpleTex-OCR</link>
-      <guid isPermaLink="false">project-simpletex</guid>
+      <title>TexStudio: OCR mathematical formula recognition</title>
+      <description>A modern LaTeX formula recognition desktop application built with TypeScript and Electron.</description>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0800</pubDate>
+      <link>https://github.com/Louaq/TexStudio</link>
+      <guid isPermaLink="false">project-texstudio</guid>
       <category>Project</category>
       <author>yangyang@mail.scuec.edu.cn (Yang Yang)</author>
     </item>
     <item>
       <title>Rice Pest and Disease Detection System</title>
-      <description>A comprehensive system for rice pest and disease detection based on the CGI2024 paper. Includes code, demo, and dataset.</description>
-      <pubDate>Wed, 01 Jan 2025 00:00:00 +0800</pubDate>
+      <description>An intelligent system for automated detection and classification of rice pests and diseases using deep learning techniques.</description>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate>
       <link>https://github.com/Louaq/CGI2024</link>
       <guid isPermaLink="false">project-rice-pest</guid>
       <category>Project</category>
@@ -56,7 +56,7 @@
     <item>
       <title>CGI2024 Conference Talk</title>
       <description>Presentation of "An Improved YOLOv8-Based Rice Pest and Disease Detection Method" at Computer Graphics International Conference 2024.</description>
-      <pubDate>Sat, 01 Mar 2025 00:00:00 +0800</pubDate>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 +0800</pubDate>
       <link>https://drive.google.com/file/d/1MYGWupPT0zrqpIpRvBc7m3qs2gzznOiw/view?usp=drive_link</link>
       <guid isPermaLink="false">talk-cgi2024</guid>
       <category>Talk</category>

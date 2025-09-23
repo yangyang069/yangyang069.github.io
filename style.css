@@ -3008,6 +3008,26 @@ strong {
     }
 }
 
+/* 跳动光标样式 */
+.blinking-cursor {
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    width: 10px;
+    height: 18px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 /* Align top-nav height with GitHub Corner */
 .top-nav { height: 64px; }
 .nav-container { height: 64px; padding: 0 20px; }

@@ -373,6 +373,11 @@ body.mobile-menu-open {
     .mobile-nav-avatar {
         margin-bottom: 12px;
     }
+
+    /* 移动端隐藏edu-logo */
+    .edu-logo {
+        display: none !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1940,9 +1945,7 @@ strong {
     }
 
     .edu-logo {
-        margin-right: 0;
-        margin-bottom: 0;
-        flex-shrink: 0;
+        display: none !important;
     }
 
     .university-logo {
@@ -2314,8 +2317,7 @@ strong {
     }
 
     .edu-logo {
-        margin-right: 0;
-        margin-bottom: 8px;
+        display: none !important;
     }
 
     .university-logo {
@@ -2640,9 +2642,7 @@ strong {
     }
 
     .edu-logo {
-        margin-right: 0;
-        margin-bottom: 0;
-        flex-shrink: 0;
+        display: none !important;
     }
 
     .university-logo {

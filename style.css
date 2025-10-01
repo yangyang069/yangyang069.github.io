@@ -1355,7 +1355,7 @@ strong {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap: 6px;
+        gap: 10px;
         flex-wrap: wrap;
     }
     
@@ -1446,7 +1446,7 @@ strong {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap: 4px;
+        gap: 8px;
         flex-wrap: wrap;
     }
     
@@ -2185,8 +2185,7 @@ strong {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: box-shadow 0.3s ease;
     }
-
-
+    
     .profile-content h1 {
         margin-bottom: 5px;
     }
@@ -2807,6 +2806,21 @@ strong {
 .fa-rss-square{
     color: #fa9b39;
 }
+
+/* 组织logo样式 */
+.org-logo {
+    width: 16px;
+    height: 16px;
+    margin-right: 0;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* 确保组织链接文字不换行 */
+.page__footer-follow .social-icons a {
+    white-space: nowrap;
+}
+
 /* 移除页脚FEED图标的缩放动画 */
 .page__footer-follow .social-icons a:hover {
     transform: none !important;
@@ -2814,4 +2828,81 @@ strong {
 
 .page__footer-follow .social-icons a:hover i {
     transform: none !important;
+}
+
+/* Gallery Section */
+.gallery-section {
+    margin-bottom: 40px;
+}
+
+.gallery-subtitle {
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 14.4px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    background: #fff;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    padding: 15px;
+    color: #000;
+    font-size: 14.4px;
+    text-align: center;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Gallery响应式布局 */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+    }
+    
+    .gallery-item img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .gallery-item img {
+        height: 250px;
+    }
+    
+    .gallery-caption {
+        padding: 12px;
+        font-size: 14.4px;
+    }
 }

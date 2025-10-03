@@ -392,6 +392,111 @@ function setupPublicationsFilter() {
     showSelectedPublications();
 }
 
+// Gallery分页功能
+let currentGalleryPage = 1;
+const itemsPerPage = 4;
+let totalGalleryItems = 0;
+let totalPages = 0;
+
+function initGalleryPagination() {
+    const galleryGrid = document.getElementById('galleryGrid');
+    if (!galleryGrid) return;
+    
+    const galleryItems = Array.from(galleryGrid.querySelectorAll('.gallery-item'));
+    totalGalleryItems = galleryItems.length;
+    totalPages = Math.ceil(totalGalleryItems / itemsPerPage);
+    
+    // 如果总数不超过4个，隐藏分页控件
+    if (totalGalleryItems <= itemsPerPage) {
+        const pagination = document.getElementById('galleryPagination');
+        if (pagination) pagination.style.display = 'none';
+        return;
+    }
+    
+    // 初始加载时不需要动画，直接显示第一页
+    galleryItems.forEach((item, index) => {
+        if (index >= itemsPerPage) {
+            item.style.display = 'none';
+        }
+    });
+    
+    // 更新分页信息和按钮状态
+    const pageInfo = document.getElementById('pageInfo');
+    if (pageInfo) {
+        pageInfo.textContent = `1 / ${totalPages}`;
+    }
+    
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    if (prevBtn) {
+        prevBtn.disabled = true;
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.cursor = 'not-allowed';
+    }
+    
+    if (nextBtn) {
+        nextBtn.disabled = totalPages === 1;
+        nextBtn.style.opacity = totalPages === 1 ? '0.5' : '1';
+        nextBtn.style.cursor = totalPages === 1 ? 'not-allowed' : 'pointer';
+    }
+    
+    currentGalleryPage = 1;
+}
+
+function showGalleryPage(page) {
+    const galleryGrid = document.getElementById('galleryGrid');
+    if (!galleryGrid) return;
+    
+    const galleryItems = Array.from(galleryGrid.querySelectorAll('.gallery-item'));
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    
+    // 切换显示/隐藏，并添加简单的淡入动画
+    galleryItems.forEach((item, index) => {
+        if (index >= startIndex && index < endIndex) {
+            item.style.display = 'block';
+            // 重置并触发动画
+            item.style.animation = 'none';
+            void item.offsetWidth; // 触发重排
+            item.style.animation = 'simpleFadeIn 0.3s ease-out';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+    
+    // 更新分页信息
+    const pageInfo = document.getElementById('pageInfo');
+    if (pageInfo) {
+        pageInfo.textContent = `${page} / ${totalPages}`;
+    }
+    
+    // 更新按钮状态
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    if (prevBtn) {
+        prevBtn.disabled = page === 1;
+        prevBtn.style.opacity = page === 1 ? '0.5' : '1';
+        prevBtn.style.cursor = page === 1 ? 'not-allowed' : 'pointer';
+    }
+    
+    if (nextBtn) {
+        nextBtn.disabled = page === totalPages;
+        nextBtn.style.opacity = page === totalPages ? '0.5' : '1';
+        nextBtn.style.cursor = page === totalPages ? 'not-allowed' : 'pointer';
+    }
+    
+    currentGalleryPage = page;
+}
+
+function changeGalleryPage(direction) {
+    const newPage = currentGalleryPage + direction;
+    if (newPage >= 1 && newPage <= totalPages) {
+        showGalleryPage(newPage);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     updateLastCommitDate();
     setupSmoothScrolling();
@@ -400,7 +505,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setupMobileMenu();
     disableUnderReviewLinks();
     setupPublicationsFilter();
-    setupCarousel(); // Initialize carousel
+    initGalleryPagination(); // 初始化Gallery分页
 });
 
 // 回到顶部按钮功能

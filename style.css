@@ -761,7 +761,21 @@ body::after {
 
 }
 
-/* SVG Badge styles */
+/* 蓝色徽标样式 */
+.badge-blue {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: absolute;
+    margin-top: .5em;
+    margin-left: -.5em;
+    color: white;
+    background-color: #00369f;
+    font-size: .8em;
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* SVG Badge styles - 保留用于兼容 */
 .badge-svg {
     position: absolute;
     top: 8px;

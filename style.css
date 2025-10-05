@@ -676,7 +676,8 @@ body::after {
 }
 
 .project-description {
-    color: #000;
+    font-size: 13px;
+    color: #6C757D;
     margin-bottom: 6px;
 }
 
@@ -824,7 +825,8 @@ body::after {
 }
 
 .talk-description {
-    color: #000;
+    font-size: 13px;
+    color: #6C757D;
     margin-bottom: 6px;
 }
 

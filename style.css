@@ -419,7 +419,7 @@ body.mobile-menu-open {
 }
 
 body {
-    font-family: "Open Sans", Segoe, "Segoe UI", "Lucida Sans Unicode", "Lucida Grande", "Avenir", "Seravek", "Ubuntu", "DejaVu Sans", "Trebuchet MS", Verdana, Arial, sans-serif;
+    font-family: "Trebuchet MS",Helvetica,sans-serif;
     line-height: 1.6;
     background-color: #fff;
 }
@@ -1570,7 +1570,7 @@ strong {
 }
 
 #citation-text {
-    font-family: 'Courier New', monospace;
+    font-family: "Trebuchet MS",Helvetica,sans-serif;
     white-space: pre-wrap;
     word-wrap: break-word;
     margin: 0;

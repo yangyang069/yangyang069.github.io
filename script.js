@@ -406,12 +406,16 @@ function initGalleryPagination() {
     totalGalleryItems = galleryItems.length;
     totalPages = Math.ceil(totalGalleryItems / itemsPerPage);
     
+    const pagination = document.getElementById('galleryPagination');
+    
     // 如果总数不超过4个，隐藏分页控件
     if (totalGalleryItems <= itemsPerPage) {
-        const pagination = document.getElementById('galleryPagination');
         if (pagination) pagination.style.display = 'none';
         return;
     }
+    
+    // 如果项目数超过4个，显示分页控件
+    if (pagination) pagination.style.display = 'flex';
     
     // 初始加载时不需要动画，直接显示第一页
     galleryItems.forEach((item, index) => {

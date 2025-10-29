@@ -676,7 +676,7 @@ body::after {
 }
 
 .project-description {
-    font-size: 13px;
+    font-size: 14.4px;
     color: #6C757D;
     margin-bottom: 6px;
 }
@@ -825,7 +825,7 @@ body::after {
 }
 
 .talk-description {
-    font-size: 13px;
+    font-size: 14.4px;
     color: #6C757D;
     margin-bottom: 6px;
 }
@@ -2948,7 +2948,7 @@ strong {
 
 /* Gallery分页控件样式 */
 .gallery-pagination {
-    display: flex;
+    display: none; /* 默认隐藏，由JavaScript控制显示 */
     justify-content: center;
     align-items: center;
     gap: 20px;
